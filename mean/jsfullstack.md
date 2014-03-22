@@ -16,12 +16,22 @@ http://www.digitalocean.com/
 ## 설치
 * yum update -y
 * yum install -y wget curl-devel zlib-devel.x86_64 perl-ExtUtils-MakeMaker.x86_64
-* yum groupinstall "Development Tools"
+* yum groupinstall "Development Tools" -y
 * wget https://git-core.googlecode.com/files/git-1.9.0.tar.gz
 * git 설치
-* adduser dev
-* passwd dev
-* su - dev
+```sh
+tar xvfz git-1.9.0.tar.gz
+cd git-1.9.0
+./configure
+make
+make install
+```
+* 개발자 계정 생성
+```sh
+adduser dev
+passwd dev
+su - dev
+```
 
 * mkdir ~/local && cd ~/local
 * wget http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-x64.tar.gz
