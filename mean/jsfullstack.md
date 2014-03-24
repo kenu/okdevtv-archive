@@ -19,28 +19,20 @@ http://www.digitalocean.com/
 * yum groupinstall -y "Development Tools"
 * wget https://git-core.googlecode.com/files/git-1.9.0.tar.gz
 * git 설치
-```sh
-tar xvfz git-1.9.0.tar.gz
-cd git-1.9.0
-./configure
-make
-make install
-```
-* 개발자 계정 생성
-```sh
-adduser dev
-passwd dev
-su - dev
-```
+* adduser dev
+* passwd dev
+* su - dev
 
 * mkdir ~/local && cd ~/local
 * wget http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-x64.tar.gz
 * wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.4.9.tgz
 * PATH에 node.js, mongodb 추가
-* npm install -g grunt-cli
-* npm install -g bower
 
 ### 서비스 설치
+```
+npm install -g grunt-cli
+npm install -g bower
+```
 * git clone http://github.com/linnovate/mean.git
 * cd mean
 * npm install
