@@ -15,13 +15,15 @@ http://www.digitalocean.com/
 
 ## 설치
 * yum update -y
-* yum install -y wget curl-devel zlib-devel.x86_64 perl-ExtUtils-MakeMaker.x86_64
-* yum groupinstall -y "Development Tools"
-* wget https://git-core.googlecode.com/files/git-1.9.0.tar.gz
-* git 설치
+* yum install -y wget
 * adduser dev
 * passwd dev
 * su - dev
+
+* git 설치(선택)
+* yum install -y curl-devel zlib-devel.x86_64 perl-ExtUtils-MakeMaker.x86_64
+* yum groupinstall -y "Development Tools"
+* wget https://git-core.googlecode.com/files/git-1.9.0.tar.gz
 
 * mkdir ~/local && cd ~/local
 * wget http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-x64.tar.gz
@@ -44,3 +46,32 @@ http://ip:3000
 80port 연결
 * iptables -t nat -A PREROUTING -p tcp -d 192.241.192.91 --dport 80 -j REDIRECT --to-port 3000
 
+# 계정 연결
+## SNS
+* 페이스북
+* 트위터
+* 구글플러스
+* 깃허브
+* 링크드인
+
+### 페이스북
+* https://developers.facebook.com
+* APP_ID
+* APP_SECRET
+
+#### 절차
+1. 앱 생성
+2. 설정 > 플랫폼 추가 > 웹사이트
+3. 사이트 URL
+
+mean/config/env/development.js
+```js
+facebook: {
+        clientID: '1417763...476376',
+        clientSecret: 'a535v2.......adf68c53f41ae6c73b',
+        callbackURL: 'http://okdevtv.com/auth/facebook/callback'
+    },
+```
+
+### 깃허브
+* https://github.com/settings/applications/
