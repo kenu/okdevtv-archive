@@ -2,49 +2,70 @@
 
 ## 절차
 * 서버 임대
-* 설치
-* 서비스 테스트
+* 시스템 설치
+* MEAN 서비스 테스트
 
 ## 서버 임대
-http://www.digitalocean.com/
-* 생성 시간 1분
+* http://www.digitalocean.com/
+* 클라우드 VM 생성 시간 1분
 * SSD 20G
 * IP, root 계정 비밀번호 이메일로 전달
 * 시간당 0.007달러
 * 샌프란시스코 서버
 
-## 설치
+## 시스템 설치
+### root 계정
+* CentOS 6.5 64bit
+* passwd
 * yum update -y
 * yum install -y wget
-* adduser dev
-* passwd dev
-* su - dev
 
 * git 설치(선택)
 * yum install -y curl-devel zlib-devel.x86_64 perl-ExtUtils-MakeMaker.x86_64
 * yum groupinstall -y "Development Tools"
+* cd /tmp
 * wget https://git-core.googlecode.com/files/git-1.9.0.tar.gz
+* tar xvfz git-1.9.0.tar.gz
+* cd git-1.9.0
+* ./configure
+* make
+* make install
+
+### dev 계정
+* adduser dev
+* passwd dev
+* su - dev
 
 * mkdir ~/local && cd ~/local
 * wget http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-x64.tar.gz
 * wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.4.9.tgz
 * PATH에 node.js, mongodb 추가
-
-### 서비스 설치
+* grunt, bower 설치
 ```
 npm install -g grunt-cli
 npm install -g bower
 ```
+
+
+### MEAN 서비스 설치
+* 조건
+  * git
+  * node
+  * mongod --dbpath=~/data/db
+  * grunt
+  * bower
 * git clone http://github.com/linnovate/mean.git
 * cd mean
 * npm install
 * grunt
 
 ## 서비스 테스트
-http://ip:3000
+* http://1xx.2xx.1xx.xx:3000
 
-80port 연결
-* iptables -t nat -A PREROUTING -p tcp -d 192.241.192.91 --dport 80 -j REDIRECT --to-port 3000
+* 80port 연결
+```sh
+iptables -t nat -A PREROUTING -p tcp -d 1xx.2xx.1xx.xx --dport 80 -j REDIRECT --to-port 3000
+```
 
 # 계정 연결
 ## SNS
@@ -75,3 +96,5 @@ facebook: {
 
 ### 깃허브
 * https://github.com/settings/applications/
+
+
