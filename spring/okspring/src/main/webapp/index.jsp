@@ -14,7 +14,7 @@ var send = function(e) {
 		snd.play();
 	}
 
-	$.post('queryJSON.jsp', { choice: $(this).val() })
+	$.post('query.do', { choice: $(this).val() })
 	 .success(function(d) {
 		 var data = JSON.parse(d);
 		 var message = "---- <strong>"+data.p1.name+": "+data.p1.choice+"</strong>"
@@ -33,7 +33,7 @@ var showMessage = function(data) {
 };
 
 var showStat = function() {
-	$.getJSON("statJSON.jsp")
+	$.getJSON("stat.do")
 	.success(function(data) {
 		showMessage(data);
 	});
