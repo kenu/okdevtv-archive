@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class GawiController {
@@ -15,32 +16,21 @@ public class GawiController {
 	}
 
 	@RequestMapping(value = "/query.do", method = RequestMethod.POST)
-	public String queryJSON(Model model, @ModelAttribute("game") Game game) {
-		String queryResult = "";
-
+	public String queryJSON(Model model, @ModelAttribute("game") Game game,
+			@RequestParam("callback") String callback) {
 		Play play = new Play();
 
 		game.setComputerChoice(play.getComputerChoice());
-		game.setJudgement(play.judge(game.getChoice(),
-				game.getComputerChoice()));
-		play.save(game.getChoice(), game.getComputerChoice(), game.getJudgement());
+		game.setJudgement(play.judge(game.getChoice(), game.getComputerChoice()));
+		play.save(game.getChoice(), game.getComputerChoice(),
+				game.getJudgement());
 		Stat stat = play.getStat();
-		queryResult += "{\"success\": true,";
-		queryResult += "\"p1\":{\"name\":\"당신\", \"choice\":\""
-				+ play.items[game.getChoice()] + "\"},";
-		queryResult += "\"p2\":{\"name\":\"컴퓨터\", \"choice\":\""
-				+ play.items[game.getComputerChoice()] + "\"},";
-		queryResult += "\"judgement\" : \"" + game.getJudgement() + "\",";
-		queryResult += "\"stat\" : {\"total\":" + stat.getTotal() + ",";
-		queryResult += "\"win\":" + stat.getWin() + ",";
-		queryResult += "\"even\":" + stat.getEven() + ",";
-		queryResult += "\"lose\": " + stat.getLose() + ",";
-		queryResult += "\"rate\": \"" + stat.getRate() + "%\"}";
-		queryResult += "}";
-//		if (callback != null) {
-//			queryResult = (callback + "(" + queryResult + ")");
-//		}
-		model.addAttribute("queryResult", queryResult);
+
+		// if (callback != null) {
+		// queryResult = (callback + "(" + queryResult + ")");
+		// }
+		model.addAttribute("game", game);
+		model.addAttribute("stat", stat);
 		return "queryJSON";
 	}
 

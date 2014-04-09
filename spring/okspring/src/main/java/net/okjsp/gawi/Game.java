@@ -19,8 +19,9 @@ public class Game implements Serializable  {
 		this.judgement = judgement;
 		this.datetime = datetime;
 	}
-
+	
 	public Game() {
+		
 	}
 
 	public int getId() {
@@ -77,6 +78,14 @@ public class Game implements Serializable  {
 			}
 		}
 		return judgement;
+	}
+
+	public String getChoiceItem() {
+		return Play.items[this.choice];
+	}
+
+	public Object getComputerChoiceItem() {
+		return Play.items[this.computerChoice];
 	}
 
 }

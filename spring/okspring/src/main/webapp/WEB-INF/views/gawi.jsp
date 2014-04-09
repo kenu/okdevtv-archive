@@ -14,7 +14,8 @@ var send = function(e) {
 		snd.play();
 	}
 
-	$.post('query.do', { choice: $(this).val() })
+	$.post('query.do', { choice: $(this).val(), 
+		callback: '' })
 	 .success(function(d) {
 		 var data = JSON.parse(d);
 		 var message = "---- <strong>"+data.p1.name+": "+data.p1.choice+"</strong>"

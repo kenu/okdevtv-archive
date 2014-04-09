@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Play {
 
-	public String[] items = { "가위", "바위", "보" };
+	public static String[] items = { "가위", "바위", "보" };
 	private List<Game> list;
 	DataAccessObject dao = new DataAccessObject();
 	Stat stat = new Stat();
