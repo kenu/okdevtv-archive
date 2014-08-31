@@ -18,7 +18,19 @@
         <link rel="stylesheet" href="css/style-normal.css" />
     </noscript>
     <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <script src="sh_3.0.83/scripts/shCore.js"></script>
+    <script src="sh_3.0.83/scripts/shBrushXml.js"></script>
+ 
+    <link href="sh_3.0.83/styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="sh_3.0.83/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+    
     <link rel="stylesheet" href="css/lecture.css" />
+
+    <script>
+    $(function(){
+        SyntaxHighlighter.all();
+    });
+    </script>
 
 </head>
 
@@ -61,7 +73,7 @@
 
         <h2>페이지 소스 기본 구조</h2>
         <ul>
-            <li>&lt;!DOCTYPE&gt;</li>
+            <li>&lt;!DOCTYPE html&gt;</li>
             <li>&lt;html&gt;
                 <ul>
                     <li>&lt;head&gt;</li>
@@ -121,6 +133,20 @@
             </dd>
         </dl>
 
+        <h2>기본 HTML</h2>
+        <ul>
+            <li><pre class="brush: xml">&lt;!DOCTYPE html>
+&lt;html>
+    &lt;head>
+        &lt;title>Basic HTML&lt;/title>
+    &lt;/head>
+    &lt;body>
+        &lt;h1>Web Page&lt;/h1>
+    &lt;/body>
+&lt;/html>
+            </pre></li>
+        </ul>
+        
         <h2>참고</h2>
         <dl>
             <dt>A history of HTML</dt>
@@ -133,6 +159,15 @@
             <dd><a href="http://html5doctor.com/" target="_blank">http://html5doctor.com/</a>
             </dd>
         </dl>
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=1417763368476376&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div class="fb-comments" data-href="http://okdevtv.com/html.html" data-width="630" data-numposts="5" data-colorscheme="light"></div>
     </section>
 
 </body>

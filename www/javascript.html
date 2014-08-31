@@ -18,8 +18,19 @@
         <link rel="stylesheet" href="css/style-normal.css" />
     </noscript>
     <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <script src="sh_3.0.83/scripts/shCore.js"></script>
+    <script src="sh_3.0.83/scripts/shBrushJScript.js"></script>
+ 
+    <link href="sh_3.0.83/styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="sh_3.0.83/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+    
     <link rel="stylesheet" href="css/lecture.css" />
 
+    <script>
+    $(function(){
+        SyntaxHighlighter.all();
+    });
+    </script>
 </head>
 
 <body>
@@ -141,6 +152,22 @@
             <li>익명 함수 호출 : (function(){})();</li>
         </ul>
         
+        <h2>DOM 스크립트</h2>
+        <ul>
+            <li>DOM; Document Object Model</li>
+            <li>HTML document를 제어하는 스크립트</li>
+            <li><pre class="brush: js">&lt;!DOCTYPE html>
+&lt;html>
+&lt;body>
+    &lt;div id="box">&lt;/div>
+    &lt;script>
+        var box = document.getElementById("box");
+        box.innerHTML = new Date();
+    &lt;/script>
+&lt;/body>
+&lt;/html>
+</pre></li>
+        </ul>
         <h2>참고</h2>
         <dl>
             <dt>JS the right way</dt>
@@ -153,9 +180,17 @@
             <dd><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators" target="_blank">https://developer.mozilla.org/en-US/.../Expressions_and_Operators</a>
             </dd>
         </dl>
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=1417763368476376&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-href="http://okdevtv.com/javascript.html" data-width="630" data-numposts="5" data-colorscheme="light"></div>
     </section>
-
-</body>
+        </body>
 <script>
     (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
