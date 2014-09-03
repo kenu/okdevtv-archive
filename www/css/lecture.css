@@ -24,6 +24,7 @@ li img {
 }
 #lecture h1 {
     font-size: 3.0em;
+    line-height: 1.0em;
     text-align: center;
 }
 #lecture h2,
