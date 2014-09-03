@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="../">
+    <title>Java 한글 - OKdevTV</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="tv, dev, ok, devTools, eclipse, java" />
+    <meta name="keywords" content="tv, dev, ok, java, programming, korean, utf-8, euckr, charset, encoding" />
+    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.poptrox.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-wide.css" />
+        <link rel="stylesheet" href="css/style-normal.css" />
+    </noscript>
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <link rel="stylesheet" href="css/lecture.css" />
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+
+        <!-- Logo -->
+        <h1 id="logo"><a href="/"><img src="images/logo.png" style="width: 36px; margin-right: 6px; margin-bottom: -6px;">OKdevTV</a></h1>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="/#intro">Intro</a>
+                </li>
+                <li><a href="/#one">Channel</a>
+                </li>
+                <li><a href="/#two">Who I Am</a>
+                </li>
+                <li><a href="/#work">My Work</a>
+                </li>
+                <li><a href="/#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="lecture">
+        <header>
+            <h1>Java 한글</h1>
+        </header>
+        <p>utf-8, euckr 인코딩과 환경변수, 페이지 인코딩에 따른, 파라미터 전달 비교</p>
+        <h2>환경</h2>
+        <ul>
+            <li>jdk 1.7</li>
+            <li>Tomcat 7.0.53</li>
+            <li>MacOSX 10.9.4</li>
+        </ul>
+        <h2>시스템 환경변수 utf-8</h2>
+        <h3>페이지 인코딩 utf-8</h3>
+        <ul>
+            <li><img src="../images/javahan/utf8-utf8-form.png" alt="utf8-utf8-form"></li>
+            <li><img src="../images/javahan/hanUtf8jsp.png" alt="hanUtf8.jsp"></li>
+            <li>GET<img src="../images/javahan/utf8-utf8-get.png" alt="utf8-utf8-get"></li>
+            <li>POST<img src="../images/javahan/utf8-utf8-post.png" alt="utf8-utf8-post"></li>
+        </ul>
+        <h3>페이지 인코딩 euc-kr</h3>
+        <ul>
+            <li><img src="../images/javahan/utf8-euckr-form.png" alt="utf8-euckr-form"></li>
+            <li>GET<img src="../images/javahan/utf8-euckr-get.png" alt="utf8-euckr-get"></li>
+            <li>POST<img src="../images/javahan/utf8-euckr-post.png" alt="utf8-euckr-post"></li>
+        </ul>
+        <h2>시스템 환경변수 euc-kr</h2>
+        <ul>
+            <li><img src="../images/javahan/file.encoding.png"></li>
+        </ul>
+        <h3>페이지 인코딩 euc-kr</h3>
+        <ul>
+            <li><img src="../images/javahan/euckr-euckr-form.png" alt="euckr-euckr-form"></li>
+            <li><img src="../images/javahan/hanjsp.png" alt="han.jsp"></li>
+            <li>GET<img src="../images/javahan/euckr-euckr-get.png" alt="euckr-euckr-get"></li>
+            <li>POST<img src="../images/javahan/euckr-euckr-post.png" alt="euckr-euckr-post"></li>
+        </ul>
+        <h3>페이지 인코딩 utf-8</h3>
+        <ul>
+            <li><img src="../images/javahan/euckr-utf8-form.png" alt="euckr-utf8-form"></li>
+            <li>GET<img src="../images/javahan/euckr-utf8-get.png" alt="euckr-utf8-get"></li>
+            <li>POST<img src="../images/javahan/euckr-utf8-post.png" alt="euckr-utf8-post"></li>
+        </ul>
+        
+        <h2>Filter</h2>
+        <ul>
+            <li>WEB-INF/web.xml 파일에 filter, filter-mapping 태그 설정</li>
+            <li>org.apache.catalina.filters.SetCharacterEncodingFilter</li>
+            <li><img src="../images/javahan/filter-utf8-webxml.png" alt="filter-utf8-webxml"></li>
+            <li>GET<img src="../images/javahan/filter-utf8-utf8-get.png" alt="filter-utf8-utf8-get"></li>
+            <li>POST<img src="../images/javahan/filter-utf8-utf8-post.png" alt="filter-utf8-utf8-post"></li>
+        </ul>
+        
+        <h2>정리</h2>
+        <ul>
+            <li>filter를 이용하면 POST방식으로 데이터 전송할 때, 인코딩 변환 코드가 없어도 한글 파라미터를 깨지지 않고 수신 가능</li>
+            <li>GET방식으로 한글 전송시 filter의 적용과 상관없이 인코딩 필요</li>
+        </ul>
+
+    </section>
+
+</body>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-49100336-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</html>
