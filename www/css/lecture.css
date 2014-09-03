@@ -56,4 +56,6 @@ li img {
 
 code {
     font-family: monospace;
+    background-color: #eeeeee;
+    padding: 0 8px;
 }

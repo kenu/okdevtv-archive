@@ -18,7 +18,19 @@
         <link rel="stylesheet" href="css/style-normal.css" />
     </noscript>
     <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <script src="sh_3.0.83/scripts/shCore.js"></script>
+    <script src="sh_3.0.83/scripts/shBrushJava.js"></script>
+ 
+    <link href="sh_3.0.83/styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="sh_3.0.83/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+    
     <link rel="stylesheet" href="css/lecture.css" />
+
+    <script>
+    $(function(){
+        SyntaxHighlighter.all();
+    });
+    </script>
 
 </head>
 
@@ -59,6 +71,29 @@
             <li>국내 기업들 프로젝트 대부분 Java기반</li>
         </ul>
         <h2>JDK (Java Development Kit)</h2>
+        <ul>
+            <li><a href="http://java.sun.com/" target="_blank">http://java.sun.com/</a> 위치에서 Java SE 다운로드</li>
+            <li>기본 설치(옵션 바꾸지 않고 Next, Next로 설치 완료)</li>
+            <li>64비트 윈도우에 32비트 jdk 설치 가능 C:\Program Files (x86) 하위에 설치</li>
+        </ul>
+        <h3>JAVA_HOME 환경변수</h3>
+        <ul>
+            <li>JAVA_HOME 환경변수는 자바 개발의 시작</li>
+            <li>윈도우7에서 환경변수를 설정하는 방법</li>
+            <li>탐색기에서 컴퓨터를 선택하고 컨텍스트 메뉴의 속성을 열기</li>
+            <li>좌측에서 고급 시스템 설정을 클릭
+                <img src="http://cfile6.uf.tistory.com/image/017F584451D02C491E060A" alt="고급 시스템 설정">
+            </li>
+            <li>고급 탭에서 하단의 환경 변수(N)... 버튼을 클릭
+                <img src="http://cfile24.uf.tistory.com/image/2705814451D02C491B4C5A" alt="환경 변수">
+            </li>
+            <li>시스템 변수 > 새로 만들기 버튼 클릭. 변수 이름에 JAVA_HOME을 입력하고, 변수 값에 설치된 경로를 붙여넣기
+                <img src="http://cfile10.uf.tistory.com/image/220BB84451D02C4A152F01" alt="환경 변수 JAVA_HOME">
+            </li>
+            <li>시스템 변수 Path 항목 열어서 맨 앞에 %JAVA_HOME%\bin; 을 추가하고, 모든 창 닫기.
+                <img src="images/java/jdk-install-path.png" alt="환경 변수 JAVA_HOME">
+            </li>
+        </ul>
         <h2>IDE(Integrated Development Environment)</h2>
 
         <h2>참고</h2>
@@ -73,6 +108,15 @@
             <dd><a href="http://opentutorials.org/course/1223" target="_blank">http://opentutorials.org/course/1223</a>
             </dd>
         </dl>
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=1417763368476376&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-href="http://okdevtv.com/java.html" data-width="630" data-numposts="5" data-colorscheme="light"></div>
     </section>
 
 </body>
