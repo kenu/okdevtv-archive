@@ -75,7 +75,7 @@
         <h2>실행환경 톰캣</h2>
         <ul>
             <li><a href="http://tomcat.apache.org/download-80.cgi" target="_blank">http://tomcat.apache.org/download-80.cgi</a> 위치에서 Binary Distribution > Core > zip 링크로 다운로드</li>
-            <li><img src="images/jsp/jsp-tomcat.png" alt="jsp tomcat"></li>
+            <li><img src="images/jsp/jsp-tomcat.png" alt="jsp tomcat" style="max-width: 320px;"></li>
             <li>적당한 위치(예 C:\java\apache-tomcat-8.0.x 또는 ~/java/apche-tomcat-8.0.x)에 압축 해제</li>
             <li><a href="java.html">JAVA_HOME 환경변수</a> 필요</li>
             <li><img src="images/jsp/tomcat-java_home.png" alt="Tomcat needs JAVA_HOME env variables"></li>
@@ -107,9 +107,27 @@
         <ul>
             <li><code>&lt;% 스크립틀릿 %&gt;</code> 형식</li>
             <li>세미콜론(;)으로 끝나는 완전한 자바 문장</li>
-            <li><pre class="brush: java">&lt;% String hello = "Hello World"; %&gt;
-&lt;% out.println(hello); %&gt;
-</pre></li>        </ul>
+            <li><pre class="brush: java">&lt;%
+    String hello = "Hello World"; 
+    out.println(hello); 
+%&gt;
+</pre></li>
+        </ul>
+        <h2>JSP 선언자(Declaratives)</h2>
+        <ul>
+            <li>권장하지 않는 기능</li>
+            <li><code>&lt;%! 자바선언문 %&gt;</code> 형식</li>
+            <li>메소드, 필드 변수 선언</li>
+            <li>사용자 세션과 상관없이 공유되는 변수, 따라서 사용주의</li>
+            <li>out, request 등 JSP 내장객체 직접 사용불가</li>
+        </ul>
+        
+        <h2>EL (Expression Language)</h2>
+        <ul>
+            <li>JSP 2.0(2003) 이후 사용가능</li>
+            <li>표현식 대체 <code>&lt;%= hello %&gt;</code> 대신 <code>${hello}</code> 사용</li>
+            <li><code>&lt;%= request.getParameter("hello") %&gt;</code> 대신 <code>${param.hello}</code></li>
+        </ul>
 
         <h2>참고</h2>
         <dl>
@@ -119,6 +137,8 @@
             <dt>JSP Tutorial</dt>
             <dd><a href="http://www.jsptut.com/" target="_blank">http://www.jsptut.com/</a>
             </dd>
+            <dt>JSP EL Tutorial</dt>
+            <dd><a href="http://www.journaldev.com/2064/jsp-expression-language-el-example-tutorial" target="_blank">http://www.journaldev.com/2064/jsp-expression-language-el-example-tutorial</a></dd>
         </dl>
         <div id="fb-root"></div>
 <script>(function(d, s, id) {

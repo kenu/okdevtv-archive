@@ -77,26 +77,42 @@
             <li><a href="http://java.sun.com/" target="_blank">http://java.sun.com/</a> 위치에서 Java SE 다운로드</li>
             <li>기본 설치(옵션 바꾸지 않고 Next, Next로 설치 완료)</li>
             <li>64비트 윈도우에 32비트 jdk 설치 가능 C:\Program Files (x86) 하위에 설치</li>
+            <li><img src="images/java/jdk-download-jdk8-01.png" alt="jdk download"></li>
+            <li><img src="images/java/jdk-download-jdk8-02.png" alt="accept license agreement"></li>
         </ul>
+        
+        <h3>JDK 설치</h3>
+        <ul>
+            <li>기본 설정으로 설치</li>
+            <li>JDK 설치 후 JRE(Java Runtime Environment) 설치</li>
+            <li>JRE는 javac(컴파일러)가 제외된 브라우저 애플릿 등의 실행환경</li>
+            <li><img src="images/java/jdk-install-01.png" alt="jdk install"></li>
+            <li><img src="images/java/jdk-install-02-jre.png" alt="jre install"></li>
+        </ul>
+        
         <h3>JAVA_HOME 환경변수</h3>
         <ul>
             <li>JAVA_HOME 환경변수는 자바 개발의 시작</li>
-            <li>윈도우7에서 환경변수를 설정하는 방법</li>
+            <li>윈도우에서 환경변수를 설정하는 방법</li>
+            <li><img src="/images/java/jdk-install-path-01.png" alt="copy JAVA_HOME path"></li>
             <li>탐색기에서 컴퓨터를 선택하고 컨텍스트 메뉴의 속성을 열기</li>
             <li>좌측에서 고급 시스템 설정을 클릭
                 <img src="http://cfile6.uf.tistory.com/image/017F584451D02C491E060A" alt="고급 시스템 설정">
             </li>
             <li>고급 탭에서 하단의 환경 변수(N)... 버튼을 클릭
-                <img src="http://cfile24.uf.tistory.com/image/2705814451D02C491B4C5A" alt="환경 변수">
             </li>
-            <li>시스템 변수 > 새로 만들기 버튼 클릭. 변수 이름에 JAVA_HOME을 입력하고, 변수 값에 설치된 경로를 붙여넣기
-                <img src="http://cfile10.uf.tistory.com/image/220BB84451D02C4A152F01" alt="환경 변수 JAVA_HOME">
+            <li><img src="/images/java/jdk-install-path-02.png" alt="환경 변수 PATH">
             </li>
-            <li>시스템 변수 Path 항목 열어서 맨 앞에 %JAVA_HOME%\bin; 을 추가하고, 모든 창 닫기.
-                <img src="images/java/jdk-install-path.png" alt="환경 변수 JAVA_HOME">
+            <li>시스템 변수 > 새로 만들기 버튼 클릭. 변수 이름에 <code>JAVA_HOME</code>을 입력하고, 변수 값에 설치된 경로를 붙여넣기
             </li>
+            <li>시스템 변수 Path 항목 열어서 맨 앞에 <code>%JAVA_HOME%\bin;</code> 을 추가하고, 모든 창 닫기</li>
         </ul>
         <h2>IDE(Integrated Development Environment)</h2>
+        <ul>
+            <li>통합 개발 환경은 코딩+컴파일+실행/디버깅이 가능한 도구</li>
+            <li>자바는 <a href="eclipse.html">이클립스</a>가 대세</li>
+            <li><a href="http://www.jetbrains.com/idea/" target="_blank">인텔리J</a>는 자바개발시 무료, JavaEE 개발용은 유료</li>
+        </ul>
 
         <h2>참고</h2>
         <dl>

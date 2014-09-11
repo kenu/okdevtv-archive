@@ -1,0 +1,52 @@
+[root@okdevtest local]# history
+    1  yum update -y
+    2  yum list | grep jdk
+    3  yum install -y java-1.6.0-openjdk-devel.x86_64
+    4  java -version
+    5  javac
+    6  mkdir local
+    7  cd local
+    8  yum install -y wget
+   11  wget http://www.us.apache.org/dist//james/apache-james/3.0beta4/apache-james-3.0-beta4-app.tar.gz
+   12  ls -altr
+   13  tar xvfz apache-james-3.0-beta4-app.tar.gz 
+   14  mkdir program
+   15  mv *.gz program/
+   16  ln -s apache-james-3.0-beta4/ james
+   17  ls -altr
+   18  cd james
+   19  cd bin
+   20  ./run.sh 
+   22  yum --help | grep list
+   23  ps -ef | grep 25
+   27  sendmail
+   21  rpm -e sendmail sendmail-cf sendmail-doc --nodeps
+   28  yum list | grep sendmail
+   29  yum remove sendmail.x86_64 sendmail-devel.x86_64
+   31  netstat -tulpn
+   32  ps -ef | grep 952
+   33  ls -altr
+   34  yum list | grep postfix
+   35  yum remove -y postfix.x86_64 postfix-perl-scripts.x86_64
+   38  netstat -tulpn
+   39  ./run.sh 
+   40  cd /root/local/james
+   61  finger
+   42  ls
+   43  ls -al
+   44  cd local
+   45  cd james
+   46  ls -altr
+   47  cd bin
+   48  ls -altr
+   49  ./james-cli.sh -h localhost -p 9999 adddomain okdevtest.com
+   50  history
+   51  netstat -tulpn
+   52  nohup ./run.sh &
+   54  netstat -tulpn
+   55  ./james-cli.sh -h localhost -p 9999 adddomain okdevtest.com
+   56  ./james-cli.sh -h localhost -p 9999 adduser myuser@okdevtest.com mypassword
+   59  finger
+   67  adduser dev
+   68  passwd dev
+   69  su - dev
