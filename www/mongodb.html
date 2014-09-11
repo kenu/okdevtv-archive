@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>Eclipse - OKdevTV</title>
+    <title>MongoDB - OKdevTV</title>
     <meta charset="utf-8" />
-    <meta name="description" content="tv, dev, ok, devTools, eclipse, java" />
-    <meta name="keywords" content="tv, dev, ok, java, eclipse, programming" />
-    <meta property="og:url" content="http://okdevtv.com/eclipse.html" />
+    <meta name="description" content="tv, dev, ok, devTools, mongodb, javascript" />
+    <meta name="keywords" content="tv, dev, ok, javascript, db, mongodb, programming" />
+    <meta property="og:url" content="http://okdevtv.com/mongodb.html" />
 
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
     <script src="js/jquery.min.js"></script>
@@ -22,7 +22,7 @@
     <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
     <script src="sh_3.0.83/scripts/shCore.js"></script>
     <script src="sh_3.0.83/scripts/shBrushJava.js"></script>
-    
+
     <link href="sh_3.0.83/styles/shCore.css" rel="stylesheet" type="text/css" />
     <link href="sh_3.0.83/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
 
@@ -61,42 +61,53 @@
     </header>
     <section id="lecture">
         <header>
-            <h1>Eclipse</h1>
+            <h1>MongoDB</h1>
         </header>
-        <p>2001 Object Technology International</p>
-        <h2>시작하기</h2>
+        <p>2009 MongoDB, Inc.</p>
+        <h2>개요</h2>
         <ul>
-            <li>처음에 IBM이 4천만($40M) 달러 투자한 오픈소스 프로젝트</li>
-            <li>2004 Eclipse Board로 독립</li>
-            <li>명실공히 국내에서 가장 많이 사용되는 자바 개발도구</li>
-            <li>버전 코드명
-                <pre class="brush: java">Austin       2004/06/21        3.0
-Bravo        2005/06/28        3.1
-Callisto     2006/06/30        3.2
-Europa       2007/06/29        3.3
-Galileo      2009/06/24        3.5
-Ganymede     2008/06/25        3.4
-Helios       2010/06/23        3.6
-Indigo       2011/06/22        3.7
-Juno         2012/06/27        3.8, 4.2
-Kepler       2013/06/26        4.3
-Luna         2014/06/25        4.4
-Mars         2015/06/24 (planned)
-</pre>
+            <li>NoSQL (Not only SQL) 데이터베이스</li>
+            <li>JSON 형태로 저장</li>
+            <li>JavaScript로 제어</li>
+            <li>오픈소스 라이선스(core:AGPL, driver:Apache License)</li>
         </ul>
-        </li>
-        </ul>
-        <h2>eclipse</h2>
+        <h2>설치</h2>
         <ul>
-            <li><a href="http://eclipse.org/downloads" target="_blank">http://eclipse.org/downloads</a> 위치에서 Java EE 패키지 다운로드</li>
+            <li>OS에 맞는 mongodb 선택하고 다운로드, <a href="http://www.mongodb.org/downloads" target="_blank">http://www.mongodb.org/downloads</a>
+            </li>
+            <li>설치하고 bin폴더 환경변수 Path에 추가</li>
+            <li>
+                <img src="/images/mongodb/mongodb-path0.png" alt="mongodb bin folder">
+            </li>
+            <li>
+                <img src="/images/mongodb/mongodb-path1.png" alt="path">
+            </li>
+            <li>cmd창에 <code>mkdir /data/db</code> 명령 실행</li>
+            <li><code>mongod</code> 명령으로 몽고DB 데몬 실행</li>
         </ul>
+
+        <h2>MongoDB 접속</h2>
+        <ul>
+            <li>cmd 창에서 <code>mongo</code> 명령 실행</li>
+            <li><code>show collections;</code> 컬렉션(테이블) 목록 보기
+            </li>
+            <li><code>db.콜렉션명.find();</code> 콜렉션 내용 보기</li>
+            <li><code>quit();</code> 클라이언트 종료</li>
+            <li><img src="/images/mongodb/mongodb-path2.png" alt="mongo connect"></li>
+
+        </ul>
+
 
         <h2>참고</h2>
         <dl>
-            <dt>Eclipse History</dt>
-            <dd><a href="http://en.wikipedia.org/wiki/Eclipse_(software)#History" target="_blank">http://en.wikipedia.org/wiki/Eclipse_(software)#History</a>
-            </dd> <dt>Eclipse 웹 개발 가이드</dt>
-            <dd><a href="http://bit.ly/okeclipse" target="_blank">http://bit.ly/okeclipse</a>
+            <dt>MongoDB Getting Started</dt>
+            <dd><a href="http://docs.mongodb.org/manual/tutorial/getting-started/" target="_blank">http://docs.mongodb.org/manual/tutorial/getting-started/</a>
+            </dd>
+            <dt>MongoDB license guide</dt>
+            <dd><a href="http://blog.mongodb.org/post/103832439/the-agpl">http://blog.mongodb.org/post/103832439/the-agpl</a>
+            </dd>
+            <dt>국내 오픈소스 라이선스 이슈</dt>
+            <dd><a href="http://blog.creation.net/589#.VBD6Q_l_v8Y">http://blog.creation.net/589#.VBD6Q_l_v8Y</a>
             </dd>
         </dl>
         <div id="fb-root"></div>
@@ -110,7 +121,7 @@ Mars         2015/06/24 (planned)
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
         </script>
-        <div class="fb-comments" data-href="http://okdevtv.com/eclipse.html" data-width="630" data-numposts="5" data-colorscheme="light"></div>
+        <div class="fb-comments" data-href="http://okdevtv.com/mongodb.html" data-width="630" data-numposts="5" data-colorscheme="light"></div>
     </section>
 
 </body>
