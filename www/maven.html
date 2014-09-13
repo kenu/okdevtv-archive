@@ -72,11 +72,11 @@
             <li>빌드 = 컴파일 + 패키징 + 일괄작업</li>
             <li>정형화된 작업 페이즈(phase)</li>
             <li>자바 라이브러리 파일 의존성 관리</li>
-            <li>스프링 프레임워크와 밀접한 관계</li>
+            <li><a href="java.html">스프링 프레임워크</a>와 밀접한 관계</li>
         </ul>
         <h2>설치</h2>
         <ul>
-            <li><a href="java.html">JDK 설치 및 JAVA_HOME 환경변수</a> 필요</li>
+            <li>JDK 설치 및 <a href="java.html">JAVA_HOME 환경변수</a> 필요</li>
             <li><a href="http://maven.apache.org" target="_blank">maven.apache.org</a> 위치에서 apache-maven-*.*.*-bin.zip 다운로드</li>
             <li>적당한 위치에 압축을 풀고 환경변수 Path에 bin/ 폴더 경로 추가</li>
             <li>
@@ -129,9 +129,9 @@
             <li><pre class="brush: bash">mvn archetype:generate -DgroupId=com.okdevtv.java -DartifactId=okdevtv -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 </pre>
             </li>
-            <li>groupId : com.okdevtv.java, 프로젝트 패키지</li>
-            <li>artifactId : okdevtv, 프로젝트 이름</li>
-            <li>archetypeArtifactId : maven-archetype-quickstart, <a href="http://maven.apache.org/guides/introduction/introduction-to-archetypes.html#Provided_Archetypes" target="_blank">템플릿 이름</a>
+            <li><strong>groupId</strong> : com.okdevtv.java, 프로젝트 패키지</li>
+            <li><strong>artifactId</strong> : okdevtv, 프로젝트 이름</li>
+            <li><strong>archetypeArtifactId</strong> : maven-archetype-quickstart, <a href="http://maven.apache.org/guides/introduction/introduction-to-archetypes.html#Provided_Archetypes" target="_blank">템플릿 이름</a>
             </li>
             <li><img src="/images/maven/maven-run-02.png" alt="maven archetype"></li>
             <li>mvn 실행에 필요한 jar파일 다운로드</li>
@@ -147,7 +147,7 @@
         <ul>
             <li>로컬, 원격 저장소로 구분</li>
             <li>~/.m2/repository 기본 위치</li>
-            <li><img src="/images/maven/maven-repository-01.png" alt="maven repository"></li>
+            <li><img src="/images/maven/maven-repository-01.png" alt="maven repository" style="max-width: 320px;"></li>
             <li><img src="/images/maven/maven-repository-02.png" alt="maven repository files"></li>
             <li><pre class="brush: xml">    &lt;dependency&gt;
       &lt;groupId&gt;junit&lt;/groupId&gt;
