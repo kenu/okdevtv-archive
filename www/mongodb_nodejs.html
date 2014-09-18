@@ -89,21 +89,138 @@ function callback(r) {
 
 MongoClient.connect(url, callback);
 </pre></li>
+
             <li><code>node mongoTest.js</code></li>
             <li>error 발생하는 경우</li>
             <li><pre class="brush: js">r:Error: failed to connect to [localhost:27017]
 </pre></li>
+            <li><img src="/images/mongodb/nodejs/mongo-node-01.png"></li>
             <li>cmd 창에서 <code>mongod</code> 명령 실행</li>
+            <li><img src="/images/mongodb/nodejs/mongo-node-02-err.png"></li>
             <li><code>node mongoTest.js</code></li>
             <li><code>npm install mongodb;</code></li>
             <li>Q: 프로그램이 종료되지 않는 이유는?</li>
+            <li><code>db.close();</code></li>
+<li><pre class="brush: js">var MongoClient = require('mongodb').MongoClient;
 
+MongoClient.connect("mongodb://localhost/test",
+    function (err, db) {
+        console.log('err:' + err + '\ndb:' + db);
+        db.close();
+    });
+</pre></li>
         </ul>
         
         <h3>MongoDB 데이터 입력</h3>
+        <ul>
+            <li><code>db.collection("test").insert({a: 1}, function(err, result) {});</code></li>
+<li><pre class="brush: js">var MongoClient = require('mongodb').MongoClient;
+
+MongoClient.connect("mongodb://localhost/test",
+    function (err, db) {
+        console.log('err:' + err + '\ndb:' + db.collection("test"));
+        db.collection("test").insert({
+            "oka": 1
+        }, function (e) {
+            console.log(e);
+            db.close();
+        });
+        //  db.close();
+    });
+</pre></li>
+        </ul>
+        
         <h3>MongoDB 데이터 조회</h3>
+        <ul>
+            <li><code>db.collection("test").find().toArray(function(err, items){});</code></li>
+<li><pre class="brush: js">
+var MongoClient = require('mongodb').MongoClient;
+
+MongoClient.connect("mongodb://localhost/test",
+    function (err, db) {
+        console.log('err:' + err + '\ndb:' + db.collection("test"));
+        db.collection("test").find().toArray(function (err, items) {
+            console.log(items.length);
+            for (var i in items) {
+                console.log(i + ":" + JSON.stringify(items[i]));
+            }
+            db.close();
+        });
+    });
+</pre></li>
+            <li><code>db.collection("test").findOne({a: 1}, function(err, item){});</code></li>
+            <li><pre class="brush: js">
+var MongoClient = require('mongodb').MongoClient;
+
+MongoClient.connect("mongodb://localhost/test",
+    function (err, db) {
+        // Find the saved document
+        db.collection("test").findOne({
+            "c": 1
+        }, function (err, item) {
+            console.log('world', item);
+            db.close();
+        });
+    });</pre></li>
+        </ul>
         <h3>MongoDB 데이터 수정</h3>
+        <ul>
+            <li><code>db.collection("test").update({a: 1}, {b: 2}, function(err, result) {});</code></li>
+            <li><pre class="brush: js">
+var MongoClient = require('mongodb').MongoClient;
+
+MongoClient.connect("mongodb://localhost/test",
+    function (err, db) {
+        console.log('err:' + err + '\ndb:' + db.collection("test"));
+        db.collection("test").update({
+            "oka": 1
+        }, {
+            "okb": 60
+        }, function (e, num) {
+            console.log(num);
+            db.close();
+        });
+    });
+</pre></li>
+        
+        </ul>
         <h3>MongoDB 데이터 삭제</h3>
+        <ul>
+            <li><code>db.collection("test").remove({a: 1}, function(err, result) {});</code></li>
+<li><pre class="brush: js">
+var Db = require('mongodb').Db,
+    MongoClient = require('mongodb').MongoClient,
+    Server = require('mongodb').Server,
+    assert = require('assert');
+
+var db = new Db('test', new Server('localhost', 27017), {safe:true});
+// Establish connection to db
+db.open(function(err, db) {
+
+  // Fetch a collection to insert document into
+  db.collection("test", function(err, collection) {
+
+    // Insert a bunch of documents
+    collection.insert([{a:1}, {b:2}], {w:1}, function(err, result) {
+      assert.equal(null, err);
+
+      // Remove all the document
+      collection.remove({a:1}, {w:1}, function(err, numberOfRemovedDocs) {
+        assert.equal(null, err);
+        assert.equal(1, numberOfRemovedDocs);
+        db.close();
+      });
+    });
+  })
+});
+</pre></li>
+        </ul>
+        
+        <h2>참고</h2>
+        <dl>
+            <dt>Node.JS MongoDB Driver Manual</dt>
+            <dd><a href="http://mongodb.github.io/node-mongodb-native/contents.html" target="_blank">http://mongodb.github.io/node-mongodb-native/contents.html</a></dd>
+        </dl>
         
         <div id="fb-root"></div>
         <script>
