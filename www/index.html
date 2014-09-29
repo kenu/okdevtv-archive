@@ -13,6 +13,37 @@
     <script src="js/jquery.poptrox.min.js"></script>
     <script src="js/skel.min.js"></script>
     <script src="js/init.js"></script>
+    <script>
+        $(function(){
+            $("#form").on("submit", function(){sendMessage(); return false;})
+        });
+        function sendMessage() {
+            if ($("#name").val() && $("#message").val()) {
+                $.ajax({url: "http://okdevtv.com:3000/register/",
+                       data: {
+                           name: $("#name").val(),
+                           email: $("#email").val(),
+                           message: $("#message").val()
+                       },
+                        dataType: "jsonp",
+                       type: "POST"})
+                .done(function(r) {
+                    $("#result").html("sent:"+r);
+                });
+                // clear form
+                $("#form").find("input[type=text], textarea").val("");
+            } else {
+                if (!($("#name").val())) {
+                    $("#name").focus();
+                    return;
+                }
+                if (!($("#message").val())) {
+                    $("#message").focus();
+                    return;
+                }
+            }
+        }
+    </script>
     <noscript>
         <link rel="stylesheet" href="css/skel.css" />
         <link rel="stylesheet" href="css/style.css" />
@@ -213,19 +244,19 @@
 							 point the "action" attribute to it (eg. action="http://mydomain.tld/mail.php").
 							 More on how it all works here: http://www.1stwebdesigner.com/tutorials/custom-php-contact-forms/
 						-->
-                <form method="post" action="#">
+                <form method="post" id="form">
                     <div class="row half">
-                        <div class="12u">작업 중이라 안 보내집니다.</div>
+                        <div class="12u" id="result"></div>
                         <div class="6u">
-                            <input type="text" name="name" placeholder="Name" />
+                            <input type="text" name="name" id="name" placeholder="Name" />
                         </div>
                         <div class="6u">
-                            <input type="text" name="email" placeholder="Email" />
+                            <input type="text" name="email" id="email" placeholder="Email (Not published)" />
                         </div>
                     </div>
                     <div class="row half">
                         <div class="12u">
-                            <textarea name="message" placeholder="Message" rows="6"></textarea>
+                            <textarea name="message" id="message" placeholder="Message" rows="6"></textarea>
                         </div>
                     </div>
                     <div class="row">
