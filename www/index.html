@@ -14,22 +14,28 @@
     <script src="js/skel.min.js"></script>
     <script src="js/init.js"></script>
     <script>
-        $(function(){
-            $("#form").on("submit", function(){sendMessage(); return false;})
+        $(function () {
+            $("#form").on("submit", function () {
+                sendMessage();
+                return false;
+            })
         });
+
         function sendMessage() {
             if ($("#name").val() && $("#message").val()) {
-                $.ajax({url: "http://okdevtv.com:3000/register/",
-                       data: {
-                           name: $("#name").val(),
-                           email: $("#email").val(),
-                           message: $("#message").val()
-                       },
-                        dataType: "jsonp",
-                       type: "POST"})
-                .done(function(r) {
-                    $("#result").html("sent:"+r);
-                });
+                $.ajax({
+                    url: "http://okdevtv.com:3000/register/",
+                    data: {
+                        name: $("#name").val(),
+                        email: $("#email").val(),
+                        message: $("#message").val()
+                    },
+                    dataType: "jsonp",
+                    type: "POST"
+                })
+                    .done(function (r) {
+                        $("#result").html("sent:" + r);
+                    });
                 // clear form
                 $("#form").find("input[type=text], textarea").val("");
             } else {
@@ -77,7 +83,7 @@
                 </li>
                 <li><a href="/#work">My Work</a>
                 </li>
-                <li><a href="/#contact">Contact</a>
+                <li><a href="/#contact">Send Tip</a>
                 </li>
             </ul>
         </nav>
@@ -114,15 +120,16 @@
                 <li><a href="java.html">Java</a>
                 </li>
             </ul>
-
-            <h3>플랫폼, 라이브러리, 프레임워크</h3>
+            <h3>라이브러리, 프레임워크</h3>
             <ul>
                 <li><a href="nodejs.html">node.js</a>
                 </li>
+                <li>jQuery</li>
                 <li><a href="jsp.html">JSP</a>
                 </li>
                 <li><a href="spring.html">Spring</a>
                 </li>
+                <li>eGovFrame</li>
                 <li><a href="android.html">Android</a>
                 </li>
             </ul>
@@ -161,7 +168,7 @@
             </header>
             <h3>허광남 OKJSP 공동대표</h3>
             <ul>
-                <li>2012~2014 전자정부 표준프레임워크 에반젤리스트</li>
+                <li>'12~'14 전자정부 표준프레임워크 에반젤리스트</li>
                 <li>현 OKJSP.net 사이트 공동대표
                     <ul>
                         <li>- http://www.okjsp.net 2000.12~현재</li>
@@ -178,7 +185,7 @@
         <div class="content container">
             <header>
                 <h2>My Work</h2>
-                <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae urna.</p>
+                <p>1994년 중학교 1학년 때부터 애플 베이직으로 프로그래밍을 해왔습니다. 이것 저것 컴퓨터로 만든 작품을 올리고 싶지만, 제가 참여한 최근의 프로젝트들을 올리겠습니다.</p>
             </header>
 
             <!--
@@ -232,8 +239,8 @@
     <section id="contact" class="main style3 secondary">
         <div class="content container">
             <header>
-                <h2>Say Hello.</h2>
-                <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
+                <h2>Say Tip.</h2>
+                <p>공유하고 싶은 팁이 있다면 알려주세요. (email은 비공개)</p>
             </header>
             <div class="box container small">
 
