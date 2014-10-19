@@ -5,6 +5,7 @@ var MongoClient = require('mongodb').MongoClient;
 app.get('/register', function (req, res) {
     console.log(req.method);
     var msg = {
+        category: req.param("category"),
         name: req.param("name"),
         email: req.param("email"),
         message: req.param("message")
@@ -22,22 +23,7 @@ app.get('/register', function (req, res) {
 });
 
 app.get('/list', function (req, res) {
-    console.log(req.method);
-    var msg = {
-        name: req.param("name"),
-        email: req.param("email"),
-        message: req.param("message")
-    };
-
-    save(msg);
-
-    res.set('Content-Type', 'application/json');
-    var callback = req.raram("callback");
-    if (callback) {
-        res.send(callback + '({"success": true})');
-    } else {
-        res.send('{"success": true}');
-    }
+    list(req, res);
 });
 
 var server = app.listen(3000, function () {
@@ -47,7 +33,7 @@ var server = app.listen(3000, function () {
 function save(msg) {
     MongoClient.connect("mongodb://localhost/test",
         function (err, db) {
-            if (!err) {
+            if (err) {
                 console.log('err:' + err + '\ndb:' + db.collection("test"));
             }
             try {
@@ -59,4 +45,29 @@ function save(msg) {
                 console.log(e);
             }
         });
+}
+
+function list(req, res) {
+    var listData = [];
+    MongoClient.connect("mongodb://localhost/test",
+        function(err, db) {
+            if (err) {
+                console.log('err:' + err );
+                return;
+            }
+            db.collection("test").find().sort({_id: -1}).toArray(function (err, items) {
+            var callback = req.param("callback");
+            res.set('Content-Type', 'application/json');
+            for (var i in items) {
+                listData.push(items[i]);
+            }
+            if (callback) {
+                res.send(callback + '({"success": true, "list": ' + JSON.stringify(listData) + '})');
+            } else {
+                res.send('{"success": true, "list": ' + JSON.stringify(listData) + '}');
+            }
+            db.close();
+        });
+        }
+    );
 }
