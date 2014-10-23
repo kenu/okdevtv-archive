@@ -1,3 +1,4 @@
+'use strict';
 var express = require('express');
 var app = express();
 var MongoClient = require('mongodb').MongoClient;
@@ -7,7 +8,8 @@ app.get('/register', function (req, res) {
     var msg = {
         name: req.param("name"),
         email: req.param("email"),
-        message: req.param("message")
+        message: req.param("message"),
+        category: req.param("category")
     };
 
     save(msg);
