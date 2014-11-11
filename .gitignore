@@ -4,3 +4,4 @@ build
 Thumbs.db
 */Thumbs.db
 .ftpsync_settings
+node_modules
