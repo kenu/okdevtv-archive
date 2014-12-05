@@ -11,3 +11,17 @@ Proto.log2 = function() {
 var obja = new Proto();
 var objb = new Proto();
 
+
+obja.log();
+obja.log();
+obja.log();
+obja.log();
+obja.log();
+obja.log();
+
+objb.log();
+objb.log();
+objb.log();
+
+obja.count;
+objb.count;
