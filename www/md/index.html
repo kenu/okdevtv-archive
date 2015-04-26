@@ -1,7 +1,32 @@
-<h1>Markdown Files</h1> 
-<ul>
-    <li><a href="hibernate/hibernate.md">Hibernate</a></li>
-    <li><a href="rabiitmq/rabbitmq.md">RabbitMQ</a></li>
-    <li><a href="securecoding/securecoding.md">Secure Coding</a></li>
-    <li><a href="server/server.png">server.png</a></li>
-</ul>
+<script src="../js/marked.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+<div id="content"></div>
+<script>
+    function change(mdfile) {
+        $.ajax(mdfile).done(success);
+    }
+
+    function success(data) {
+        var md = data;
+        jQuery('#content').html(marked(md));
+    }
+
+    $(function () {
+        var mdfile = 'rabiitmq/rabbitmq.md';
+        change(mdfile);
+    });
+</script>
+<div style="border: 1px solid #888; padding-left: 12px;">
+
+    <h1>Markdown Files</h1>
+    <ul>
+        <li><a href="javascript:change('hibernate/hibernate.md');">Hibernate</a>
+        </li>
+        <li><a href="javascript:change('rabiitmq/rabbitmq.md');">RabbitMQ</a>
+        </li>
+        <li><a href="javascript:change('securecoding/securecoding.md');">Secure Coding</a>
+        </li>
+        <li><a href="server/server.png">server.png</a>
+        </li>
+    </ul>
+</div>
