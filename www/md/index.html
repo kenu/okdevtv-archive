@@ -1,5 +1,15 @@
 <script src="../js/marked.min.js"></script>
 <script src="../js/jquery.min.js"></script>
+<style>
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border : 1px solid #ddd;
+    padding: 4px;
+}
+
+</style>
 <div id="content"></div>
 <script>
     function change(mdfile) {
@@ -12,7 +22,7 @@
     }
 
     $(function () {
-        var mdfile = 'rabiitmq/rabbitmq.md';
+        var mdfile = 'intellij/intellij-shortcuts.md';
         change(mdfile);
     });
 </script>
@@ -20,9 +30,11 @@
 
     <h1>Markdown Files</h1>
     <ul>
-        <li><a href="javascript:change('hibernate/hibernate.md');">Hibernate</a>
+        <li><a href="javascript:change('intellij/intellij-shortcuts.md');">IntelliJ 단축키</a>
         </li>
         <li><a href="javascript:change('rabiitmq/rabbitmq.md');">RabbitMQ</a>
+        </li>
+        <li><a href="javascript:change('hibernate/hibernate.md');">Hibernate</a>
         </li>
         <li><a href="javascript:change('securecoding/securecoding.md');">Secure Coding</a>
         </li>
