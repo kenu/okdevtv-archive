@@ -4,3 +4,7 @@
 |---|----|----|
 |자동 완성 |Ctrl + Space | Ctrl + Space | 
 |Quick Fix |Alt + Enter | Ctrl + 1 | 
+|Open Declaration|F3 | Ctrl + B | 
+|Rename|Ctrl + Alt + R | Shift + F6 | 
+
+
