@@ -1,75 +1,86 @@
-<script src="../js/marked.min.js"></script>
-<script src="../js/jquery.min.js"></script>
-<style>
-table {
-    border-collapse: collapse;
-}
-th, td {
-    border : 1px solid #ddd;
-    padding: 4px;
-}
+<head>
+    <title>관심 사항</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-</style>
-<div id="content"></div>
-<script>
-    function change(mdfile) {
-        loadMarkdown(mdfile);
-        history.pushState({
-                page: mdfile
-            },
-            mdfile, '#' + mdfile);
-    }
+    <script src="../js/marked.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
 
-    window.onpopstate = function (event) {
-        loadStateContent(event.state);
-    };
-    function loadStateContent(state) {
-        loadMarkdown(state.page);
-    }
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 4px;
+        }
+    </style>
+</head>
 
-    function loadMarkdown(mdfile) {
-        $.ajax(mdfile).done(success);
-    }
+<body>
 
-    function success(data) {
-        var md = data;
-        $('#content').html(marked(md));
-    }
+    <div id="content"></div>
+    <script>
+        function change(mdfile) {
+            loadMarkdown(mdfile);
+            history.pushState({
+                    page: mdfile
+                },
+                mdfile, '#' + mdfile);
+        }
 
-    $(function () {
-        var mdfile = 'intellij/intellij-shortcuts.md';
-        change(mdfile);
-    });
-</script>
-<div style="border: 1px solid #888; padding-left: 12px;">
+        window.onpopstate = function (event) {
+            loadStateContent(event.state);
+        };
 
-    <h1>Markdown Files</h1>
-    <ul>
-        <li><a href="javascript:change('intellij/intellij-shortcuts.md');">IntelliJ 단축키</a>
-        </li>
-        <li><a href="javascript:change('rabiitmq/rabbitmq.md');">RabbitMQ</a>
-        </li>
-        <li><a href="javascript:change('hibernate/hibernate.md');">Hibernate</a>
-        </li>
-        <li><a href="javascript:change('securecoding/securecoding.md');">Secure Coding</a>
-        </li>
-        <li><a href="server/server.png">server.png</a>
-        </li>
-    </ul>
-</div>
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        function loadStateContent(state) {
+            loadMarkdown(state.page);
+        }
 
-    ga('create', 'UA-49100336-1', 'auto');
-    ga('send', 'pageview');
-</script>
+        function loadMarkdown(mdfile) {
+            $.ajax(mdfile).done(success);
+        }
+
+        function success(data) {
+            var md = data;
+            $('#content').html(marked(md));
+        }
+
+        $(function () {
+            var mdfile = 'intellij/intellij-shortcuts.md';
+            change(mdfile);
+        });
+    </script>
+    <div style="border: 1px solid #888; padding-left: 12px;">
+
+        <h1>Markdown Files</h1>
+        <ul>
+            <li><a href="javascript:change('intellij/intellij-shortcuts.md');">IntelliJ 단축키</a>
+            </li>
+            <li><a href="javascript:change('rabiitmq/rabbitmq.md');">RabbitMQ</a>
+            </li>
+            <li><a href="javascript:change('hibernate/hibernate.md');">Hibernate</a>
+            </li>
+            <li><a href="javascript:change('securecoding/securecoding.md');">Secure Coding</a>
+            </li>
+            <li><a href="server/server.png">server.png</a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-49100336-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
