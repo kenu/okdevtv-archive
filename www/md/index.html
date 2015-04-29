@@ -15,8 +15,7 @@ th, td {
     function change(mdfile) {
         loadMarkdown(mdfile);
         history.pushState({
-                page: mdfile,
-                name: mdfile
+                page: mdfile
             },
             mdfile, '#' + mdfile);
     }
