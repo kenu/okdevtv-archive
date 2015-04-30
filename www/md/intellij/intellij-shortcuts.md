@@ -9,4 +9,7 @@
 |Find in Path (Search Project)|Ctrl + H | Ctrl + Shift + O | 
 |Rename|Ctrl + Alt + R | Shift + F6 | 
 
+## 참고
+* IntelliJ on Youtube
+  * [JetBrainsTV](https://www.youtube.com/channel/UC4ogdcPcIAOOMJktgBMhQnQ)
 
