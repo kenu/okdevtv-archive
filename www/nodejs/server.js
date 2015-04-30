@@ -4,16 +4,20 @@ var MongoClient = require('mongodb').MongoClient;
 
 app.get('/register', function (req, res) {
     console.log(req.method);
+    res.set('Content-Type', 'application/json');
+    if (!req.param('message')) {
+        res.send('{"success" : false}');
+        return;
+    }
     var msg = {
-        category: req.param("category"),
-        name: req.param("name"),
-        email: req.param("email"),
-        message: req.param("message")
+        category: req.param('category'),
+        name: req.param('name'),
+        email: req.param('email'),
+        message: req.param('message')
     };
 
     save(msg);
 
-    res.set('Content-Type', 'application/json');
     var callback = req.param("callback");
     if (callback) {
         res.send(callback + '({"success": true})');

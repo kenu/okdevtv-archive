@@ -40,6 +40,9 @@ function getList() {
     .done(function(data){
         var list = data.list;
         for(var i in list) {
+            if (!list[i].message) {
+                continue;
+            }
             var row = '<div><span>' + list[i].message.linkify() + '</span>';
             var datetime = $.datepicker.formatDate('yy/mm/dd', getDate(list[i]._id));
             row += '<br><span>' + datetime + '</span>';
