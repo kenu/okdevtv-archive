@@ -8,6 +8,8 @@
 |Open a file by name (Open Resource)|Ctrl + Shift + R | Ctrl + Shift + O | 
 |Find in Path (Search Project)|Ctrl + H | Ctrl + Shift + O | 
 |Rename|Ctrl + Alt + R | Shift + F6 | 
+|SmartType code completion | Ctrl + Shift + Space | - | 
+|Quick Documentation | Ctrl + Q | F2 | 
 
 ## 참고
 * IntelliJ on Youtube
