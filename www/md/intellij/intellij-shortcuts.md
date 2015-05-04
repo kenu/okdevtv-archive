@@ -3,13 +3,20 @@
 |기능|IntelliJ|Eclipse|
 |---|----|----|
 |자동 완성 |Ctrl + Space | Ctrl + Space | 
-|Quick Fix |Alt + Enter | Ctrl + 1 | 
-|Open Declaration|F3 | Ctrl + B | 
-|Open a file by name (Open Resource)|Ctrl + Shift + R | Ctrl + Shift + O | 
-|Find in Path (Search Project)|Ctrl + H | Ctrl + Shift + O | 
-|Rename|Ctrl + Alt + R | Shift + F6 | 
 |SmartType code completion | Ctrl + Shift + Space | - | 
+|Quick Fix |Alt + Enter | Ctrl + 1 | 
+|Navigate &#124; Declaration (Open Declaration)|Ctrl + B | F3 | 
+|Go to file(Open Resource) | Ctrl + Shift + N | Ctrl + Shift + R 
+|Find in Path (Search Project)| Ctrl + Shift + O |Ctrl + H | 
+|Rename | Shift + F6|Ctrl + Alt + R | 
 |Quick Documentation | Ctrl + Q | F2 | 
+|Go to class|Ctrl + N | Ctrl + Shift + T | 
+|Go to symbol | Ctrl + Alt + Shift + N |
+|Go to next/prev| Alt + Right/Left | Alt + Right/Left |
+
+
+
+
 
 ## 참고
 * IntelliJ on Youtube
