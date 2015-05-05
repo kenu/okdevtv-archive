@@ -7,7 +7,7 @@
 |Quick Fix |Alt + Enter | Ctrl + 1 | 
 |Navigate &#124; Declaration (Open Declaration)|Ctrl + B | F3 | 
 |Go to file(Open Resource) | Ctrl + Shift + N | Ctrl + Shift + R 
-|Find in Path (Search Project)| Ctrl + Shift + O |Ctrl + H | 
+|Find in Path (Search Project)| Ctrl + Shift + F |Ctrl + H | 
 |Rename | Shift + F6|Ctrl + Alt + R | 
 |Quick Documentation | Ctrl + Q | F2 | 
 |Go to class|Ctrl + N | Ctrl + Shift + T | 
