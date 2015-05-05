@@ -33,6 +33,7 @@
     <script>
         function change(mdfile) {
             loadMarkdown(mdfile);
+            $('body').scrollTop(0);
             history.pushState({
                     page: mdfile
                 },
