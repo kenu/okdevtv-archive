@@ -11,7 +11,7 @@
 |Rename | Shift + F6|Ctrl + Alt + R | 
 |Quick Documentation | Ctrl + Q | F2 | 
 |Go to class|Ctrl + N | Ctrl + Shift + T | 
-|Go to symbol | Ctrl + Alt + Shift + N |
+|Go to symbol | Ctrl + Alt + Shift + N | - |
 |Go to next/prev| Alt + Right/Left | Alt + Right/Left |
 
 
@@ -19,6 +19,10 @@
 
 
 ## 참고
+* IntelliJ IDEA Web Help
+  * https://www.jetbrains.com/idea/webhelp10.5/ctrl-alt-shift.html
+* IntelliJ IDEA ReferenceCard pdf
+  * https://www.jetbrains.com/idea/docs/IntelliJIDEA_ReferenceCard.pdf
 * IntelliJ on Youtube
   * [JetBrainsTV](https://www.youtube.com/channel/UC4ogdcPcIAOOMJktgBMhQnQ)
-
+  
