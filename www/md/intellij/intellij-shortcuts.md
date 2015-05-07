@@ -14,6 +14,7 @@
 |Go to symbol | Ctrl + Alt + Shift + N | - |
 |Go to next/prev| Alt + Right/Left | Alt + Right/Left |
 |Search Action (Quick Access)| Ctrl + Shift + A | Ctrl + 3 |
+|View Hierarchy (Show Hierarchy)| Ctrl + H | Ctrl + T |
 
 
 
