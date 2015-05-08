@@ -29,8 +29,8 @@ $(function () {
     change(mdfile);
 });
 
+var mdFile = 'intellij/intellij-shortcuts.md';
 function getMdFile() {
-    var mdFile = 'intellij/intellij-shortcuts.md';
     var href = location.href;
     if (href.indexOf('#') > 0) {
         var hash = href.substring(href.indexOf('#') + 1);

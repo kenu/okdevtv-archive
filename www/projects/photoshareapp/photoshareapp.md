@@ -21,4 +21,4 @@
 * 다운로드
 
 ## 앱 네비게이션
-<img src="app-navi.png">
+<img src="app-navi.png" style="width: 90%">
