@@ -40,5 +40,15 @@
 * Round-robin 방식으로 작업 배분
 * 작업 무결성을 위한 acknowledgement 설명
 
+#### 3. Publish/Subscribe
+* exchange를 통해서 하나의 메시지를 여러 Queue에 보내는 법
 
+#### 4. Routing
+* exchange의 binding Key를 이용해 routing Key로 매칭시켜 보내는 법
+
+#### 5. Topic
+* 패턴으로 메시지를 Queue에 보내는 방법
+
+#### 6. RPC
+* 원격에 있는 함수를 호출해서 결과를 가져오는 방식
 
