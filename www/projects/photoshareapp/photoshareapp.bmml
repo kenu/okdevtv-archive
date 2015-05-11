@@ -277,5 +277,20 @@
         <text>Wrong</text>
       </controlProperties>
     </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::Image" x="1715" y="283" w="-1" h="-1" measuredW="22" measuredH="28" zOrder="59" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/ic_menu.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::Image" x="2140" y="283" w="-1" h="-1" measuredW="22" measuredH="28" zOrder="60" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/ic_menu.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::Image" x="1176" y="283" w="-1" h="-1" measuredW="22" measuredH="28" zOrder="61" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/ic_menu.png</src>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>
