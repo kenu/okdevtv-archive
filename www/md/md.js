@@ -22,6 +22,16 @@ function loadMarkdown(mdfile) {
 function success(data) {
     var md = data;
     $('#content').html(marked(md));
+    setTitle(data);
+}
+
+function setTitle(data) {
+    var start = data.indexOf('# ');
+    var end = data.indexOf('\n');
+    if (start > -1) {
+        var title = data.substring(start + 2, end);
+        $('title').html(title);
+    }
 }
 
 $(function () {
@@ -30,6 +40,7 @@ $(function () {
 });
 
 var mdFile = 'intellij/intellij-shortcuts.md';
+
 function getMdFile() {
     var href = location.href;
     if (href.indexOf('#') > 0) {
