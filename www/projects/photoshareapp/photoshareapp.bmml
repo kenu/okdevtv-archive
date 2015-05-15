@@ -1,4 +1,4 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="2202" measuredH="1502" mockupW="1975" mockupH="1413">
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="2457" measuredH="1502" mockupW="2230" mockupH="1413">
   <controls>
     <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="427" y="173" w="-1" h="-1" measuredW="282" measuredH="573" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
@@ -125,10 +125,10 @@
         <model>IPhone5</model>
       </controlProperties>
     </control>
-    <control controlID="37" controlTypeID="com.balsamiq.mockups::Label" x="2001" y="89" w="-1" h="-1" measuredW="120" measuredH="48" zOrder="24" locked="false" isInGroup="-1">
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::Label" x="2001" y="89" w="-1" h="-1" measuredW="160" measuredH="48" zOrder="24" locked="false" isInGroup="-1">
       <controlProperties>
         <size>40</size>
-        <text>%uBCF4%uB0B4%uAE30</text>
+        <text>%uACF5%uC720%uD558%uAE30</text>
       </controlProperties>
     </control>
     <control controlID="38" controlTypeID="com.balsamiq.mockups::Image" x="1946" y="335" w="225" h="231" measuredW="77" measuredH="79" zOrder="25" locked="false" isInGroup="-1">
@@ -290,6 +290,21 @@
     <control controlID="77" controlTypeID="com.balsamiq.mockups::Image" x="1176" y="283" w="-1" h="-1" measuredW="22" measuredH="28" zOrder="61" locked="false" isInGroup="-1">
       <controlProperties>
         <src>./assets/ic_menu.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="79" controlTypeID="com.balsamiq.mockups::Image" x="1344" y="283" w="-1" h="-1" measuredW="22" measuredH="28" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/ic_menu.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="80" controlTypeID="com.balsamiq.mockups::List" x="1272" y="311" w="100" h="28" measuredW="100" measuredH="126" zOrder="63" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Log%20Out</text>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::Alert" x="2257" y="335" w="-1" h="-1" measuredW="200" measuredH="117" zOrder="64" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alert%0A%uC9C4%uC9DC%20%uBCF4%uB0B4%uC2E4%20%uAC81%uB2C8%uAE4C%3F%0ANo%2C%20Yes</text>
       </controlProperties>
     </control>
   </controls>
