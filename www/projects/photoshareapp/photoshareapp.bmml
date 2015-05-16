@@ -343,53 +343,56 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="93" controlTypeID="com.balsamiq.mockups::TextInput" x="2122" y="1370" w="-1" h="-1" measuredW="79" measuredH="26" zOrder="72" locked="false" isInGroup="-1"/>
-    <control controlID="94" controlTypeID="com.balsamiq.mockups::Button" x="2216" y="1370" w="61" h="27" measuredW="61" measuredH="27" zOrder="73" locked="false" isInGroup="-1"/>
-    <control controlID="95" controlTypeID="com.balsamiq.mockups::Canvas" x="2083" y="1061" w="230" h="50" measuredW="100" measuredH="70" zOrder="74" locked="false" isInGroup="-1"/>
-    <control controlID="96" controlTypeID="com.balsamiq.mockups::Label" x="2139" y="1072" w="-1" h="-1" measuredW="104" measuredH="28" zOrder="75" locked="false" isInGroup="-1">
+    <control controlID="95" controlTypeID="com.balsamiq.mockups::Canvas" x="2083" y="1061" w="230" h="50" measuredW="100" measuredH="70" zOrder="72" locked="false" isInGroup="-1"/>
+    <control controlID="96" controlTypeID="com.balsamiq.mockups::Label" x="2139" y="1072" w="-1" h="-1" measuredW="104" measuredH="28" zOrder="73" locked="false" isInGroup="-1">
       <controlProperties>
         <size>20</size>
         <text>PhotoShare</text>
       </controlProperties>
     </control>
-    <control controlID="97" controlTypeID="com.balsamiq.mockups::RoundButton" x="2098" y="1070" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="76" locked="false" isInGroup="-1">
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::RoundButton" x="2098" y="1070" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="74" locked="false" isInGroup="-1">
       <controlProperties>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="98" controlTypeID="com.balsamiq.mockups::Image" x="2277" y="1072" w="-1" h="-1" measuredW="22" measuredH="28" zOrder="77" locked="false" isInGroup="-1">
+    <control controlID="98" controlTypeID="com.balsamiq.mockups::Image" x="2277" y="1072" w="-1" h="-1" measuredW="22" measuredH="28" zOrder="75" locked="false" isInGroup="-1">
       <controlProperties>
         <src>./assets/ic_menu.png</src>
       </controlProperties>
     </control>
-    <control controlID="99" controlTypeID="com.balsamiq.mockups::Alert" x="2394" y="1124" w="-1" h="-1" measuredW="200" measuredH="117" zOrder="78" locked="false" isInGroup="-1">
+    <control controlID="99" controlTypeID="com.balsamiq.mockups::Alert" x="2394" y="1124" w="-1" h="-1" measuredW="200" measuredH="117" zOrder="76" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Alert%0A%uC9C4%uC9DC%20%uC0AD%uC81C%uD558%uC2E4%20%uAC81%uB2C8%uAE4C%3F%0ANo%2C%20Yes</text>
       </controlProperties>
     </control>
-    <control controlID="100" controlTypeID="com.balsamiq.mockups::Button" x="2083" y="895" w="-1" h="-1" measuredW="55" measuredH="27" zOrder="79" locked="false" isInGroup="-1">
+    <control controlID="100" controlTypeID="com.balsamiq.mockups::Button" x="2083" y="895" w="-1" h="-1" measuredW="55" measuredH="27" zOrder="77" locked="false" isInGroup="-1">
       <controlProperties>
         <text>0202</text>
       </controlProperties>
     </control>
-    <control controlID="101" controlTypeID="com.balsamiq.mockups::Image" x="1888" y="283" w="22" h="28" measuredW="22" measuredH="28" zOrder="80" locked="false" isInGroup="-1">
+    <control controlID="101" controlTypeID="com.balsamiq.mockups::Image" x="1888" y="283" w="22" h="28" measuredW="22" measuredH="28" zOrder="78" locked="false" isInGroup="-1">
       <controlProperties>
         <src>./assets/ic_menu.png</src>
       </controlProperties>
     </control>
-    <control controlID="102" controlTypeID="com.balsamiq.mockups::List" x="1816" y="311" w="100" h="80" measuredW="100" measuredH="126" zOrder="81" locked="false" isInGroup="-1">
+    <control controlID="102" controlTypeID="com.balsamiq.mockups::List" x="1816" y="311" w="100" h="80" measuredW="100" measuredH="126" zOrder="79" locked="false" isInGroup="-1">
       <controlProperties>
         <text>%uACF5%uC720%uD558%uAE30%0A%uC0AD%uC81C%uD558%uAE30%0ALog%20Out</text>
       </controlProperties>
     </control>
-    <control controlID="103" controlTypeID="com.balsamiq.mockups::Button" x="215" y="871" w="-1" h="-1" measuredW="51" measuredH="27" zOrder="82" locked="false" isInGroup="-1">
+    <control controlID="103" controlTypeID="com.balsamiq.mockups::Button" x="215" y="871" w="-1" h="-1" measuredW="51" measuredH="27" zOrder="80" locked="false" isInGroup="-1">
       <controlProperties>
         <text>0001</text>
       </controlProperties>
     </control>
-    <control controlID="104" controlTypeID="com.balsamiq.mockups::Button" x="613" y="871" w="-1" h="-1" measuredW="55" measuredH="27" zOrder="83" locked="false" isInGroup="-1">
+    <control controlID="104" controlTypeID="com.balsamiq.mockups::Button" x="613" y="871" w="-1" h="-1" measuredW="55" measuredH="27" zOrder="81" locked="false" isInGroup="-1">
       <controlProperties>
         <text>0002</text>
+      </controlProperties>
+    </control>
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::Arrow" x="1881" y="344" w="229" h="551" measuredW="150" measuredH="100" zOrder="82" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
       </controlProperties>
     </control>
   </controls>
