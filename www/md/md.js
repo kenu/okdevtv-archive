@@ -30,6 +30,9 @@ function setTitle(data) {
     var end = data.indexOf('\n');
     if (start > -1) {
         var title = data.substring(start + 2, end);
+        if (imageBase) {
+            title = title.replaceAll();
+        }
         $('title').html(title);
     }
 }
@@ -40,6 +43,7 @@ $(function () {
 });
 
 var mdFile = 'intellij/intellij-shortcuts.md';
+var imageBase = '';
 
 function getMdFile() {
     var href = location.href;
