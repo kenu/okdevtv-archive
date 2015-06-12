@@ -21,4 +21,4 @@
 * 다운로드
 
 ## 앱 네비게이션
-<img src="photoshareapp.png" style="width: 90%">
+<img src="images/photoshareapp.png" style="width: 90%">
