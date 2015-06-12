@@ -20,9 +20,15 @@ function loadMarkdown(mdfile) {
 }
 
 function success(data) {
-    var md = data;
-    $('#content').html(marked(md));
     setTitle(data);
+    setBody(data);
+}
+
+function setBody(data) {
+    var html = marked(data);
+    var folder = mdFile.substring(0, mdFile.indexOf('/') + 1);
+    html = html.replace(/img src="images/g, 'img src="' + folder + 'images');
+    $('#content').html(html);
 }
 
 function setTitle(data) {
