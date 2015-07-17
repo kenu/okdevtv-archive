@@ -1,0 +1,9 @@
+{
+  "name": "mariadbtest",
+  "version": "1.0.0",
+  "description": "",
+  "author": "kenu",
+  "dependencies": {
+    "mysql": "^2.7.0"
+  }
+}
