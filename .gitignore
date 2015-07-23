@@ -4,6 +4,7 @@ build
 Thumbs.db
 */Thumbs.db
 .ftpsync_settings
+npm-debug.log
 node_modules
 classes
 class
