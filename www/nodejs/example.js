@@ -8,6 +8,9 @@ function callback(req, res) {
     });
     
     var path = url.parse(req.url).pathname;
+    if (path === '/') {
+        path = '/index.html';
+    }
 
     fs.readFile(__dirname + path, 
                 function (err, content) {
