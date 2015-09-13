@@ -1,0 +1,296 @@
+<html>
+
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th,
+        td {
+            border: 1px inset #888;
+            padding: 3px;
+            font-size: smaller;
+            font-family: Verdana;
+        }
+        tr:nth-child(odd) {
+            background: eff5fd;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>node.js hosting</h1>
+    <table>
+        <thead>
+            <tr>
+                <th align="left">Name</th>
+                <th align="left">Node Version</th>
+                <th align="left">Web Sockets</th>
+                <th align="left">IP/Hostname</th>
+                <th align="left">IRC</th>
+                <th align="left">Repository</th>
+                <th align="left">Free Plan</th>
+                <th align="left">Paid Plans</th>
+                <th align="left">Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="left"><a href="http://appfog.com/">appfog</a>
+                </td>
+                <td align="left">0.4.12, 0.6.17, 0.8.14, 0.10.22</td>
+                <td align="left">No</td>
+                <td align="left">Yes, custom domains in paid plan only</td>
+                <td align="left"></td>
+                <td align="left"><a href="https://github.com/appfog">appfog</a>
+                </td>
+                <td align="left">Free Signups suspended</td>
+                <td align="left">Yes – monthly subscriptions and enterprise support available</td>
+                <td align="left">General Availability</td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://developer.baidu.com/cloud/rt">Baidu App Engine</a>
+                </td>
+                <td align="left">0.10.21</td>
+                <td align="left">Yes (with Port Service enabled)</td>
+                <td align="left">Yes</td>
+                <td align="left"></td>
+                <td align="left"><a href="https://github.com/BaiduAppEngine">BaiduAppEngine</a>
+                </td>
+                <td align="left">No</td>
+                <td align="left">
+                    <a href="http://developer.baidu.com/wiki/index.php?title=docs/cplat/bae/bill#.E8.AE.A1.E8.B4.B9.E6.A0.87.E5.87.86">CNY 0.1 / Day / Instance at least</a>, Postpaid</td>
+                <td align="left">MySQL, MongoDB, Redis, Memcache, SSH Login, NFS, CDN and many service supported</td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://www.clever-cloud.com/">Clever Cloud</a>
+                </td>
+                <td align="left">version you need</td>
+                <td align="left">Yes</td>
+                <td align="left">Yes, custom domains in paid plan only</td>
+                <td align="left"><a href="irc://irc.freenode.net:6667/clevercloud">#clevercloud on irc.freenode.net</a>
+                </td>
+                <td align="left"><a href="https://github.com/clevercloud">Clever Cloud on github</a>
+                </td>
+                <td align="left">No, just a free trial</td>
+                <td align="left">Yes – pay as you go model</td>
+                <td align="left">General Availability, launch of <a href="http://nodejs-cloud.com">nodejs-cloud</a>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://www.cloudfoundry.com">Cloud Foundry</a>
+                </td>
+                <td align="left">0.4.12, 0.6.8, 0.8.2</td>
+                <td align="left">No</td>
+                <td align="left">No</td>
+                <td align="left"></td>
+                <td align="left"><a href="https://github.com/cloudfoundry">cloudfoundry</a>
+                </td>
+                <td align="left">Yes - Only during beta.</td>
+                <td align="left"></td>
+                <td align="left">Beta, accepting signups</td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://cloudno.de">Cloudnode</a>
+                </td>
+                <td align="left">0.4.12, 0.6.17, 0.8.25</td>
+                <td align="left">Yes</td>
+                <td align="left">Yes</td>
+                <td align="left"></td>
+                <td align="left"></td>
+                <td align="left">Yes - Up to 3 VMs, 25 MB CouchDB space, 250,000 requests/month.</td>
+                <td align="left"></td>
+                <td align="left">Beta (accepting signups) - powered by Nodester</td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://www.dotcloud.com">DotCloud</a>
+                </td>
+                <td align="left">0.4.10</td>
+                <td align="left">Yes</td>
+                <td align="left">Paid plan</td>
+                <td align="left">#dotcloud</td>
+                <td align="left"><a href="https://github.com/dotcloud">dotcloud</a>
+                </td>
+                <td align="left"></td>
+                <td align="left">Pro - $99/month, 4 services. Enterprise - Unlimited services.</td>
+                <td align="left"></td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://www.evennode.com">EvenNode</a>
+                </td>
+                <td align="left">0.8.x, 0.9.x, 0.10.x, 0.11.x</td>
+                <td align="left">Yes</td>
+                <td align="left">Yes</td>
+                <td align="left"></td>
+                <td align="left"></td>
+                <td align="left"></td>
+                <td align="left">Starting at $8/month</td>
+                <td align="left">Runs on AWS</td>
+            </tr>
+            <tr>
+                <td align="left"><a href="https://www.exoscale.ch/open-cloud/apps/">exoscale apps</a>
+                </td>
+                <td align="left">0.8.x, 0.10.x</td>
+                <td align="left">Yes</td>
+                <td align="left">Yes</td>
+                <td align="left"></td>
+                <td align="left"><a href="https://github.com/exoscale">exoscale</a>
+                </td>
+                <td align="left">Yes, free credit on sign-up</td>
+                <td align="left">Yes, pre-paid credit, post-paid option</td>
+                <td align="left">General Availability</td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://heroku.com">Heroku</a>
+                </td>
+                <td align="left"><a href="http://heroku-buildpack-nodejs.s3.amazonaws.com/manifest.nodejs">0.4.x, 0.6.x, 0.8.x, 0.10.x</a>
+                </td>
+                <td align="left">Yes</td>
+                <td align="left">Yes</td>
+                <td align="left">#heroku</td>
+                <td align="left"><a href="http://github.com/heroku">heroku</a>
+                </td>
+                <td align="left">Yes - 1 Dyno (512 MB Ram)</td>
+                <td align="left">$0.05/hour/dyno</td>
+                <td align="left"></td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://modulus.io">Modulus</a>
+                </td>
+                <td align="left">0.2.x - 0.11.x</td>
+                <td align="left">Yes</td>
+                <td align="left">Yes</td>
+                <td align="left">#modulus</td>
+                <td align="left"><a href="https://github.com/onmodulus">OnModulus</a>
+                </td>
+                <td align="left">$15 free credits</td>
+                <td align="left">$0.02/hour per instance</td>
+                <td align="left">Live on AWS</td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://nodejitsu.com">Nodejitsu</a>
+                </td>
+                <td align="left">0.4.12, 0.6.x, 0.8.x, 0.10.x</td>
+                <td align="left">Yes</td>
+                <td align="left">Yes</td>
+                <td align="left">#nodejitsu</td>
+                <td align="left"><a href="http://github.com/nodejitsu">nodejitsu</a>
+                </td>
+                <td align="left">30 days sandbox</td>
+                <td align="left">Yes</td>
+                <td align="left">now with Joyent</td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://jsapp.us">JSApp.US</a>
+                </td>
+                <td align="left"></td>
+                <td align="left"></td>
+                <td align="left">No</td>
+                <td align="left"></td>
+                <td align="left"><a href="https://github.com/matthewfl/node-host">node-host</a>
+                </td>
+                <td align="left"></td>
+                <td align="left"></td>
+                <td align="left">Open signup, web editing/npm command</td>
+            </tr>
+            <tr>
+                <td align="left"><a href="https://node-ninja.com">Node Ninja(JP)</a>
+                </td>
+                <td align="left">0.6.11</td>
+                <td align="left">Yes</td>
+                <td align="left">Yes</td>
+                <td align="left"></td>
+                <td align="left"></td>
+                <td align="left">Yes</td>
+                <td align="left"></td>
+                <td align="left">In Private Beta</td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://cnodejs.net">NAE(CN)</a>
+                </td>
+                <td align="left">0.6.2</td>
+                <td align="left">Yes</td>
+                <td align="left">Just allow *.cnodejs.net or custom domain</td>
+                <td align="left"></td>
+                <td align="left"></td>
+                <td align="left">Yes - You can create 10 apps. And you can request a MongoDB for every app.</td>
+                <td align="left"></td>
+                <td align="left">Open (with invite)</td>
+            </tr>
+            <tr>
+                <td align="left"><a href="https://openshift.redhat.com/">OpenShift</a>
+                </td>
+                <td align="left">0.6.20 <a href="https://openshift.redhat.com/community/blogs/any-version-of-nodejs-you-want-in-the-cloud-openshift-does-it-paas-style">or any other</a>
+                </td>
+                <td align="left">Yes (preview)</td>
+                <td align="left">Yes</td>
+                <td align="left">#openshift</td>
+                <td align="left"><a href="https://github.com/openshift">openshift</a>
+                </td>
+                <td align="left">Yes</td>
+                <td align="left"></td>
+                <td align="left">Open</td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://pogoapp.com">Pogoapp</a>
+                </td>
+                <td align="left">0.6.x, 0.8.x, 0.10.x</td>
+                <td align="left">Yes</td>
+                <td align="left">Yes</td>
+                <td align="left">#pogoapp</td>
+                <td align="left"><a href="http://github.com/pogoapp">pogoapp</a>
+                </td>
+                <td align="left">Yes - Trial</td>
+                <td align="left">Paid Beta</td>
+                <td align="left">Private Beta</td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://www.rosehosting.com">RoseHosting</a>
+                </td>
+                <td align="left">0.6+</td>
+                <td align="left">Yes</td>
+                <td align="left">Yes</td>
+                <td align="left"></td>
+                <td align="left"></td>
+                <td align="left"></td>
+                <td align="left">Yes - Fully Managed VPS Hosting Plans - 24×7 EPIC Support</td>
+                <td align="left"></td>
+            </tr>
+            <tr>
+                <td align="left"><a href="http://www.windowsazure.com/en-us/develop/nodejs/">Windows Azure</a>
+                </td>
+                <td align="left">0.6+</td>
+                <td align="left">Yes (Worker Role)</td>
+                <td align="left">Yes</td>
+                <td align="left"></td>
+                <td align="left"><a href="http://github.com/WindowsAzure/azure-sdk-for-node">Azure-Sdk-for-Node</a>
+                </td>
+                <td align="left">3 month free trial 10 free web sites forever</td>
+                <td align="left">Yes</td>
+                <td align="left"></td>
+            </tr>
+        </tbody>
+    </table>
+    source: <a href="https://github.com/joyent/node/wiki/node-hosting" target="_blank">https://github.com/joyent/node/wiki/node-hosting</a>
+    <footer>
+        <a href="http://okdevtv.com/">http://okdevtv.com/</a>
+    </footer>
+</body>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-49100336-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</html>

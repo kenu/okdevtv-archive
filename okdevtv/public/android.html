@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>안드로이드와 안드로이드 스튜디오 - OKdevTV</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="tv, dev, ok, devTools, java, android, studio, intellij" />
+    <meta name="keywords" content="tv, dev, ok, android, studio, intellij" />
+    <meta property="og:url" content="http://okdevtv.com/android.html" />
+
+    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.poptrox.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-wide.css" />
+        <link rel="stylesheet" href="css/style-normal.css" />
+    </noscript>
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <link rel="stylesheet" href="css/lecture.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+
+        <!-- Logo -->
+        <h1 id="logo"><a href="/"><img src="images/logo.png" style="width: 36px; margin-right: 6px; margin-bottom: -6px;">OKdevTV</a></h1>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="/#intro">Intro</a>
+                </li>
+                <li><a href="/#one">Channel</a>
+                </li>
+                <li><a href="/#two">Who I Am</a>
+                </li>
+                <li><a href="/#work">My Work</a>
+                </li>
+                <li><a href="/#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="lecture">
+        <header>
+            <h1>안드로이드와 안드로이드 스튜디오</h1>(Android with Android Studio)
+        </header>
+        <p>2003 Android, Inc.</p>
+        
+        <h2>시작하기</h2>
+        <ul>
+            <li>리눅스 기반의 모바일 운영체제</li>
+            <li>개발 프레임워크는 자바 언어 기반</li>
+            <li>JVM이 아닌 달빅(Dalvik VM) 사용</li>
+            <li>구글을 중심으로 한 <a href="http://www.openhandsetalliance.com/" target="_blank">OHA(Open Handset Alliance)</a> 주도</li>
+            <li>영역 확장, 폰 > 태블릿 > TV > 자동차 > 시계</li>
+            <li>개발도구는 이클립스(ADT)에서 IntelliJ 기반(Android Studio)으로 변경 (2014)</li>
+        </ul>
+
+        <h2>설치</h2>
+        <ul>
+            <li>개발도구는 무료로 다운로드 가능</li>
+            <li>2014년부터 이클립스 기반의 ADT(Android Development Tookit)는 개발 중단</li>
+            <li>2014년부터 인텔리J IDEA 기반의 Android Studio로 개발할 것을 권장</li>
+            <li><img src="/images/android/android-ide-01.png" alt="old ADT"></li>
+            <li>안드로이드 스튜디오 = 인텔리J IDEA 무료패키지 + 안드로이드 개발 기능</li>
+            <li>Community 에디션으로 자바만 가능. 웹/스프링 개발 지원 안함</li>
+            <li>IDE 기본 설치 경로 Program Files/Android/android-studio</li>
+            <li>SDK 기본 설치 경로 ~/AppData/Local/Android/sdk</li>
+            <li>~는 사용자 홈 폴더. 기본 설치 경로 변경 가능</li>
+            <li><img src="/images/android/android-install-01.png" alt="Android Studio path"></li>
+        </ul>
+        <h2>안드로이드 프로젝트 생성</h2>
+        <ul>
+            <li>이클립스의 마법사보다 개선된 인터페이스</li>
+            <li><img src="/images/android/android-install-02.png" alt="Android Studio splash image"></li>
+            <li><img src="/images/android/android-project-01.png" alt="Android New Project"></li>
+            <li><img src="/images/android/android-project-02.png" alt="Project Configure"></li>
+            <li><img src="/images/android/android-project-03.png" alt="Select Form Factor"></li>
+            <li><img src="/images/android/android-project-04.png" alt="Select Template Activity"></li>
+            <li><img src="/images/android/android-project-05.png" alt="Configure Activity"></li>
+            <li><img src="/images/android/android-project-06.png" alt="time for gradle build"></li>
+            <li><img src="/images/android/android-project-07.png" alt="Android Studio Started"></li>
+        </ul>
+        
+        <h2>SDK, AVD 매니저</h2>
+        <ul>
+            <li>ADT 시절과 동일한 인터페이스</li>
+            <li>다양한 안드로이드 버전 중에서 개발할 버전 선택</li>
+            <li>느린 에뮬레이터 사용보다는 실제 기기 연결 권장</li>
+            <li>또는 VirtualBox 기반의 <a href="http://www.genymotion.com/" target="_blank">Genymotion 권장</a></li>
+            <li><img src="/images/android/android-sdk-01.png" alt="SDK Manager" style="max-width: 320px;"></li>
+            <li><img src="/images/android/android-sdk-02.png" alt="Select and install target version"></li>
+            <li><img src="/images/android/android-sdk-03.png" alt="SDK installed"></li>
+            <li><img src="/images/android/android-avd-01.png" alt="AVD Manager" style="max-width: 320px;"></li>
+        </ul>
+
+        <h2>실행</h2>
+        <ul>
+            <li><img src="/images/android/android-studio-01.png" alt="Run" style="max-width: 320px;"></li>
+            <li><img src="/images/android/android-studio-02-choose.png" alt="Choose Devices" style="max-width: 490px;"></li>
+        </ul>
+
+
+        <h2>참고</h2>
+        <dl>
+            <dt>안드로이드 스튜디오 가이드</dt>
+            <dd><a href="https://developer.android.com/sdk/installing/studio.html" target="_blank">https://developer.android.com/sdk/installing/studio.html</a>
+            </dd>
+            <dt>안드로이드 스튜디오와 이클립스 단축키 비교</dt>
+            <dd><a href="/md/#intellij/intellij-shortcuts.md" target="_blank">http://okdevtv.com/md/#intellij/intellij-shortcuts.md</a>
+            </dd>
+            <dt>안드로이드 아프리카TV 방송 동영상</dt>
+            <dd><a href="http://bit.ly/okdevtv-android" target="_blank">http://bit.ly/okdevtv-android</a>
+            </dd>
+        </dl>
+        
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=1417763368476376&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-href="http://okdevtv.com/android.html" data-width="630" data-numposts="5" data-colorscheme="light"></div>
+    </section>
+</body>
+
+</html>

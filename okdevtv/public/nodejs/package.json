@@ -1,0 +1,9 @@
+{
+  "name": "first-express-app",
+  "version": "0.0.1",
+  "description": "...",
+  "dependencies": {
+    "express": "^4.10.2",
+    "mongodb": "^2.0.39"
+  }
+}

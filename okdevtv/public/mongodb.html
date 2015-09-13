@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MongoDB - OKdevTV</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="tv, dev, ok, devTools, mongodb, javascript" />
+    <meta name="keywords" content="tv, dev, ok, javascript, db, mongodb, programming" />
+    <meta property="og:url" content="http://okdevtv.com/mongodb.html" />
+
+    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.poptrox.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-wide.css" />
+        <link rel="stylesheet" href="css/style-normal.css" />
+    </noscript>
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <script src="sh_3.0.83/scripts/shCore.js"></script>
+    <script src="sh_3.0.83/scripts/shBrushJava.js"></script>
+
+    <link href="sh_3.0.83/styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="sh_3.0.83/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/lecture.css" />
+
+    <script>
+        $(function () {
+            SyntaxHighlighter.all();
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+
+        <!-- Logo -->
+        <h1 id="logo"><a href="/"><img src="images/logo.png" style="width: 36px; margin-right: 6px; margin-bottom: -6px;">OKdevTV</a></h1>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="/#intro">Intro</a>
+                </li>
+                <li><a href="/#one">Channel</a>
+                </li>
+                <li><a href="/#two">Who I Am</a>
+                </li>
+                <li><a href="/#work">My Work</a>
+                </li>
+                <li><a href="/#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="lecture">
+        <header>
+            <h1>MongoDB</h1>
+        </header>
+        <p>2009 MongoDB, Inc.</p>
+        <h2>개요</h2>
+        <ul>
+            <li>NoSQL (Not only SQL) 데이터베이스</li>
+            <li>JSON 형태로 저장</li>
+            <li>JavaScript로 제어</li>
+            <li>오픈소스 라이선스(core:AGPL, driver:Apache License)</li>
+        </ul>
+        <h2>설치</h2>
+        <ul>
+            <li>OS에 맞는 mongodb 선택하고 다운로드, <a href="http://www.mongodb.org/downloads" target="_blank">http://www.mongodb.org/downloads</a>
+            </li>
+            <li>설치하고 bin폴더 환경변수 Path에 추가</li>
+            <li>
+                <img src="/images/mongodb/mongodb-path0.png" alt="mongodb bin folder" style="max-width: 320px;">
+            </li>
+            <li>
+                <img src="/images/mongodb/mongodb-path1.png" alt="path">
+            </li>
+            <li>cmd창에 <code>mkdir /data/db</code> 명령 실행</li>
+            <li><code>mongod</code> 명령으로 몽고DB 데몬 실행</li>
+        </ul>
+
+        <h2>MongoDB 접속</h2>
+        <ul>
+            <li>cmd 창에서 <code>mongo</code> 명령 실행</li>
+            <li><code>show collections;</code> 컬렉션(테이블) 목록 보기
+            </li>
+            <li><code>db.콜렉션명.find();</code> 콜렉션 내용 보기</li>
+            <li><code>quit();</code> 클라이언트 종료</li>
+            <li><img src="/images/mongodb/mongodb-path2.png" alt="mongo connect"></li>
+
+        </ul>
+        
+        <h2>기본 컨셉</h2>
+        <ul>
+            <li>RDB와 다른 BSON(Binary JSON) 데이터 형태</li>
+            <li>{field: value, field: value, field: value}</li>
+            <li>
+                <table>
+                    <tr>
+                        <th>MongoDB</th>
+                        <td>RDB</td>
+                    </tr>
+                    <tr>
+                        <td>document</td>
+                        <td>record</td>
+                    </tr>
+                    <tr>
+                        <td>collection</td>
+                        <td>table</td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+
+        <h2>데이터 입력</h2>
+        <ul>
+            <li><img src="/images/mongodb/mongodb-insert.png"></li>
+            <li>컬렉션을 따로 만들 필요 없음</li>
+            <li><code>db.컬렉션.insert(object);</code></li>
+            <li>예) <code>db.testData.insert({name: "kenu"});</code></li>
+        </ul>
+
+
+        <h2>참고</h2>
+        <dl>
+            <dt>MongoDB Getting Started</dt>
+            <dd><a href="http://docs.mongodb.org/manual/tutorial/getting-started/" target="_blank">http://docs.mongodb.org/manual/tutorial/getting-started/</a>
+            </dd>
+            <dt>MongoDB license guide</dt>
+            <dd><a href="http://blog.mongodb.org/post/103832439/the-agpl">http://blog.mongodb.org/post/103832439/the-agpl</a>
+            </dd>
+            <dt>국내 오픈소스 라이선스 이슈</dt>
+            <dd><a href="http://blog.creation.net/589#.VBD6Q_l_v8Y">http://blog.creation.net/589#.VBD6Q_l_v8Y</a>
+            </dd>
+        </dl>
+        <div id="fb-root"></div>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=1417763368476376&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <div class="fb-comments" data-href="http://okdevtv.com/mongodb.html" data-width="630" data-numposts="5" data-colorscheme="light"></div>
+    </section>
+
+</body>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-49100336-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</html>
