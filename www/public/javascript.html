@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="tv, dev, ok, devTools, eclipse, java, brackets, JavaScript" />
+    <meta name="keywords" content="tv, dev, ok, java" />
+    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.poptrox.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-wide.css" />
+        <link rel="stylesheet" href="css/style-normal.css" />
+    </noscript>
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <script src="sh_3.0.83/scripts/shCore.js"></script>
+    <script src="sh_3.0.83/scripts/shBrushJScript.js"></script>
+
+    <link href="sh_3.0.83/styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="sh_3.0.83/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/lecture.css" />
+
+    <script>
+    $(function(){
+        SyntaxHighlighter.all();
+    });
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+
+        <!-- Logo -->
+        <h1 id="logo"><a href="/"><img src="images/logo.png" style="width: 36px; margin-right: 6px; margin-bottom: -6px;">OKdevTV</a></h1>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="/#intro">Intro</a>
+                </li>
+                <li><a href="/#one">Channel</a>
+                </li>
+                <li><a href="/#two">Who I Am</a>
+                </li>
+                <li><a href="/#work">My Work</a>
+                </li>
+                <li><a href="/#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <section id="lecture">
+        <header>
+            <h1>JavaScript</h1>
+        </header>
+        <p>1995 Bandon Eich</p>
+        <h2>시작하기</h2>
+        <ul>
+            <li>브라우저에서 실행 가능</li>
+            <li>&lt;script&gt; 태그 사이에 위치</li>
+            <li>개발 도구 콘솔(Console)</li>
+            <li>요소 검사(inspect element) > Console 탭</li>
+            <li>3 * 5
+                <img src="images/javascript/js01-console.png" alt="JS Console">
+            </li>
+        </ul>
+
+        <h2>JSON</h2>
+        <ul>
+            <li>JavaScript Object Notation</li>
+            <li>1999 Douglas Crockford</li>
+            <li>Standard ECMA-262 3rd Edition—December 1999</li>
+            <li><a href="http://www.json.org/" target="_blank">http://www.json.org/</a>
+            </li>
+        </ul>
+
+        <h3>Object</h3>
+        <ul>
+            <li>객체</li>
+            <li>{key: value, key2: value}</li>
+            <li>중괄호 {}</li>
+            <li>key: value 쌍을 쉼표(, comma)로 연결</li>
+        </ul>
+
+        <h3>Array</h3>
+        <ul>
+            <li>배열</li>
+            <li>[value, value]</li>
+            <li>대괄호 []</li>
+            <li>value를 쉼표(, comma)로 연결</li>
+        </ul>
+
+        <h2>문법</h2>
+        <ul>
+            <li>대소문자 구분</li>
+            <li>문장은 세미콜론(;)으로 구분</li>
+            <li>변수는 var로 선언</li>
+            <li>var 없이 선언된 변수는 글로벌 변수</li>
+        </ul>
+
+        <h3>값 Value</h3>
+        <ul>
+            <li>숫자 : 정수, 실수</li>
+            <li>문자 : "" 또는 ''로 감싼 문자열(string)</li>
+            <li>불리언 : true, false</li>
+            <li>null</li>
+            <li>object</li>
+            <li>array</li>
+        </ul>
+
+        <h3>변수 Variable</h3>
+        <ul>
+            <li>값을 담고 있는 문자열</li>
+            <li>var 변수명 = 값;</li>
+            <li>변수명은 a-zA-Z0-9_의 조합</li>
+            <li>변수의 type은 가변</li>
+        </ul>
+
+        <h3>문장 Statement</h3>
+        <ul>
+            <li>명령어</li>
+            <li>문장은 세미콜론(;)으로 구분</li>
+        </ul>
+
+        <h3>식 Expression</h3>
+        <ul>
+            <li>변수에 값을 할당</li>
+            <li>연산자를 이용해 값을 산출</li>
+        </ul>
+
+        <h3>함수 function</h3>
+        <ul>
+            <li>명령어의 그룹</li>
+            <li>함수 선언 : function 함수명(파라미터) {명령문;}</li>
+            <li>함수 호출 : 함수명()</li>
+        </ul>
+
+        <h3>익명 함수 Anonymous function</h3>
+        <ul>
+            <li>이름 없는 함수</li>
+            <li>파라미터로 전달되는 함수</li>
+            <li>비동기 프로그래밍에서 CallBack 함수로 사용</li>
+            <li>익명 함수 선언 : function (파라미터) {명령문;}</li>
+            <li>익명 함수 호출 : (function(){})();</li>
+        </ul>
+
+        <h2>DOM 스크립트</h2>
+        <ul>
+            <li>DOM; Document Object Model</li>
+            <li>HTML document를 제어하는 스크립트</li>
+            <li><pre class="brush: js">&lt;!DOCTYPE html>
+&lt;html>
+&lt;body>
+    &lt;div id="box">&lt;/div>
+    &lt;script>
+        var box = document.getElementById("box");
+        box.innerHTML = new Date();
+    &lt;/script>
+&lt;/body>
+&lt;/html>
+</pre></li>
+        </ul>
+        <h2>참고</h2>
+        <dl>
+            <dt>JS the right way</dt>
+            <dd><a href="http://jstherightway.org/" target="_blank">http://jstherightway.org/</a>
+            </dd>
+            <dt>w3schools</dt>
+            <dd><a href="http://www.w3schools.com/js/" target="_blank">http://www.w3schools.com/js/</a>
+            </dd>
+            <dt>JS expressions and operators</dt>
+            <dd><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators" target="_blank">https://developer.mozilla.org/en-US/.../Expressions_and_Operators</a>
+            </dd>
+        </dl>
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=1417763368476376&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-href="http://okdevtv.com/javascript.html" data-width="630" data-numposts="5" data-colorscheme="light"></div>
+    </section>
+        </body>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-49100336-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</html>

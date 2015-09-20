@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Java - OKdevTV</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="tv, dev, ok, devTools, eclipse, java" />
+    <meta name="keywords" content="tv, dev, ok, java, programming" />
+    <meta property="og:url" content="http://okdevtv.com/java.html" />
+
+    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.poptrox.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-wide.css" />
+        <link rel="stylesheet" href="css/style-normal.css" />
+    </noscript>
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <script src="sh_3.0.83/scripts/shCore.js"></script>
+    <script src="sh_3.0.83/scripts/shBrushJava.js"></script>
+
+    <link href="sh_3.0.83/styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="sh_3.0.83/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/lecture.css" />
+
+    <script>
+    $(function(){
+        SyntaxHighlighter.all();
+    });
+    </script>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+
+        <!-- Logo -->
+        <h1 id="logo"><a href="/"><img src="images/logo.png" style="width: 36px; margin-right: 6px; margin-bottom: -6px;">OKdevTV</a></h1>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="/#intro">Intro</a>
+                </li>
+                <li><a href="/#one">Channel</a>
+                </li>
+                <li><a href="/#two">Who I Am</a>
+                </li>
+                <li><a href="/#work">My Work</a>
+                </li>
+                <li><a href="/#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="lecture">
+        <header>
+            <h1>Java</h1>
+        </header>
+        <p>1995 James Gosling</p>
+        <h2>시작하기</h2>
+        <ul>
+            <li>자바를 잡아라! 라는 올드한 유머</li>
+            <li>그래도 잡고 싶은 분들, 손!</li>
+            <li>명실공히 국내에서 가장 많이 사용되는 언어</li>
+            <li>기업형 객체 지향 언어</li>
+            <li>국내 기업들 프로젝트 대부분 Java기반</li>
+        </ul>
+        <h2>JDK (Java Development Kit)</h2>
+        <ul>
+            <li><a href="http://java.sun.com/" target="_blank">http://java.sun.com/</a> 위치에서 Java SE 다운로드</li>
+            <li>기본 설치(옵션 바꾸지 않고 Next, Next로 설치 완료)</li>
+            <li>64비트 윈도우에 32비트 jdk 설치 가능 C:\Program Files (x86) 하위에 설치</li>
+            <li><img src="images/java/jdk-download-jdk8-01.png" alt="jdk download"></li>
+            <li><img src="images/java/jdk-download-jdk8-02.png" alt="accept license agreement"></li>
+        </ul>
+
+        <h3>JDK 설치</h3>
+        <ul>
+            <li>기본 설정으로 설치</li>
+            <li>JDK 설치 후 JRE(Java Runtime Environment) 설치</li>
+            <li>JRE는 javac(컴파일러)가 제외된 브라우저 애플릿 등의 실행환경</li>
+            <li><img src="images/java/jdk-install-01.png" alt="jdk install"></li>
+            <li><img src="images/java/jdk-install-02-jre.png" alt="jre install"></li>
+        </ul>
+
+        <h3>JAVA_HOME 환경변수</h3>
+        <ul>
+            <li>JAVA_HOME 환경변수는 자바 개발의 시작</li>
+            <li>윈도우에서 환경변수를 설정하는 방법</li>
+            <li><img src="/images/java/jdk-install-path-01.png" alt="copy JAVA_HOME path"></li>
+            <li>탐색기에서 컴퓨터를 선택하고 컨텍스트 메뉴의 속성을 열기</li>
+            <li>좌측에서 고급 시스템 설정을 클릭
+                <img src="http://cfile6.uf.tistory.com/image/017F584451D02C491E060A" alt="고급 시스템 설정">
+            </li>
+            <li>고급 탭에서 하단의 환경 변수(N)... 버튼을 클릭
+            </li>
+            <li><img src="/images/java/jdk-install-path-02.png" alt="환경 변수 PATH">
+            </li>
+            <li>시스템 변수 > 새로 만들기 버튼 클릭. 변수 이름에 <code>JAVA_HOME</code>을 입력하고, 변수 값에 설치된 경로를 붙여넣기
+            </li>
+            <li>시스템 변수 Path 항목 열어서 맨 앞에 <code>%JAVA_HOME%\bin;</code> 을 추가하고, 모든 창 닫기</li>
+        </ul>
+        <h2>IDE(Integrated Development Environment)</h2>
+        <ul>
+            <li>통합 개발 환경은 코딩+컴파일+실행/디버깅이 가능한 도구</li>
+            <li>자바는 <a href="eclipse.html">이클립스</a>가 대세</li>
+            <li><a href="http://www.jetbrains.com/idea/" target="_blank">인텔리J</a>는 자바개발시 무료, JavaEE 개발용은 유료</li>
+        </ul>
+
+        <h2>참고</h2>
+        <dl>
+            <dt>Java Sun Com</dt>
+            <dd><a href="http://java.sun.com/" target="_blank">http://java.sun.com/</a>
+            </dd>
+            <dt>Java Tutorials</dt>
+            <dd><a href="http://docs.oracle.com/javase/tutorial/" target="_blank">http://docs.oracle.com/javase/tutorial/</a>
+            </dd>
+            <dt>생활코딩 자바</dt>
+            <dd><a href="http://opentutorials.org/course/1223" target="_blank">http://opentutorials.org/course/1223</a>
+            </dd>
+        </dl>
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=1417763368476376&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-href="http://okdevtv.com/java.html" data-width="630" data-numposts="5" data-colorscheme="light"></div>
+    </section>
+
+</body>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-49100336-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</html>

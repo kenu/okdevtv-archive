@@ -1,0 +1,15 @@
+<script src="https://facebook.github.io/react/js/jsfiddle-integration.js"></script>
+
+<div id="container">
+    <!-- This element's contents will be replaced with your component. -->
+</div>
+<script>
+var Hello = React.createClass({
+    render: function() {
+        return <div>Hello {this.props.name}</div>;
+    }
+});
+
+React.render(<Hello name="World" />, document.getElementById('container'));
+
+</script>
