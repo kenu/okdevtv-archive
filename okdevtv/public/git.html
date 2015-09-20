@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Git - OKdevTV</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="tv, dev, ok, devTools, git" />
+    <meta name="keywords" content="tv, dev, ok, version, git, programming" />
+    <meta property="og:url" content="http://okdevtv.com/git.html" />
+
+    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.poptrox.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-wide.css" />
+        <link rel="stylesheet" href="css/style-normal.css" />
+    </noscript>
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <script src="sh_3.0.83/scripts/shCore.js"></script>
+    <script src="sh_3.0.83/scripts/shBrushBash.js"></script>
+
+    <link href="sh_3.0.83/styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="sh_3.0.83/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/lecture.css" />
+
+    <script>
+        $(function () {
+            SyntaxHighlighter.all();
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+
+        <!-- Logo -->
+        <h1 id="logo"><a href="/"><img src="images/logo.png" style="width: 36px; margin-right: 6px; margin-bottom: -6px;">OKdevTV</a></h1>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="/#intro">Intro</a>
+                </li>
+                <li><a href="/#one">Channel</a>
+                </li>
+                <li><a href="/#two">Who I Am</a>
+                </li>
+                <li><a href="/#work">My Work</a>
+                </li>
+                <li><a href="/#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="lecture">
+        <header>
+            <h1>깃(git)</h1>
+        </header>
+        <p>2005.04 Linus Torvaldz</a>
+
+            <h2>시작하기</h2>
+            <ul>
+                <li>분산 버전 관리 시스템</li>
+                <li>로컬 저장소에 작업 폴더의 변경사항을 기록하고 관리</li>
+                <li>장점은 오프라인에서 버전관리 가능</li>
+                <li>단점은 또 배워야 됨</li>
+                <li>Git을 엔진으로 사용하는 서비스 다수</li>
+                <li>GitHub, BitBucket, 구글코드, 소스포지, nForge</li>
+                <li>GitLab, Yobi 등에도 포함</li>
+            </ul>
+
+            <h2>설치</h2>
+            <h3>윈도우 클라이언트</h3>
+            <ul>
+                <li><a href="http://git-scm.com" target="_blank">http://git-scm.com</a> 에서 윈도우 버전 다운로드</li>
+                <li>기본 설치 또는 cmd창에서의 옵션 변경</li>
+                <li>
+                    <ol>
+                        <li>Git Bash에서만 git 명령 사용 가능</li>
+                        <li>cmd창에서 git, 리눅스 명령 사용 가능(권장)</li>
+                        <li>두 번째 옵션 + find.exe, sort.exe 명령 리눅스 버전으로 변경</li>
+                    </ol>
+                </li>
+            </ul>
+
+            <h2>사용</h2>
+            <h3>git 사용자 등록</h3>
+            <ul>
+                <li><code>git config --global user.email 이메일주소</code>
+                </li>
+                <li><code>git config --global user.name "kenu heo"</code>
+                </li>
+            </ul>
+        </p>
+ 
+        <h2>참고</h2>
+        <dl>
+            <dt>dogfeet git</dt>
+            <dd><a href="http://dogfeet.github.io/" target="_blank">http://dogfeet.github.io/</a>
+            </dd>
+        </dl>
+        <div id="fb-root"></div>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=1417763368476376&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <div class="fb-comments" data-href="http://okdevtv.com/git.html" data-width="630" data-numposts="5" data-colorscheme="light"></div>
+    </section>
+
+</body>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-49100336-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</html>

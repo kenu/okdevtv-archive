@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript debug</title>
+<script type="text/javascript">
+    // 전역변수 count
+    var count = 0;
+    /**
+     * count값을 #place div에 출력하는 함수
+     */
+    function doPrint() {
+        var place = document.getElementById("place");
+        count++;
+        place.innerHTML = count;
+    }
+</script>
+</head>
+<body>
+<input type="button" value="trigger" onclick="doPrint()">
+<div id="place"></div>
+</body>
+</html>
