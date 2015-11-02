@@ -4,7 +4,7 @@
 ## JS Warm Up
 
 * JavaScript
-* JSON
+* [JSON](http://www.json.org)
 
 ## node.js 개요
 
@@ -17,6 +17,7 @@ that makes it lightweight and efficient, perfect
 for data-intensive real-time applications 
 that run across distributed devices.
 ```
+
 ### 특징
 * JavaScript 기반
 * Server-side
@@ -25,6 +26,7 @@ that run across distributed devices.
 
 ### 장점
 * 쉬운 시작
+* 안정적인 서비스 w/ pm2
 * 모듈 154,772 total packages
 * 성능 개선
   * [linkedin 사례](http://highscalability.com/blog/2012/10/4/linkedin-moved-from-rails-to-node-27-servers-cut-and-up-to-2.html)
@@ -37,9 +39,8 @@ that run across distributed devices.
 ### 단점
 * No Silver Bullet
   * CPU과다 사용시 이슈
-  * 아직 < 1.0
-* 예외처리 실수하면 서버 다운
-* Callback Hell
+* 예외처리 실수하면 서버 다운 (pm2로 자동 재시작 가능)
+* Callback Hell (Async로 커버 가능)
 
 
 
@@ -114,8 +115,11 @@ from: http://www.nodebeginner.org/index-kr.html#how-to-not-do-it
 
 ## socket.io 모듈
 * socket.io
+* 52라인으로 웹채팅 가능
 
 ## node.js PaaS 활용 - heroku
+* node.js 지원하는 PaaS
+  * 무료사용 가능
 * https://www.heroku.com/
 * http://okdevtv.com/tip/nodehosting.html
 
@@ -134,7 +138,9 @@ baseurl = http://yum.mariadb.org/10.0/centos7-amd64
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
+ * CentOS 6.x는 `baseurl = http://yum.mariadb.org/10.0/centos6-amd64`
 
+ 
 ```
 # yum install MariaDB-server MariaDB-client
 # service mysql start
