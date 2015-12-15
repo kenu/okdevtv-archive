@@ -11,7 +11,7 @@
 * Google Analytics(GA)의 데이터로 사이트 접속 통계를 구할 경우 원하는 대로 데이터를 획득하기 어렵다.
 * 자체 서버의 모든 로그를 100% 수집할 수 있기 때문에 데이터에 대한 신뢰성이 높다.
 * 파라미터 값별로 통계를 볼 수 있기 때문에 정확한 데이터 분석이 가능하다.
-* 검색엔진이 포함되어 있어, 빠르게 데이터를 검색할 수 있다.
+* 검색엔진(lucene)이 포함되어 있어, 빠르게 데이터를 검색할 수 있다.
 * 모두 오픈소스이며 자유롭게 사용이 가능하다.
 
 
@@ -77,11 +77,61 @@ cd logstash-1.5.4
 
 * conf 파일 생성
 
+```
+mkdir logconf
+vi logconf/nginx.conf
+```
+
+logconf/nginx.conf
+```
+input {
+    file {
+        path => "/var/log/nginx/access.log"
+    }
+}
+filter {
+    grok {
+        match => { "message" => "%{COMBINEDAPACHELOG}"}
+    }
+    geoip {
+        source => "clientip"
+    }
+}
+output {
+    elasticsearch {}
+    stdout {}
+}
+```
+
+
+```
+bin/logstash -f logconf/nginx.conf -t
+bin/logstash -f logconf/nginx.conf
+```
+
+
+## nginx 설치
+
+```
+sudo yum install nginx -y
+sudo chown -R ec2-user:ec2-user /var/log/nginx /usr/share/nginx/html
+sudo service nginx start
+echo "<h1>Hello World</h1>" > /usr/share/nginx/html/hello.html
+```
+
+* http://아이피/
+* http://아이피/hello.html
 
 
 ## 참고
 * ELKR (ElasticSearch + Logstash + Kibana + Redis) 를 이용한 로그분석 환경 구축하기
   * http://brantiffy.axisj.com/archives/418
+
+* ELK 구축하기 1 – LOGSTASH
+  * http://linux.systemv.pe.kr/elk-구축하기-1-logstash/
+
+* [Ubuntu] ELK 설치 및 테스트 하기
+  * http://digndig.kr/ubuntu/449/
 
 * Splunk 대체 Solution으로서의 ELK Stack 
   * http://blog.embian.com/18
