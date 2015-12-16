@@ -22,6 +22,26 @@
 * 리눅스 서버 CentOS 또는 Ubuntu
 * Java 1.7 이상(esp. logstash는 1.8이상 필요)
 
+## nginx 설치(샘플용)
+
+```
+sudo yum install nginx -y
+sudo service nginx start
+echo "<h1>Hello World</h1>" > /usr/share/nginx/html/hello.html
+curl -i http://localhost
+sudo chown -R ec2-user:ec2-user /var/log/nginx /usr/share/nginx/html
+```
+
+* http://아이피/
+* http://아이피/hello.html
+
+## AWS 포트 설정
+* EC2 Security Groups
+* 외부 접근 포트 추가(inbound)
+  * http(80)
+  * elasticsearch(9200)
+  * kibana(5601)
+
 
 ## 설치
 * Elasticsearch 
@@ -30,6 +50,7 @@
 
 * 버전을 맞춰서 작업하는 것이 좋지만, 최신 버전으로 작업해도 동작함(2015/10/20 현재)
 * 설치 위치 /opt/ 또는 ~/local/ 권장
+
 
 ## Elasticsearch 설치
 
@@ -87,6 +108,7 @@ logconf/nginx.conf
 input {
     file {
         path => "/var/log/nginx/access.log"
+        start_position => beginning
     }
 }
 filter {
@@ -103,24 +125,14 @@ output {
 }
 ```
 
-
+* logstash 실행 
 ```
+# test
 bin/logstash -f logconf/nginx.conf -t
+# run
 bin/logstash -f logconf/nginx.conf
 ```
 
-
-## nginx 설치
-
-```
-sudo yum install nginx -y
-sudo chown -R ec2-user:ec2-user /var/log/nginx /usr/share/nginx/html
-sudo service nginx start
-echo "<h1>Hello World</h1>" > /usr/share/nginx/html/hello.html
-```
-
-* http://아이피/
-* http://아이피/hello.html
 
 
 ## 참고
