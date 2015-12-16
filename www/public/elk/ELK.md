@@ -71,7 +71,7 @@ curl -i http://localhost:9200/
 
 ```
 cd ~/local
-wget https://download.elastic.co/kibana/kibana/kibana-4.1.2-linux-x64.tar.gz
+wget https://download.elastic.co/kibana/kibana/kibana-4.3.0-linux-x64.tar.gz
 tar xvfz kibana-4.1.2-linux-x64.tar.gz
 cd kibana-4.1.2-linux-x64
 ```
@@ -91,7 +91,7 @@ http://yourhost.com:5601
 
 ```
 cd ~/local
-wget https://download.elastic.co/logstash/logstash/logstash-1.5.4.tar.gz
+wget https://download.elastic.co/logstash/logstash/logstash-2.1.1.tar.gz
 tar xvfz logstash-1.5.4.tar.gz
 cd logstash-1.5.4
 ```
@@ -132,6 +132,15 @@ bin/logstash -f logconf/nginx.conf -t
 # run
 bin/logstash -f logconf/nginx.conf
 ```
+
+
+## Kibana 통계
+
+### 시각화
+  * 테이블
+  * 차트
+
+### 대시보드 만들기
 
 
 
