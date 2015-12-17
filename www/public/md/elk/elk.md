@@ -163,3 +163,6 @@ bin/logstash -f logconf/nginx.conf
 * How To Install Elasticsearch, Logstash, and Kibana 4 on Ubuntu 14.04
   * https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-4-on-ubuntu-14-04
 
+* ELK 프로그래밍 방송 영상
+  * http://bit.ly/okdevtv-elk
+
