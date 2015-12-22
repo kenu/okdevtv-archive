@@ -3,7 +3,7 @@
 * Elasticsearch는 Apache의 Lucene을 바탕으로 개발한 실시간 분산 검색 엔진이며, 
 * Logstash는 각종 로그를 가져와 JSON형태로 만들어 Elasticsearch로 전송하고,
 * Kibana는 Elasticsearch에 저장된 Data를 사용자에게 Dashboard 형태로 보여주는 솔루션이다.
-![ELK Architecture](elk_arch.jpg)
+![ELK Architecture](images/elk_arch.jpg)
 * http://elastic.co 사이트 오픈소스 제품
 
 
