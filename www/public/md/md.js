@@ -1,4 +1,5 @@
 function change(mdfile) {
+    mdFile = mdfile;
     loadMarkdown(mdfile);
     $('body').scrollTop(0);
     history.pushState({
@@ -12,7 +13,9 @@ window.onpopstate = function (event) {
 };
 
 function loadStateContent(state) {
-    loadMarkdown(state.page);
+    if (state) {
+        loadMarkdown(state.page);
+    }
 }
 
 function loadMarkdown(mdfile) {
