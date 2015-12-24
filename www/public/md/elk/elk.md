@@ -27,9 +27,9 @@
 ```
 sudo yum install nginx -y
 sudo service nginx start
-echo "<h1>Hello World</h1>" > /usr/share/nginx/html/hello.html
 curl -i http://localhost
 sudo chown -R ec2-user:ec2-user /var/log/nginx /usr/share/nginx/html
+echo "<h1>Hello World</h1>" > /usr/share/nginx/html/hello.html
 ```
 
 * http://아이피/
@@ -56,9 +56,9 @@ sudo chown -R ec2-user:ec2-user /var/log/nginx /usr/share/nginx/html
 
 ```
 cd ~/local
-wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.3.tar.gz
-tar xvfz elasticsearch-1.7.3.tar.gz
-cd elasticsearch-1.7.3
+wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-2.1.1.tar.gz
+tar xvfz elasticsearch-2.1.1.tar.gz
+cd elasticsearch-2.1.1
 bin/elasticsearch 
 ```
 
@@ -72,8 +72,8 @@ curl -i http://localhost:9200/
 ```
 cd ~/local
 wget https://download.elastic.co/kibana/kibana/kibana-4.3.0-linux-x64.tar.gz
-tar xvfz kibana-4.1.2-linux-x64.tar.gz
-cd kibana-4.1.2-linux-x64
+tar xvfz kibana-4.3.0-linux-x64.tar.gz
+cd kibana-4.3.0-linux-x64
 ```
 
 * elasticsearch 연결
@@ -143,6 +143,17 @@ bin/logstash -f logconf/nginx.conf
 ### 대시보드 만들기
 
 
+## Filebeat
+* (Optional)
+* logstash forwarder 의 경량(lightweight) 버전
+
+```
+cd ~/local
+wget https://download.elastic.co/beats/filebeat/filebeat-1.0.1-x86_64.tar.gz
+tar xvfz filebeat-1.0.1-x86_64.tar.gz
+cd filebeat-1.0.1-x86_64
+./filebeat -e -c filebeat.yml
+```
 
 ## 참고
 * ELKR (ElasticSearch + Logstash + Kibana + Redis) 를 이용한 로그분석 환경 구축하기
