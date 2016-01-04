@@ -59,7 +59,9 @@ cd ~/local
 wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-2.1.1.tar.gz
 tar xvfz elasticsearch-2.1.1.tar.gz
 cd elasticsearch-2.1.1
-bin/elasticsearch 
+vi config/elasticsearch.yml
+`# network.host: 192.168.0.1`의 주석을 풀고 `network.host: 0.0.0.0`으로 변경
+bin/elasticsearch
 ```
 
 * 실행 확인
@@ -92,8 +94,8 @@ http://yourhost.com:5601
 ```
 cd ~/local
 wget https://download.elastic.co/logstash/logstash/logstash-2.1.1.tar.gz
-tar xvfz logstash-1.5.4.tar.gz
-cd logstash-1.5.4
+tar xvfz logstash-2.1.1.tar.gz
+cd logstash-2.1.1
 ```
 
 * conf 파일 생성
