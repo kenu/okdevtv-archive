@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.okjsp.gawi.GameMapper">
+	<select id="getGameList" resultType="net.okjsp.gawi.Game">
+		SELECT
+			choice,
+			computerChoice,
+			judgement,
+			datetime
+		FROM game
+	</select>
+
+	<select id="getGameStat" resultType="net.okjsp.gawi.StatTemp">
+SELECT judgement, count(*) count
+FROM game
+GROUP BY judgement;
+	</select>
+	
+	<insert id="insertGame" parameterType="net.okjsp.gawi.Game" useGeneratedKeys="true"
+    keyProperty="id">
+	insert into game 
+		(choice, computerChoice, judgement, datetime) 
+		values 
+		(#{choice}, #{computerChoice}, #{judgement}, #{datetime})
+	</insert>
+</mapper>

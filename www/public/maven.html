@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Java - OKdevTV</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="tv, dev, ok, devTools, maven, eclipse, java" />
+    <meta name="keywords" content="tv, dev, ok, java, maven, build, programming" />
+    <meta property="og:url" content="http://okdevtv.com/maven.html" />
+
+    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.poptrox.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+
+
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-wide.css" />
+        <link rel="stylesheet" href="css/style-normal.css" />
+    </noscript>
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <script src="sh_3.0.83/scripts/shCore.js"></script>
+    <script src="sh_3.0.83/scripts/shBrushXml.js"></script>
+    <script src="sh_3.0.83/scripts/shBrushBash.js"></script>
+
+    <link href="sh_3.0.83/styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="sh_3.0.83/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/lecture.css" />
+
+    <script>
+        $(function () {
+            SyntaxHighlighter.all();
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+
+        <!-- Logo -->
+        <h1 id="logo"><a href="/"><img src="images/logo.png" style="width: 36px; margin-right: 6px; margin-bottom: -6px;">OKdevTV</a></h1>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="/#intro">Intro</a>
+                </li>
+                <li><a href="/#one">Channel</a>
+                </li>
+                <li><a href="/#two">Who I Am</a>
+                </li>
+                <li><a href="/#work">My Work</a>
+                </li>
+                <li><a href="/#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="lecture">
+        <header>
+            <h1>메이븐(Maven)</h1>
+        </header>
+        <p>2002 <a href="http://maven.apache.org" target="_blank">maven.apache.org</a>
+        </p>
+        <h2>시작하기</h2>
+        <ul>
+            <li>자바 빌드 도구</li>
+            <li>빌드 = 컴파일 + 패키징 + 일괄작업</li>
+            <li>정형화된 작업 페이즈(phase)</li>
+            <li>자바 라이브러리 파일 의존성 관리</li>
+            <li><a href="java.html">스프링 프레임워크</a>와 밀접한 관계</li>
+        </ul>
+        <h2>설치</h2>
+        <ul>
+            <li>JDK 설치 및 <a href="java.html">JAVA_HOME 환경변수</a> 필요</li>
+            <li><a href="http://maven.apache.org" target="_blank">maven.apache.org</a> 위치에서 apache-maven-*.*.*-bin.zip 다운로드</li>
+            <li>적당한 위치에 압축을 풀고 환경변수 Path에 bin/ 폴더 경로 추가</li>
+            <li>
+                <img src="images/maven/maven-install-01.png" alt="maven path">
+            </li>
+            <li>
+                <img src="images/maven/maven-install-02.png" alt="maven path environment variable">
+            </li>
+        </ul>
+
+        <h2>메이븐 실행</h2>
+        <ul>
+            <li>환경변수 설정 후 새로 cmd창을 띄우고 <code>mvn --version</code> 실행</li>
+            <li>
+                <img src="images/maven/maven-run-01.png" alt="maven run">
+            </li>
+        </ul>
+
+        <h2>POM</h2>
+        <ul>
+            <li>Project Object Model</li>
+            <li>메이븐은 pom.xml 기반으로 실행</li>
+            <li><pre class="brush: xml">&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                  http://maven.apache.org/maven-v4_0_0.xsd"&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;groupId&gt;com.okdevtv.java&lt;/groupId&gt;
+  &lt;artifactId&gt;okdevtv&lt;/artifactId&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+  &lt;name&gt;okdevtv&lt;/name&gt;
+  &lt;url&gt;http://maven.apache.org&lt;/url&gt;
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;3.8.1&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/project&gt;
+</pre>
+            </li>
+        </ul>
+
+        <h2>메이븐 퀵 스타트</h2>
+        <ul>
+            <li>Archetype: 메이븐 프로젝트 템플릿 도구</li>
+            <li><pre class="brush: bash">mvn archetype:generate -DgroupId=com.okdevtv.java -DartifactId=okdevtv -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+</pre>
+            </li>
+            <li><strong>groupId</strong> : com.okdevtv.java, 프로젝트 패키지</li>
+            <li><strong>artifactId</strong> : okdevtv, 프로젝트 이름</li>
+            <li><strong>archetypeArtifactId</strong> : maven-archetype-quickstart, <a href="http://maven.apache.org/guides/introduction/introduction-to-archetypes.html#Provided_Archetypes" target="_blank">템플릿 이름</a>
+            </li>
+            <li><img src="/images/maven/maven-run-02.png" alt="maven archetype"></li>
+            <li>mvn 실행에 필요한 jar파일 다운로드</li>
+            <li><img src="/images/maven/maven-run-03.png" alt="maven source tree"></li>
+            <li><code>mvn package</code></li>
+            <li><img src="/images/maven/maven-run-04.png" alt="mvn package"></li>
+            <li>프로젝트 빌드(컴파일, 테스트, 패키징)에 필요한 jar파일 다운로드</li>
+            <li><img src="/images/maven/maven-run-05.png" alt="mvn clean package"></li>
+            <li>두 번째 실행시 로컬에 저장된 jar 사용으로 빨라짐</li>
+        </ul>
+
+        <h2>메이븐 저장소</h2>
+        <ul>
+            <li>로컬, 원격 저장소로 구분</li>
+            <li>~/.m2/repository 기본 위치</li>
+            <li><img src="/images/maven/maven-repository-01.png" alt="maven repository" style="max-width: 320px;"></li>
+            <li><img src="/images/maven/maven-repository-02.png" alt="maven repository files"></li>
+            <li><pre class="brush: xml">    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;3.8.2&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+</pre>
+            </li>
+            <li>라이브러리 정보는 <a href="http://mvnrepository.com" target="_blank">http://mvnrepository.com</a> 에서 검색 가능</li>
+        </ul>
+
+        <h2>참고</h2>
+        <dl>
+            <dt>5분 메이븐</dt>
+            <dd><a href="http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html" target="_blank">http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html</a>
+            </dd>
+        </dl>
+        <div id="fb-root"></div>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=1417763368476376&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <div class="fb-comments" data-href="http://okdevtv.com/maven.html" data-width="630" data-numposts="5" data-colorscheme="light"></div>
+    </section>
+
+</body>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-49100336-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</html>

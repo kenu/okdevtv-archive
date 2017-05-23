@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+    <title></title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        // Assign handlers immediately after making the request,
+         // and remember the jqXHR object for this request
+        var jqxhr = $.ajax("snippet.txt")
+            .done(function () {
+                alert("success");
+            })
+            .fail(function () {
+                alert("error");
+            })
+            .always(function () {
+                alert("complete");
+            });
+
+         // Perform other work here ...
+
+         // Set another completion function for the request above
+        jqxhr.always(function () {
+            alert("second complete");
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

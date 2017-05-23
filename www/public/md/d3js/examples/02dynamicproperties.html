@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <title>D3 basic</title>
+</head>
+
+<body>
+
+    <p>Hello D4</p>
+    <p>Hello D8</p>
+    <p>Hello D15</p>
+    <p>Hello D16</p>
+    <p>Hello D23</p>
+    <p>Hello D42</p>
+    <script>
+        d3.selectAll("p")
+            .data([4, 8, 15, 16, 23, 42])
+            .style("font-size", function (d) {
+                return d + "px";
+            });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+    <title></title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        var jqxhr = $.ajax("snippet.json", {
+                dataType: 'json'
+            })
+            .done(function (data) {
+                console.log(data);
+            }).fail(function (e) {
+                console.log(e);
+            })
+
+        ;
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
