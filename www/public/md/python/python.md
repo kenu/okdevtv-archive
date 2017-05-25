@@ -75,3 +75,5 @@ backend: TkAgg
   * https://www.tutorialspoint.com/python/
 * Python 10 tasks
   * [10 things possible with Python](https://okdevtv.com/mib/python/10)
+* pyenv
+  * https://okdevtv.com/mib/python/pyenv
