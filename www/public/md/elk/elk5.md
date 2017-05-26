@@ -450,7 +450,9 @@ lv,region_addr,latitude,longitude,cnt
 
 
 ## Kibana 인증 with nginx
+
 ### htpasswd 설치
+
 ```
 sudo yum install httpd-tools -y
 sudo htpasswd -c /etc/nginx/htpasswd.users kibanaadmin
