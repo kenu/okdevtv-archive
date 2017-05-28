@@ -244,30 +244,6 @@ curl 'localhost:9200/magazines/_search?pretty' -d '
 }'
 ```
 
-## 페이셋(facet)/'fæsəts/
-* 시작하세요! 엘라스틱서치 6장
-* 검색시 입력한 조건에 대해 각 결과의 갯수 확인 가능
-* 1.0부터 페이셋의 단점을 보완한 어그리게이션(aggregation) 모듈 추가
-* 2.0에서 삭제됨 `unknown search element [facets]`
-* 카운트, 합계 등을 다루는 기술
-
-
-* Term facet
-  * 검색 결과를 Term 별로 구분해서 표시
-  * 2.0 이상에서는 절대 따라하지 마시오. `unknown search element [facets]`
-```
-curl 'localhost:9200/hotels/_search?pretty' -d '
-{
-  "query" : {
-    "term" : { "name" : "seoul" }
-  },
-  "facets" : {
-    "term_service" : {
-      "field" : "service"
-    }
-  }
-}'
-```
 
 ## 어그리게이션(aggregation)
 
