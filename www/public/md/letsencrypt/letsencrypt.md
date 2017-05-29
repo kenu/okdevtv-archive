@@ -204,6 +204,34 @@ server {
 ```
 * https://bjornjohansen.no/redirect-to-https-with-nginx
 
+## update alert email
+```
+Hello,
+
+Your certificate (or certificates) for the names listed below will expire in 20 days (on 31 Oct 16 03:55 +0000). Please make sure to renew your certificate before then, or visitors to your website will encounter errors.
+
+okdevtv.com
+www.okdevtv.com
+
+For any questions or support, please visit https://community.letsencrypt.org/. Unfortunately, we can't provide support by email.
+```
+
+## nginx update expiry
+```
+service nginx stop
+./certbot-auto certonly --renew-by-default -a standalone -d okdevtest.net -d www.okdevtest.net
+service nginx start
+```
+* 무중단 갱신 가능 : http://www.phpschool.com/gnuboard4/bbs/board.php?bo_table=tipntech&wr_id=80590
+  * thanks to @shjxenoside
+
+## when stuck
+```
+unset PYTHON_INSTALL_LAYOUT
+/root/.local/share/letsencrypt/bin/pip install --upgrade certbot
+```
+
+
 ## apache2.2.15 on CentOS 6.8
 ```
 yum update -y
@@ -224,33 +252,6 @@ pip install virtualenv
 * http vs https
 * http://www.wireshark.org
 
-
-## update alert email
-```
-Hello,
-
-Your certificate (or certificates) for the names listed below will expire in 20 days (on 31 Oct 16 03:55 +0000). Please make sure to renew your certificate before then, or visitors to your website will encounter errors.
-
-okdevtv.com
-www.okdevtv.com
-
-For any questions or support, please visit https://community.letsencrypt.org/. Unfortunately, we can't provide support by email.
-```
-
-## nginx update expiry
-```
-service nginx stop
-./letsencrypt-auto certonly --renew-by-default -a standalone -d okdevtest.net -d www.okdevtest.net
-service nginx start
-```
-* 무중단 갱신 가능 : http://www.phpschool.com/gnuboard4/bbs/board.php?bo_table=tipntech&wr_id=80590
-  * thanks to @shjxenoside
-
-## when stuck
-```
-unset PYTHON_INSTALL_LAYOUT
-/root/.local/share/letsencrypt/bin/pip install --upgrade certbot
-```
 
 ## 참고
 * SSL Test
