@@ -5,16 +5,16 @@
 * [Lucene](http://lucene.apache.org) 라이브러리 사용
 * Lucene 검색 엔진을 잘 이용하는 제품입니다.
 * 경쟁제품 Solr, Tica
-* Java 7 이상 필요
+* Java 8(jdk 1.8) 이상 필요
 
-* [설치 및 실행](http://okdevtv.com/mib/elk/elk)
+* [AWS에서 설치 및 실행](http://okdevtv.com/mib/elk/elk)
 
 ## 플러그인 설치
 * 5.0부터 외부에 설치; 보안이슈로 인해 격리
 * config/elasticsearch.yml 에 다음 설정 추가 필요
 ```
 http.cors.enabled: true
-http.cors.allow-origin: "*" 
+http.cors.allow-origin: "*"
 # "*"일 경우 모든 도메인 접속 가능하기 때문에, 보안 해제와 같음
 ```
 * head :
@@ -25,10 +25,10 @@ http.cors.allow-origin: "*"
 
 ### 2.x 버전
 * `bin/plugin install {org}/{user/component}/{version}`
-* head : 
+* head :
   * `bin/plugin install mobz/elasticsearch-head`
   * http://localhost:9200/_plugin/head
-* hq : 
+* hq :
   * `bin/plugin install royrusso/elasticsearch-HQ`
   * http://localhost:9200/_plugin/hq
 
@@ -758,7 +758,7 @@ curl 'localhost:9200/books/_search?pretty' -d '
   }
 }'
 ```
-  
+
 * Bool query
   * `must`, `must_not`, `should`
 ```
@@ -1091,7 +1091,7 @@ curl 'http://localhost:9200/books/book/King%20Lear?pretty'
 
 * _source
   * 원본 저장 여부 결정
-  
+
 ```
 curl -XDELETE 'http://localhost:9200/books'
 
@@ -1109,7 +1109,7 @@ curl -XPOST localhost:9200/_bulk --data-binary @5_1_books.json
 curl 'http://localhost:9200/books/_search?q=prince&pretty'
 ```
   * 특정 필드만 원본으로 저장
-  
+
 ```
 curl -XPUT 'http://localhost:9200/books' -d '
 {
@@ -1123,7 +1123,7 @@ curl -XPUT 'http://localhost:9200/books' -d '
 }'
 ```
   * 특정 필드 제외
-  
+
 ```
 curl -XPUT 'http://localhost:9200/books' -d '
 {
@@ -1136,7 +1136,7 @@ curl -XPUT 'http://localhost:9200/books' -d '
   }
 }'
 ```
-  
+
 
 * _all
 ```
@@ -1159,7 +1159,7 @@ curl -XPUT 'http://localhost:9200/books' -d '
   }
 }'
 ```
-  
+
 
 * _analyzer
   * 사용할 분석기 지정
@@ -1190,7 +1190,7 @@ curl -XPUT 'http://localhost:9200/books' -d '
   }
 }'
 ```
-  
+
 * _ttl(time to live)
 ```
 curl -XPUT 'http://localhost:9200/books' -d '
@@ -1214,14 +1214,14 @@ curl -XPUT 'http://localhost:9200/books' -d '
 
 | 이름 | 설명 | 기본값 |
 |---|---|---|
-|store | 필드값 저장 여부 |  false 
-|index | 분석기 적용 여부 analyzed, not_analyzed, no | . 
+|store | 필드값 저장 여부 |  false
+|index | 분석기 적용 여부 analyzed, not_analyzed, no | .
 |boost | 필드 가중치 | 1.0
-|null_value | 필드 없는 경우 기본값 지정 | . 
-|analyzer | 분석기 지정 | . 
+|null_value | 필드 없는 경우 기본값 지정 | .
+|analyzer | 분석기 지정 | .
 |index_analyzer | 데이터 색인에 사용될 분석기 지정 | .
 |search_analyzer | 문자열 검색에 사용될 분석기 지정 | .
-|include_in_all | _all 매핑 필드 적용된 경우 색인 여부 지정 | . 
+|include_in_all | _all 매핑 필드 적용된 경우 색인 여부 지정 | .
 |ignore_above | 지정값보다 큰 크기의 문자열 색인 제외 | .
 
 ```
@@ -1286,7 +1286,7 @@ curl 'localhost:9200/test_nums/_search?pretty' -d '
 * 날짜
   * 엔진 내부적으로는 long으로 저장
   * `ignore_malformed`, `format` 옵션
-  
+
 * 불린
   * `true`, `false`
 
@@ -1303,7 +1303,7 @@ curl 'localhost:9200/test_nums/_search?pretty' -d '
   * 트리 형태가 아닌 독립 데이터로 저장
   * `user.name`
   * 색인 가능
-  
+
 * 좌표
 ```
 curl -XPUT localhost:9200/test_geos/ -d '
@@ -1405,7 +1405,7 @@ curl 'localhost:9200/books' -d '
         "title" : {
           "type" : "string", "index" : "analyzed",
           "fields" : {
-            "tokens" : { 
+            "tokens" : {
               "type" : "token_count",
               "store" : true,
               "analyzer" : "standard"
@@ -1632,7 +1632,7 @@ curl -XPOST 'localhost:9200/books/_analyze?analyzer=language&pretty' -d '삼국�
 
 * snowball 분석기
   * days -> day
-  
+
 ```
 curl -XPUT 'localhost:9200/books' -d '
 {
@@ -1668,7 +1668,7 @@ curl -XPUT 'localhost:9200/books' -d '
   }
 }'
 
-# 또는 
+# 또는
 
 curl -XPUT 'localhost:9200/books' -d '
 {
@@ -1823,7 +1823,7 @@ curl -XPUT 'localhost:9200/books' -d '
   }
 }'
 
-# 또는 
+# 또는
 
 curl -XPUT 'localhost:9200/books' -d '
 {
@@ -2290,7 +2290,7 @@ curl -XPOST 'localhost:9200/books/_analyze?analyzer=my_analyzer&pretty' -d 'Arou
 
 
 ### 한글 형태소 분석기
-* 은전한닢 
+* 은전한닢
 
 * install
 
@@ -2368,7 +2368,7 @@ curl -XPOST 'localhost:9200/${ES}/_analyze?analyzer=korean&pretty' -d '동해물
 
 
 
-### 부분삭제 
+### 부분삭제
 * query 된 목록 삭제
 * `delete-by-query` 플러그인 설치 후 elasticsearch 재시작 필요
 ```
@@ -2378,7 +2378,7 @@ curl -XPOST 'localhost:9200/${ES}/_analyze?analyzer=korean&pretty' -d '동해물
 ```
 curl -XDELETE 'http://localhost:9200/twitter/tweet/_query?q=user:kimchy'
 
-#or 
+#or
 curl -XDELETE 'http://localhost:9200/twitter/tweet/_query' -d '
 {
   "query" : {
@@ -2420,4 +2420,3 @@ bin/plugin install file:/path/to/master.zip
 
 * 엘라스틱서치 기초 사용법 by 박연오
   * http://bakyeono.net/post/2016-06-03-start-elasticsearch.html
-
