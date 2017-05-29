@@ -45,12 +45,12 @@ http.cors.allow-origin: "*"
 
 * 데이터 입출력
 
-| HTTP method | Elasticsearch |
-|----|----|
-| Create | POST |
-| Read | GET |
-| Update | PUT |
-| Delete | DELETE |
+| Function | Elasticsearch<br />HTTP method | SQL |
+|----|----|----|
+| Create | POST | INSERT |
+| Read | GET | SELECT |
+| Update | PUT | UPDATE |
+| Delete | DELETE | DELETE |
 
 ## 데이터 입력
 ```
