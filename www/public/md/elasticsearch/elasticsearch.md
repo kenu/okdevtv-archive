@@ -186,9 +186,9 @@ curl 'localhost:9200/books/_search?pretty' -d '
 ```
 curl 'localhost:9200/books/_search?pretty' -d '
 {
-  from : 1,
-  size : 2,
-  fields : ["title", "category"],
+  "from" : 1,
+  "size" : 2,
+  "stored_fields" : ["title", "category"],
   "query" : {
     "term" : { "author" : "william" }
   }
@@ -196,16 +196,7 @@ curl 'localhost:9200/books/_search?pretty' -d '
 ```
 
   * `sort`
-```
-curl 'localhost:9200/books/_search?pretty' -d '
-{
-  fields : ["title", "author", "category", "pages"],
-  sort : [{"category":"desc"}, "pages", "title"],
-  "query" : {
-    "term" : { "author" : "william" }
-  }
-}'
-```
+* https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-sort.html
 
   * `_source`
     * false
@@ -641,9 +632,13 @@ curl 'localhost:9200/books/_search?pretty' -d '
 ```
 curl 'localhost:9200/books/_search?pretty' -d '
 {
-  "filter" : {
-    "term" : {
-      "title" : "prince"
+  "query" : {
+    "bool" : {
+      "filter" : {
+        "term" : {
+          "title" : "prince"
+        }
+      }
     }
   }
 }
@@ -674,19 +669,6 @@ curl 'localhost:9200/books/_search?pretty' -d '
   "query" : {
     "terms" : {
       "title" : ["prince", "king"]
-    }
-  }
-}'
-```
-
-* minimum_should_match(deprecated)
-```
-curl 'localhost:9200/books/_search?pretty' -d '
-{
-  "query" : {
-    "terms" : {
-      "title" : ["the", "and", "of"],
-      "minimum_should_match" : 2
     }
   }
 }'
@@ -870,124 +852,13 @@ curl 'localhost:9200/books/_search?pretty' -d '
 }'
 ```
 
-```
-curl 'localhost:9200/books/_search?pretty' -d '
-{
-  "query" : {
-    "fuzzy" : {
-      "pages" : {
-        "value" : 100,
-        "fuzziness" : 20
-      }
-    }
-  }
-}'
-```
 
-
-### Filter
-* term filter
-```
-curl 'localhost:9200/books/_search?pretty' -d '
-{
-  "filter" : {
-    "term" : {
-      "title" : "prince"
-    }
-  }
-}'
-```
-* terms filter
-```
-curl 'localhost:9200/books/_search?pretty' -d '
-{
-  "filter" : {
-    "terms" : {
-      "title" : ["prince", "king"]
-    }
-  }
-}'
-```
-  * execution option
-```
-curl 'localhost:9200/books/_search?pretty' -d '
-{
-  "field" : {
-    "terms" : {
-      "title" : ["and", "the"],
-      "execution" : "and"
-    }
-  }
-}'
-```
-* range filter
-```
-curl 'localhost:9200/books/_search?pretty' -d '
-{
-  "filter" : {
-    "range" : {
-      "pages" : { "gte" : 50, "lt" : 150 }
-    }
-  }
-}'
-```
-* and, or, not filter
-```
-curl 'localhost:9200/books/_search?pretty' -d '
-{
-  "filter" : {
-    "not" : {
-      "range" : {
-        "pages" : { "gte" : 50, "lt" : 150 }
-      }
-    }
-  }
-}'
-```
-
-```
-curl 'localhost:9200/books/_search?pretty' -d '
-{
-  "filter" : {
-    "and" : [{
-      "range" : {
-        "pages" : { "gte" : 50, "lt" : 150 }
-      }
-    },
-    {
-      "term" : { "title" : "the" }
-    }]
-  }
-}'
-```
-
-* Bool filter
-```
-curl 'localhost:9200/books/_search?pretty' -d '
-{
-  "filter" : {
-    "bool" : {
-      "must" : {
-        "term" : { "title" : "the" }
-      },
-      "must_not" : {
-        "term" : { "plot" : "prince" }
-      },
-      "should" : [
-        {"term" : { "title" : "time" } },
-        {"term" : { "title" : "world" } }
-      ]
-    }
-  }
-}'
-```
-
-* geo filter
+* geo 
   * geo_bounding_box
 ```
 curl 'localhost:9200/hotels/_search?pretty' -d '
 {
-  "filter" : {
+  "query" : {
     "geo_bounding_box" : {
       "location" : {
         "top_left" : { "lat" : 38.00, "lon" : 126.00 },
@@ -1001,7 +872,7 @@ curl 'localhost:9200/hotels/_search?pretty' -d '
 ```
 curl 'localhost:9200/hotels/_search?pretty' -d '
 {
-  "filter" : {
+  "query" : {
     "geo_distance" : {
       "distance" : "5km",
       "location" : { "lat" : 37.52, "lon" : 126.98 }
@@ -1009,24 +880,12 @@ curl 'localhost:9200/hotels/_search?pretty' -d '
   }
 }'
 ```
-  * geo_distance_range
-```
-curl 'localhost:9200/hotels/_search?pretty' -d '
-{
-  "filter" : {
-    "geo_distance_range" : {
-      "from" : "5km",
-      "to" : "10km",
-      "location" : { "lat" : 37.52, "lon" : 126.98 }
-    }
-  }
-}'
-```
+
   * geo_polygon
 ```
 curl 'localhost:9200/hotels/_search?pretty' -d '
 {
-  "filter" : {
+  "query" : {
     "geo_polygon" : {
       "location" : {
         "points" : [
@@ -1066,28 +925,6 @@ curl -XPUT 'http://localhost:9200/books/_mapping/book' -d '
 
 ### 내장필드
 * 도큐먼트 데이터의 스키마 구조를 정의
-
-* _id
-  * 데이터의 특정 필드의 값이 도큐먼트 아이디로 저장되도록 설정 가능
-
-```
-curl -XDELETE 'http://localhost:9200/books'
-
-curl -XPUT 'http://localhost:9200/books' -d '
-{
-  "mappings" : {
-    "book" : {
-      "_id" : { "path"  : "title" }
-    }
-  }
-}'
-
-curl -XPOST localhost:9200/_bulk --data-binary @5_1_books.json
-
-curl 'http://localhost:9200/books/_search?pretty'
-
-curl 'http://localhost:9200/books/book/King%20Lear?pretty'
-```
 
 * _source
   * 원본 저장 여부 결정
@@ -1161,52 +998,6 @@ curl -XPUT 'http://localhost:9200/books' -d '
 ```
 
 
-* _analyzer
-  * 사용할 분석기 지정
-```
-curl -XPUT 'http://localhost:9200/books' -d '
-{
-  "mappings" : {
-    "book" : {
-      "_analyzer" : { "path" : "analyze_value" }
-    }
-  }
-}'
-```
-
-
-* _timestamp
-  * 색인 시점의 타임스탬프 저장
-```
-curl -XPUT 'http://localhost:9200/books' -d '
-{
-  "mappings" : {
-    "books" : {
-      "_timestamp" : {
-        "enabled" : true,
-        "sort" : true
-      }
-    }
-  }
-}'
-```
-
-* _ttl(time to live)
-```
-curl -XPUT 'http://localhost:9200/books' -d '
-{
-  "mappings" : {
-    "books" : {
-      "_ttl" : {
-        "enabled" : true,
-        "default" : "2m"
-      }
-    }
-  }
-}'
-```
-
-
 ### 데이터 타입
 
 * 문자열
@@ -1224,19 +1015,6 @@ curl -XPUT 'http://localhost:9200/books' -d '
 |include_in_all | _all 매핑 필드 적용된 경우 색인 여부 지정 | .
 |ignore_above | 지정값보다 큰 크기의 문자열 색인 제외 | .
 
-```
-curl -XPUT 'http://localhost:9200/books' -d '
-{
-  "mappings" : {
-    "book" : {
-      "properties" : {
-        "title" : { "type" : "string", "boost" : 2.0 },
-        "category" : { "type" : "string", "index" : "not_analyzed" }
-      }
-    }
-  }
-}'
-```
 
 * `curl 'localhost:9200/books/_search?q=prince&pretty'`
 * `curl 'localhost:9200/books/_search?q=category:science&pretty'`
@@ -1331,7 +1109,7 @@ curl -XPUT 'localhost:9200/test_geos/test_geo/1' -d '
 ```
 curl 'http://localhost:9200/test_geos/_search?pretty' -d '
 {
-  "filter" : {
+  "query" : {
     "geo_bounding_box" : {
       "location" : {
         "top_left": { "lat" : 37.53, "lon" : 126.92 },
@@ -1368,7 +1146,7 @@ curl -XPUT localhost:9200/test_geos/ -d '
 * 하나의 필드 값을 서로 다른 설정의 여러 필드에 자동 반복 저장
 * title 필드를 인덱싱하고 풀검색하도록 하는 경우
 ```
-curl 'localhost:9200/books' -d '
+curl -XPUT 'localhost:9200/books' -d '
 {
   "mappings" : {
     "book" : {
@@ -1397,7 +1175,7 @@ curl 'localhost:9200/books/_search?pretty' -d '
 
 * 토큰 수
 ```
-curl 'localhost:9200/books' -d '
+curl -XPUT 'localhost:9200/books' -d '
 {
   "mappings" : {
     "book" : {
@@ -1433,7 +1211,7 @@ curl 'localhost:9200/books/_search?pretty' -d '
 ### 필드 복사
 * 다른 필드로 복사
 ```
-curl 'localhost:9200/books' -d '
+curl -XPUT 'localhost:9200/books' -d '
 {
   "mappings" : {
     "book" : {
@@ -1448,7 +1226,7 @@ curl 'localhost:9200/books' -d '
 ```
 
 ```
-curl 'localhost:9200/books' -d '
+curl -XPUT 'localhost:9200/books' -d '
 {
   "mappings" : {
     "book" : {
@@ -2203,10 +1981,12 @@ curl -XPOST 'localhost:9200/books/_analyze?analyzer=my_analyzer&pretty' -d 'Arou
   * `unzip korean_spell-checker-0.5.6_ooo.oxt`
 
 ```
-mkdir -p $ELASTICSEARCH_HOME/config/hunspell/en_US
-cp en_US.* $ELASTICSEARCH_HOME/config/hunspell/en_US
-mkdir -p $ELASTICSEARCH_HOME/config/hunspell/ko_KR
-cp ko_KR.* $ELASTICSEARCH_HOME/config/hunspell/ko_KR
+cd $ELASTICSEARCH_HOME
+mkdir -p ../config/hunspell/en_US
+cp en_US.* ../config/hunspell/en_US
+
+mkdir -p ../config/hunspell/ko_KR
+cp ko_KR.* ../config/hunspell/ko_KR
 
 curl -XPUT 'localhost:9200/books' -d '
 {
@@ -2300,6 +2080,7 @@ curl -XPOST 'localhost:9200/books/_analyze?analyzer=my_analyzer&pretty' -d 'Arou
 ./bin/elasticsearch-plugin install https://oss.sonatype.org/service/local/repositories/releases/content/org/bitbucket/eunjeon/elasticsearch-analysis-seunjeon/5.1.1.1/elasticsearch-analysis-seunjeon-5.1.1.1.zip
 ```
 * file
+  * 다운받은 파일 압축 풀고, plugin-descriptor.properties 파일 버전 수정 후 다시 압축해서 설치 가능
 ```
 wget https://oss.sonatype.org/service/local/repositories/releases/content/org/bitbucket/eunjeon/elasticsearch-analysis-seunjeon/5.1.1.1/elasticsearch-analysis-seunjeon-5.1.1.1.zip
 ./bin/elasticsearch-plugin install file:///home/ec2-user/local/elasticsearch/elasticsearch-analysis-seunjeon-5.1.1.1.zip
