@@ -31,6 +31,10 @@ sudo apt-get install oracle-java8-installer
 sudo apt-get install oracle-java8-set-default
 ```
 
+* mac
+```
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+```
 
 ## 참고
 * 2시간만에 자바를 쉽게 배우고 싶어요.
