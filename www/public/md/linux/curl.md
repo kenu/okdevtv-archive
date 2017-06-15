@@ -17,6 +17,11 @@ curl -XGET 'https://okdevtv.com?param=value'
 curl -O http://downloadlink
 ```
 
+## file upload
+```
+curl -F "userid=kenu" -F "file=/home/kenu/data/hello.txt" http://uploadlink
+```
+
 ## 헤더 설정
 * `-H` or `--header`
 
