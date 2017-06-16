@@ -267,3 +267,5 @@ pip install virtualenv
 * https://danpalmer.me/blog/ssl-labs-grade-a
 * https://www.gypthecat.com/how-to-install-a-ssl-certificate-on-nginx
 * https://community.letsencrypt.org/t/getting-certbot-auto-to-include-the-x3-public-key/18472
+* zope interface issue
+  * https://github.com/certbot/certbot/issues/2872
