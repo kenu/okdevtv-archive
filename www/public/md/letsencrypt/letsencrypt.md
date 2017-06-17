@@ -269,3 +269,7 @@ pip install virtualenv
 * https://community.letsencrypt.org/t/getting-certbot-auto-to-include-the-x3-public-key/18472
 * zope interface issue
   * https://github.com/certbot/certbot/issues/2872
+* 휴대폰으로 5분만에 letsencrypt 적용
+  * https://synd.kr/articles/1814
+* 에러 메시지와 처리
+  * https://okdevtv.com/mib/letsencrypt/err
