@@ -1,6 +1,6 @@
 # ELK
 * Elasticsearch + Logstash + Kibana
-* Elasticsearch는 Apache의 Lucene을 바탕으로 개발한 실시간 분산 검색 엔진이며, 
+* Elasticsearch는 Apache의 Lucene을 바탕으로 개발한 실시간 분산 검색 엔진이며,
 * Logstash는 각종 로그를 가져와 JSON형태로 만들어 Elasticsearch로 전송하고,
 * Kibana는 Elasticsearch에 저장된 Data를 사용자에게 Dashboard 형태로 보여주는 솔루션이다.
 ![ELK Architecture](images/elk_arch.jpg)
@@ -17,7 +17,7 @@
 
 ## 사전 준비
 * 로그수집 서버(AWS 추천)
-  * aws 접속 key가 있는 경우 
+  * aws 접속 key가 있는 경우
   * 윈도우에서 git bash 추천(http://git-scm.com). putty 접속보다 쉬움
 * 리눅스 서버 CentOS 또는 Ubuntu
 * Java 1.8 이상
@@ -49,7 +49,7 @@ ulimit -a
 ```
 sudo vi /etc/security/limits.conf
 ```
-* 
+*
 ```
 ec2-user hard nofile 65536
 ec2-user soft nofile 65536
@@ -60,7 +60,7 @@ ec2-user soft nproc 65536
 ```
 sudo vi /etc/rc.local
 ```
-* 
+*
 ```
 echo 1048575 > /proc/sys/vm/max_map_count
 ```
@@ -81,7 +81,7 @@ sudo reboot
 
 
 ## 설치
-* Elasticsearch 
+* Elasticsearch
 * Kibana
 * Logstash (FluentD로 대치 가능)
 
@@ -95,9 +95,9 @@ sudo reboot
 ```
 mkdir ~/local
 cd ~/local
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.0.tar.gz
-tar xvfz elasticsearch-5.4.0.tar.gz
-ln -s elasticsearch-5.4.0 elasticsearch
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.1.tar.gz
+tar xvfz elasticsearch-5.4.1.tar.gz
+ln -s elasticsearch-5.4.1 elasticsearch
 cd elasticsearch
 bin/elasticsearch -d
   # 데몬(백그라운드)로 실행. 옵션 -d를 빼면 터미널 접속해 있는 동안만 실행
@@ -112,9 +112,9 @@ curl -i http://localhost:9200/
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/kibana/kibana-5.4.0-linux-x86_64.tar.gz
-tar xvfz kibana-5.4.0-linux-x86_64.tar.gz
-ln -s kibana-5.4.0-linux-x86_64 kibana
+wget https://artifacts.elastic.co/downloads/kibana/kibana-5.4.1-linux-x86_64.tar.gz
+tar xvfz kibana-5.4.1-linux-x86_64.tar.gz
+ln -s kibana-5.4.1-linux-x86_64 kibana
 cd kibana
 ```
 
@@ -131,9 +131,9 @@ nohup bin/kibana &
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/logstash/logstash-5.4.0.tar.gz
-tar xvfz logstash-5.4.0.tar.gz
-ln -s logstash-5.4.0 logstash
+wget https://artifacts.elastic.co/downloads/logstash/logstash-5.4.1.tar.gz
+tar xvfz logstash-5.4.1.tar.gz
+ln -s logstash-5.4.1 logstash
 cd logstash
 ```
 
@@ -143,7 +143,7 @@ cd logstash
 mkdir logconf
 vi logconf/nginx.conf
 ```
-* 
+*
 ```
 input {
     file {
@@ -164,7 +164,7 @@ output {
 }
 ```
 
-* logstash 실행 
+* logstash 실행
 ```
 # test
 bin/logstash -f logconf/nginx.conf -t
@@ -187,9 +187,9 @@ cd ~/local/logstash
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-5.4.0-linux-x86_64.tar.gz
-tar xvfz filebeat-5.4.0-linux-x86_64.tar.gz
-ln -s filebeat-5.4.0-linux-x86_64 filebeat
+wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-5.4.1-linux-x86_64.tar.gz
+tar xvfz filebeat-5.4.1-linux-x86_64.tar.gz
+ln -s filebeat-5.4.1-linux-x86_64 filebeat
 cd filebeat
 # elasticsearch 부분 #으로 주석 처리
   # output.elasticsearch:
@@ -233,7 +233,7 @@ chmod +x start.sh
   * Terms(request.raw, clientip.raw, ...) 또는 Filters(request: "/hello.html", ...) 이용해서 차트 생성
   * 테이블, 라인차트, 파이차트, 지도 등 가능
   * 만들어진 차트는 저장 가능
-  
+
 
 ### 대시보드 만들기
   * 저장된 차트를 한 화면에서 볼 수 있도록 추가, 레이아웃 가능
@@ -315,7 +315,7 @@ filter {
             prefix => "param_"
         }
     }
-    
+
 ```
 
 * 이미지 제거
@@ -514,7 +514,7 @@ pm2 start bin/cli
 * [Ubuntu] ELK 설치 및 테스트 하기
   * http://digndig.kr/ubuntu/449/
 
-* Splunk 대체 Solution으로서의 ELK Stack 
+* Splunk 대체 Solution으로서의 ELK Stack
   * http://blog.embian.com/18
 
 * How To Install Elasticsearch, Logstash, and Kibana 4 on Ubuntu 14.04
@@ -531,6 +531,6 @@ pm2 start bin/cli
 
 * ELK Kibana 사용법
   * https://dl.dropboxusercontent.com/u/2385737/Kibana-basic.pdf
-  
+
 * okky.conf
   * https://okdevtv.com/md/elk/okky.conf
