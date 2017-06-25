@@ -218,9 +218,7 @@ For any questions or support, please visit https://community.letsencrypt.org/. U
 
 ## nginx update expiry
 ```
-service nginx stop
-./certbot-auto certonly --renew-by-default -a standalone -d okdevtest.net -d www.okdevtest.net
-service nginx start
+service nginx stop && certbot-auto renew && service nginx start
 ```
 * 무중단 갱신 가능 : http://www.phpschool.com/gnuboard4/bbs/board.php?bo_table=tipntech&wr_id=80590
   * thanks to @shjxenoside
