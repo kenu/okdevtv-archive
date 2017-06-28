@@ -45,6 +45,13 @@ df2.head()
 df[['ZIP_NO']] = df[['ZIP_NO']].astype(str)
 ```
 
+## read sheet
+```
+xls = pd.ExcelFile('docs/20170525.xlsx')
+df1 = xls.parse('Sheet 1')
+df2 = xls.parse('Sheet 2')
+```
+
 ## Tutorial
 * http://pandas.pydata.org/pandas-docs/stable/tutorials.html
 * 01 - Lesson: - Importing libraries - Creating data sets - Creating data frames - Reading from CSV - Exporting to CSV - Finding maximums - Plotting data
