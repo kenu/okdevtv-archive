@@ -26,4 +26,7 @@ Creating Tests/HelloTests/HelloTests.swift
 * `swift test`
 
 ## ref
-* facebook login https://okdevtv.com/mib/swift/fblogin-ios
+* facebook login
+  * https://okdevtv.com/mib/swift/fblogin-ios
+* socket.io with swift
+  * https://github.com/nuclearace/socket.io-client-swift-spm-example
