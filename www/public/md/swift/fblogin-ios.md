@@ -21,6 +21,7 @@ from: https://developers.facebook.com/docs/swift/getting-started
 
 
 * AppDelegate.swift
+
 ```
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -35,5 +36,4 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
 
     return handled
 }
-
 ```
