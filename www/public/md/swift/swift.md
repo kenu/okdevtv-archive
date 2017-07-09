@@ -26,4 +26,4 @@ Creating Tests/HelloTests/HelloTests.swift
 * `swift test`
 
 ## ref
-* facebook login https://okdevtv.com/mib/swift/fblogin-ios.md
+* facebook login https://okdevtv.com/mib/swift/fblogin-ios
