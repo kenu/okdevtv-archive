@@ -9,7 +9,7 @@
 ## Package
 * `mkdir Hello`
 * `cd Hello`
-* `swift package init`
+* `swift package init` or `swift package init --type executable`
 ```
 Creating library package: Hello
 Creating Package.swift
@@ -22,6 +22,7 @@ Creating Tests/HelloTests/
 Creating Tests/HelloTests/HelloTests.swift
 ```
 * `swift build`
+* `./build/debug/Hello` (if executable)
 * `swift test`
 
 ## ref
