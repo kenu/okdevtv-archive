@@ -30,3 +30,5 @@ Creating Tests/HelloTests/HelloTests.swift
   * https://okdevtv.com/mib/swift/fblogin-ios
 * socket.io with swift
   * https://github.com/nuclearace/socket.io-client-swift-spm-example
+* socket.io iOS chat(Deprecated)
+  * https://www.appcoda.com/socket-io-chat-app/
