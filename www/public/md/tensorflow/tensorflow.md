@@ -113,7 +113,7 @@ for step in range(201):
 * the perceptron is an algorithm for learning a binary classifier
 <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/04228fc42b76b9ebcb067208e6129c3ccb735903" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.505ex; width:28.374ex; height:6.176ex;" alt="f(x)={\begin{cases}1&amp;{\text{if }}w\cdot x+b>0\\0&amp;{\text{otherwise}}\end{cases}}">
 
-## softmax 
+## softmax
   * http://pythonkim.tistory.com/19
   * "softmax는 데이터를 2개 이상의 그룹으로 나누기 위해 binary classification을 확장한 모델이다."
   * "통계에서 가장 큰 값을 찾는 개념을 hardmax라고 부른다. softmax는 새로운 조건으로 가장 큰 값을 찾는 개념을 말한다. 일반적으로는 큰 숫자를 찾는 것이 hardmax에 해당하고, 숫자를 거꾸로 뒤집었을 경우에 대해 가장 큰 숫자를 찾는다면 softmax에 해당한다. 여기서는 우리가 알고 있는 큰 숫자를 찾는 것이 아니라는 뜻으로 쓰인다."
@@ -166,13 +166,20 @@ for step in range(201):
 ### LSTM
 * Long Short Term Memory
 * Long Short Term Memory networks – usually just called “LSTMs” – are a special kind of RNN, capable of learning long-term dependencies.
-* Hochreiter & Schmidhuber (1997) 
+* Hochreiter & Schmidhuber (1997)
   * http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf
 * <img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-var-GRU.png">
 
 ## NLU
 * https://github.com/tensorflow/models/tree/master/syntaxnet
 * natural language understanding (NLU)
+
+## CRF
+* Conditional Random Field
+* 이웃하는 표본을 고려하여 예측
+* 활용: 자연언어 처리, HCI, 컴퓨터 비전, 생물정보학
+  * https://ko.wikipedia.org/wiki/조건부_무작위장
+
 
 ### GRU
 
