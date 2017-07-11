@@ -38,7 +38,6 @@
 
 <img src="/images/brackets/brackets13.png" alt="Show in Explorer">
 
-
 ## 플러그인
 
 * Brackets Git https://github.com/zaggino/brackets-git
@@ -50,6 +49,12 @@
 * Minimap
 * Bracket Compare https://github.com/bomsy/brackets-compare
 
+* when brackets not working, remove plugins folder
+
+```
+cd /Users/heogn/Library/Application Support
+rm -rf Brackets
+```
 
 ## Video
 * https://youtu.be/OwN-T7b2_o8
