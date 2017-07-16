@@ -3,6 +3,6 @@
 
 ## Goals
 * 매우 빠른 스프링 개발
-* Be opinionated out of the box, but get out of the way quickly as requirements start to diverge from the defaults
-* Provide a range of non-functional features that are common to large classes of projects (e.g. embedded servers, security, metrics, health checks, externalized configuration)
-* Absolutely no code generation and no requirement for XML configuration
+* 기본도 충실하지만, 요구사항 변화에 빨리 대응
+* 다양한 비기능 특징 제공(임베디드 서버, 보안, 메트릭, 헬스 체크, 외부 설정)
+* 코드 생성이 없고, XML 요구되지 않음
