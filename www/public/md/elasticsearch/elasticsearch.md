@@ -105,6 +105,10 @@ curl -XDELETE http://localhost:9200/books/book/1
 curl -XPOST http://localhost:9200/_bulk?pretty --data-binary @data.txt
 ```
 
+## index list
+```
+curl localhost:9200/_cat/indices?v
+```
 
 ## 검색
 * query방식은 2가지
