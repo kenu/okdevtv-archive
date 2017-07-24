@@ -16,6 +16,8 @@ open -n Simulator.app
 ```
   * Hardware > Device > choose others
 
+## Getting Started Develop iOS Apps Swift
+* https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/
 
 ## ref
 * https://developer.apple.com
