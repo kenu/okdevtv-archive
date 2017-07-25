@@ -19,6 +19,9 @@ open -n Simulator.app
 ## Getting Started Develop iOS Apps Swift
 * https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/
 
+### ViewController Lifecycle
+* <img src="images/WWVC_vclife_2x.png" alt="ViewController Lifecycle">
+
 ## ref
 * https://developer.apple.com
 * https://www.inflearn.com/?post_type=course&s=ios
