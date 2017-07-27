@@ -19,6 +19,14 @@ open -n Simulator.app
 ## Getting Started Develop iOS Apps Swift
 * https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/
 
+### Xcode
+* Toolbar
+* Editor Area
+* Navigator Area
+* Utility Area
+  * Inspector pane
+  * Library pane
+
 ### ViewController Lifecycle
 * <img src="images/WWVC_vclife_2x.png" alt="ViewController Lifecycle">
 
