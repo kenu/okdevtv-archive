@@ -22,6 +22,11 @@ open -n Simulator.app
 ### ViewController Lifecycle
 * <img src="images/WWVC_vclife_2x.png" alt="ViewController Lifecycle">
 
+* viewDidLoad() :
+* viewWillAppear() :
+* viewDidAppear() :
+
+
 ## ref
 * https://developer.apple.com
 * https://www.inflearn.com/?post_type=course&s=ios
