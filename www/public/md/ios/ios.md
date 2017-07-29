@@ -34,6 +34,11 @@ open -n Simulator.app
 * viewWillAppear() :
 * viewDidAppear() :
 
+### Custom View
+* Custom class and storyboard element
+* Use UIStackView subclass as a container
+* Implement an initializer on a custom class
+* @IBInspectable, @IBDesignable
 
 ## ref
 * https://developer.apple.com
