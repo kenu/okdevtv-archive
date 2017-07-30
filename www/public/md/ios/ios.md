@@ -40,6 +40,37 @@ open -n Simulator.app
 * Implement an initializer on a custom class
 * @IBInspectable, @IBDesignable
 
+* initializer
+```
+override init(frame: CGRect) {
+    super.init(frame: frame)
+}
+
+required init(coder: NSCoder) {
+    super.init(coder: coder)
+}
+```
+* Button status
+  * normal, highlighted, focused, selected, and disabled
+
+### Define Data Model
+* failable, non-failable
+* Unit Test
+  * cmd+U
+  * XCTestCase
+
+### Table View
+* TableViewCell
+* TableViewController
+
+### NavigationController
+* NavigationController
+
+* segue
+
+
+
+
 ## ref
 * https://developer.apple.com
 * https://www.inflearn.com/?post_type=course&s=ios
