@@ -36,6 +36,19 @@ sudo apt-get install oracle-java8-set-default
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 ```
 
+* 자바의신 1권 36p
+
+
+## 기본 용어
+* 패키지(package)
+* 클래스(class)
+* 메소드(method)
+* 명령문(statement)
+
+* 자바의신 1권 20p
+* 들여쓰기(indent)
+* 예약어(reserved word)
+
 ## 참고
 * 2시간만에 자바를 쉽게 배우고 싶어요.
   * http://www.slideshare.net/kenu/java-start01-in-2hours
