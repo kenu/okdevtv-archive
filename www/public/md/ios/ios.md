@@ -67,6 +67,8 @@ required init(coder: NSCoder) {
 * NavigationController
 
 * segue
+* Bar Button Item
+
 
 
 
