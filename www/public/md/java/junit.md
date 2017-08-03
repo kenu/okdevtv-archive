@@ -11,6 +11,19 @@
   * http://mvnrepository.com/artifact/junit/junit/4.12
 
 ## Getting started
+* Calculator.java
+
+```java
+public class Calculator {
+  public int evaluate(String expression) {
+    int sum = 0;
+    for (String summand: expression.split("\\+"))
+      sum += Integer.valueOf(summand);
+    return sum;
+  }
+}
+```
+
 * CalculatorTest.java
 
 ```java
