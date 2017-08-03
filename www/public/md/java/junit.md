@@ -12,7 +12,8 @@
 
 ## Getting started
 * CalculatorTest.java
-```
+
+```java
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -25,6 +26,7 @@ public class CalculatorTest {
   }
 }
 ```
+* compile
 
 ```
 javac -cp .:junit-4.XX.jar CalculatorTest.java
