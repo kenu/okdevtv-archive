@@ -69,6 +69,11 @@ required init(coder: NSCoder) {
 * segue
 * Bar Button Item
 
+### Persist Data
+* NSCoding
+  * a protocol that enables a lightweight solution for archiving objects and other structures
+* static properties
+* instance properties
 
 
 
