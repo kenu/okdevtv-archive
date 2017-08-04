@@ -27,7 +27,7 @@ gpgcheck=1
 
     * MariaDB config
 ```
-sudo yum install MariaDB-server MariaDB-client
+sudo yum install MariaDB-server
 ```
 
 ```
