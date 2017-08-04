@@ -1,9 +1,9 @@
-# Yona 
+# Yona
 - 21세기 SW 협업 개발 환경
 - http://yona.io
 - GitHub의 설치형 + 프로젝트별 게시판
 - 한국어, 영어, 일어 지원
-- installation 
+- installation
   * https://github.com/yona-projects/yona
 
 ## In AWS install Yona
@@ -84,12 +84,12 @@ default-character-set=utf8mb4
 
 ### Install Yona
 * Yona 설치
-  
+
 ```
 mkdir local && cd local
-wget https://github.com/yona-projects/yona/releases/download/v1.5.1/yona-v1.5.1-bin.zip
-unzip yona-v1.5.1-bin.zip
-ln -s yona-1.5.1/ yona
+wget https://github.com/yona-projects/yona/releases/download/v1.6.1/yona-v1.6.1-bin.zip
+unzip yona-v1.6.1-bin.zip
+ln -s yona-1.6.1/ yona
 cd yona
 bin/yona # first for unarchive folders
 vi conf/application.conf
@@ -118,19 +118,19 @@ nohup bin/yona &
 ```
 
 ## Err 발생시
-* `[error] play - Specified key was too long; max key length is 767 bytes [ERROR:1071, SQLSTATE:42000]` 
+* `[error] play - Specified key was too long; max key length is 767 bytes [ERROR:1071, SQLSTATE:42000]`
 에러메시지를 만나면, MariaDB 삭제했다가 다시 설치
 * `sudo yum uninstall -y MariaDB-server MariaDB-client`
 
 ## Yona in Windows
 * 환경변수
 ```
-SET YONA_HOME=c:\yona\yona-1.5.1
+SET YONA_HOME=c:\yona\yona-1.6.1
 SET JAVA_OPTS=-Dyona.home=%YONA_HOME% -Dconfig.file=%YONA_HOME%\conf\application.conf -Dlogger.file=%YONA_HOME%\conf\application-logger.xml
 ```
 
 ## 참고
-* yona-1.5.1 설치 영상
+* yona-1.6.1 설치 영상
   * https://youtu.be/B3Q2FVXZWBM
 * gmail 보안 설정 조정법
   * http://okky.kr/article/343036
