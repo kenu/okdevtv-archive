@@ -14,3 +14,8 @@ pre {
     background-color: #eefefe;
     width: 92%;
 }
+
+.img {
+    width: 50%;
+    max-width: 600px;
+}
