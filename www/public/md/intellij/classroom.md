@@ -5,7 +5,7 @@
 * Buy IntelliJ Ultimate **Individual, Monthly**
   * https://www.jetbrains.com/idea/buy/#edition=personal
 * Click __"Have a discount code?"__
-* input coupon like **CIWV2-1FK8G-XXXXX-XXXXX-EJ0RJ**
+* Input coupon number. ex) **CIWV2-1FK8G-XXXXX-XXXXX-EJ0RJ**
 * Download IntelliJ Ultimate
 * Login with jetbrains account
 * That's all
