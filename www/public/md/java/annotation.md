@@ -102,4 +102,6 @@ public class Generation3List extends Generation2List {
 ```
 
 ## ref
+* http://docs.oracle.com/javase/1.5.0/docs/guide/language/annotations.html
 * https://docs.oracle.com/javase/tutorial/java/annotations/basics.html
+* https://www.mkyong.com/java/java-custom-annotations-example/
