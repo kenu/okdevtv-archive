@@ -16,7 +16,7 @@ gpgcheck=1
 ```
  * CentOS 6.x는 `baseurl = http://yum.mariadb.org/10.0/centos6-amd64`
 
- 
+
 ```
 sudo yum install MariaDB-server MariaDB-client
 sudo service mysql start
@@ -29,6 +29,13 @@ sudo mysql_secure_installation
 GRANT ALL PRIVILEGES ON devdb.* TO devuser@localhost
 IDENTIFIED BY 'devpass' WITH GRANT OPTION;
 ```
+
+* Read only account
+```
+GRANT SELECT, SHOW VIEW ON devdb.* TO devuser2@localhost
+IDENTIFIED BY 'devpass';
+```
+
 
 ## Timezone
 ```
@@ -48,4 +55,3 @@ sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://ftp.kaist.ac.kr/ma
 ## MariaDB + node.js
 * https://github.com/felixge/node-mysql
 * https://github.com/mscdex/node-mariasql
-
