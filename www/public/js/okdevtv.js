@@ -8,8 +8,8 @@ $(function () {
                 dataType: 'json' // data type
             })
             .done(function (res) {
-                console.log(res);
-                alert('감사합니다.');
+                //console.log(res);
+                //alert('감사합니다.');
                 $('form#form')[0].reset();
             });
     });
