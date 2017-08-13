@@ -7,9 +7,7 @@ $(function () {
                 data: data,
                 dataType: 'json' // data type
             })
-            .done(function (res) {
-                //console.log(res);
-                //alert('감사합니다.');
+            .done(function () {
                 $('form#form')[0].reset();
             });
     });
