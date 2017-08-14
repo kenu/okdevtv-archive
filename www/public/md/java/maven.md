@@ -61,6 +61,18 @@ mvn archetype:generate -DgroupId=com.okdevtv.java -DartifactId=okdevtv -Darchety
 * 프로젝트 빌드(컴파일, 테스트, 패키징)에 필요한 jar파일 다운로드
 * 두 번째 실행시 로컬에 저장된 jar 사용으로 빨라짐
 
+## 메이븐 phase
+* validate
+* compile
+* test
+* package
+* integration-test
+* verify
+* deploy
+
+* clean
+* site
+
 ## 메이븐 저장소
 * 로컬, 원격 저장소로 구분
 * `~/.m2/repository` 기본 위치
