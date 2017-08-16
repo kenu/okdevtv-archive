@@ -95,6 +95,7 @@ task copy(type: Copy) {
 
 ## Plugin
 * build.gradle
+
 ```
 plugins {
     id 'base'
