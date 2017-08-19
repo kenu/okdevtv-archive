@@ -24,9 +24,100 @@
 
 ## 스프링 아키텍처
 
-* from: <a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#spring-introduction" target="_blank">Spring Framework Reference</a>
+* from: [Spring Framework Reference](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#spring-introduction)
 * <img src="/images/spring/spring-overview.png" alt="Spring Framework Architecture">
 
+## Simple Spring Code
+* bean : HelloWorld.java
+* config : Beans.xml
+* use : MainApp.java
+
+* HelloWorld.java
+
+```java
+package okdevtvspring;
+
+public class HelloWorld {
+	private String message;
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public void getMessage() {
+		System.out.println("Your Message : " + message);
+	}
+}
+```
+
+* Beans.xml
+
+```java
+package okdevtvspring;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainApp {
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		HelloInterface obj = (HelloInterface) context.getBean("helloWorld");
+		obj.getMessage();
+	}
+}
+```
+
+* MainApp.java
+
+```xml
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="helloWorld" class="okdevtvspring.HelloWorld">
+		<property name="message" value="# Hello World!" />
+	</bean>
+
+</beans>
+```
+
+## Bean scope
+* singleton
+* prototype
+* request
+* session
+* global-session
+
+### example
+```xml
+<bean id="..." class="..." scope="singleton">
+</bean>
+```
+
+## Bean lifecycle
+* Initialization callbacks
+  * init-method="init"
+  * InitializingBean interface
+```java
+public class ExampleBean implements InitializingBean {
+       public void afterPropertiesSet() {
+           // do some initialization work
+       }
+}
+```
+* Destruction callbacks
+  * destroy-method="destroy"
+  * DisposableBean interface
+```java
+public class ExampleBean implements DisposableBean {
+        public void destroy() {
+           // do some destruction work
+        }
+}
+```
 
 
 ## 참고
