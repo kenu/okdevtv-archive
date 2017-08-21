@@ -1,6 +1,7 @@
 # Metricbeat
 
 ```
+cd ~/local
 wget https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-5.5.1-linux-x86_64.tar.gz
 tar xvfz metricbeat-5.5.1-linux-x86_64.tar.gz
 ln -s metricbeat-5.5.1-linux-x86_64 metricbeat
@@ -8,13 +9,18 @@ cd metricbeat
 ```
 
 ## run
+* change metricbeat.yml permission
+```
+sudo chown root metricbeat.yml
+```
+
+* for linux
 ```
 sudo ./metricbeat -e -c metricbeat.yml
 ```
 
 * for mac
 ```
-sudo chown root metricbeat.yml
 sudo ./metricbeat -e -c metricbeat.yml -d "publish"
 ```
 
