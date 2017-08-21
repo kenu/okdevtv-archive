@@ -35,7 +35,7 @@
 
    <servlet-mapping>
       <servlet-name>HelloWeb</servlet-name>
-      <url-pattern>*.jsp</url-pattern>
+      <url-pattern>*.do</url-pattern>
    </servlet-mapping>
 
    <context-param>
