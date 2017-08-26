@@ -536,7 +536,7 @@ pm2 start bin/cli
   * https://lucene.apache.org/core/2_9_4/queryparsersyntax.html
 
 * ELK Kibana 사용법
-  * https://dl.dropboxusercontent.com/u/2385737/Kibana-basic.pdf
+  * https://www.dropbox.com/s/xjwyta14b5nw7j8/Kibana-basic.pdf?dl=0
 
 * okky.conf
   * https://okdevtv.com/md/elk/okky.conf
