@@ -12,6 +12,31 @@ var HelloMessage = React.createClass({
 ReactDOM.render(<HelloMessage name="John" />, mountNode);
 ```
 
+## Sample
+```javascript
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      ReactDOM.render(
+        <h1>Hello, world!</h1>,
+        document.getElementById('root')
+      );
+
+    </script>
+  </body>
+</html>
+```
+
 ## render lifecycle
 * LIFECYCLE METHODS
   * `componentWillMount` – 한 번 실행, 렌더링 전 클라이언트, 서버 양쪽에서
@@ -55,3 +80,5 @@ ReactDOM.render(<Timer />, mountNode);
 * inflearn react 강좌
   * https://www.inflearn.com/course/react-%EA%B0%95%EC%A2%8C-velopert/
 * https://scotch.io/tutorials/learning-react-getting-started-and-concepts
+* webpack
+  * https://okdevtv.com/mib/webpack
