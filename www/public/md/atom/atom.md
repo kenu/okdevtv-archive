@@ -5,6 +5,11 @@
 * Git support
 * Plugin support
 
+## open atom in terminal
+```
+atom .
+```
+
 ## Useful shortcuts
 * open file by name : ctrl + t, cmd + t
 * open Settings : ctrl + `,`, cmd + `,`
