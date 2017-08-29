@@ -6,39 +6,41 @@
   * BitBucket
   * Gitlab
 * 사용자 등록
-  * git config --global user.name kenu
-  * git config --global user.email kenu.heo@gmail.com
+  * `git config --global user.name kenu`
+  * `git config --global user.email kenu.heo@gmail.com`
 * 코드 가져오기
-  * git clone
+  * `git clone`
 * 커밋하기
-  * git add
-  * git commit
+  * `git add`
+  * `git commit`
 * 상태 보기
-  * git status
+  * `git status`
 * 공유하기
-  * git push
-  * git pull
-  * git fetch
-  * git merge
+  * `git push`
+  * `git pull`
+  * `git fetch`
+  * `git merge`
 * 로컬 저장소 만들기
-  * git init
+  * `git init`
 * 원격 저장소 연결하기
-  * git remote
+  * `git remote`
 
 ### git 중급
 * 브랜치 다루기
-  * git checkout -b dev
-  * git branch dev && git checkout dev
+  * `git checkout -b dev`
+  * `git branch dev && git checkout dev`
+* 원격 브랜치 가져오기
+  * `git checkout -b dev origin/dev`
 * 태깅하기
   * 가벼운 태그
   * 주석달린 태그
   * http://git-scm.com/book/ko/Git의-기초-태그
 * 리셋하기
-  * git reset --hard a189fce
+  * `git reset --hard a189fce`
 * 미뤄두기
-  * git stash
-  * git stash list
-  * git stash pop
+  * `git stash`
+  * `git stash list`
+  * `git stash pop`
 * 머지
 * rebase
 * 커밋 롤백하기
