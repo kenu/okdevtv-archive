@@ -90,3 +90,17 @@ public class Example {
     </build>
 </project>
 ```
+
+
+## Migration to Spring Boot
+* http://www.baeldung.com/spring-boot-migration
+
+* pom.xml
+
+```
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.6.RELEASE</version>
+</parent>
+```
