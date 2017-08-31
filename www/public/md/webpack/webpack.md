@@ -1,5 +1,45 @@
 # webpack
-* webpack.github.io
+* https://webpack.github.io
+
+## install
+```
+npm install -g webpack
+npm init
+npm install --save-dev webpack
+```
+
+## Directory Structure
+* `app/*.js`
+* `public/index.html`
+
+## `index.html`
+```
+<script src="bundle.js"></script>
+```
+
+## Build
+* command line
+```
+webpack app/main.js public/bundle.js
+```
+
+* `webpack.config.js`
+```
+module.exports = {
+	entry: __dirname + "/app/main.js",
+	output: {
+		path: __dirname + "/public",
+		filename: "bundle.js"
+	},
+
+	devServer: {
+		contentBase: "./public",
+		colors: true,
+		historyApiFallback: true,
+		inline: true
+	}
+}
+```
 
 ```
 // webpack은 모듈 번들러
@@ -46,7 +86,7 @@ function loadTemplate(name) {
 
 // ... 그리고, 모든 것을 한꺼번에
 function loadTemplateAsync(name, callback) {
-	require(["bundle?lazy!./templates/" + name + ".jade"], 
+	require(["bundle?lazy!./templates/" + name + ".jade"],
 	  function(templateBundle) {
 		templateBundle(callback);
 	});
