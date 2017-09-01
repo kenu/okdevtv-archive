@@ -49,6 +49,22 @@ export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 * 들여쓰기(indent)
 * 예약어(reserved word)
 
+## Other topic
+* [inheritance](https://okdevtv.com/mib/java/inheritance)
+* [interface](https://okdevtv.com/mib/java/interface)
+* [generic](https://okdevtv.com/mib/java/generic)
+* [autoboxing](https://okdevtv.com/mib/java/autoboxing)
+* [lambda](https://okdevtv.com/mib/java/lambda)
+* [annotation](https://okdevtv.com/mib/java/annotation)
+* [jdbc](https://okdevtv.com/mib/java/jdbc)
+* [junit](https://okdevtv.com/mib/java/junit)
+* [tomcat](https://okdevtv.com/mib/java/tomcat)
+* [war](https://okdevtv.com/mib/java/war)
+* [deploy](https://okdevtv.com/mib/java/deploy)
+* [ant](https://okdevtv.com/mib/java/ant)
+* [maven](https://okdevtv.com/mib/java/maven)
+* [gradle](https://okdevtv.com/mib/java/gradle)
+
 ## 참고
 * 2시간만에 자바를 쉽게 배우고 싶어요.
   * http://www.slideshare.net/kenu/java-start01-in-2hours
