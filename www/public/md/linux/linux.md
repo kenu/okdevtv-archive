@@ -62,6 +62,22 @@ sudo yum install pciutils
 lspci | grep -i vga
 ```
 
+## file filter
+```
+find . -type f | egrep "gif$|jpg$|jpeg$|svg$|png$" | wc -l
+```
+
+## archive filtered list containing spaces in file name
+```
+find . -type f | grep -v list_files |egrep "php$|html$|htm$|js$|css$|inc$" > list.txt
+tar cvfz text.tgz -T list.txt
+
+find . -type f | grep -v list_files |egrep "gif$|jpg$|jpeg$|svg$|png$|ico$" > list_img.txt
+tar cvfz img.tgz -T list_img.txt
+```
+
+
+
 ## Basic command
 |basic command	| mac	| windows |
 |----|----|----|
