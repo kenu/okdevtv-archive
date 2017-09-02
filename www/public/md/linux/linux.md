@@ -72,6 +72,12 @@ lspci | grep -i vga
 |open site	|open http://www.naver.com	|explorer http://www.naver.com|
 |edit file	|nano filename	|notepad filename|
 
+## other topics
+* curl
+  * https://okdevtv.com/mib/linux/curl
+* cron
+  * https://okdevtv.com/mib/linux/cron
+
 ## Ref
 * vi 에디터에서 utf8, euc-kr 전환하기
   * http://egloos.zum.com/indirock/v/3791689
