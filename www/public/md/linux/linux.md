@@ -88,6 +88,17 @@ tar cvfz img.tgz -T list_img.txt
 |open site	|open http://www.naver.com	|explorer http://www.naver.com|
 |edit file	|nano filename	|notepad filename|
 
+## htop
+
+```
+sudo yum install htop
+```
+
+```
+htop
+htop -p "$(pgrep -vfd, 'java|python')"
+```
+
 ## other topics
 * curl
   * https://okdevtv.com/mib/linux/curl
