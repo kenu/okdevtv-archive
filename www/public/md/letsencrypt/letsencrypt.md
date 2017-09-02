@@ -224,6 +224,8 @@ service nginx stop && certbot-auto renew && service nginx start
   * thanks to @shjxenoside
 
 ## when stuck
+* such as zope.interface no module named interface
+
 ```
 unset PYTHON_INSTALL_LAYOUT
 /root/.local/share/letsencrypt/bin/pip install --upgrade certbot
@@ -265,7 +267,7 @@ pip install virtualenv
 * https://danpalmer.me/blog/ssl-labs-grade-a
 * https://www.gypthecat.com/how-to-install-a-ssl-certificate-on-nginx
 * https://community.letsencrypt.org/t/getting-certbot-auto-to-include-the-x3-public-key/18472
-* zope interface issue
+* zope.interface issue
   * https://github.com/certbot/certbot/issues/2872
 * 휴대폰으로 5분만에 letsencrypt 적용
   * https://synd.kr/articles/1814
