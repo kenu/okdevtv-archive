@@ -34,6 +34,8 @@ done
 ```
 date '+%Y%m%d %H%M%S' # today
 date -v-3d '+%Y%m%d %H%M%S' # 1 days before
+# or
+date -d "3days ago" '+%Y-%m-%d %H' # bash
 ```
 
 ## Timezone
