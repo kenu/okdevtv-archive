@@ -32,7 +32,7 @@ root     17952     1  0 20:48 ?        00:00:00 nginx: master process /usr/sbinn
 nginx    17953 17952  0 20:48 ?        00:00:00 nginx: worker process
 nginx    17954 17952  0 20:48 ?        00:00:00 nginx: worker process
 root     17956  9025  0 20:48 pts/0    00:00:00 grep --color=auto nginx
-[root@elk1 local]# 
+[root@elk1 local]#
 ```
 
 ### Ubuntu 14.x nginx 설치
@@ -61,7 +61,7 @@ su
 # 개발 관련 패키지 설치
 yum install development #CentOS 7.x
 
-# 사용자id dev 생성 
+# 사용자id dev 생성
 adduser dev
 passwd dev
 
@@ -145,7 +145,7 @@ sudo service nginx restart
 
 
 ## centos6.* 경우
-* epel의 nginx 버전이 1.0.*로 낮음
+* epel의 nginx 버전이 `1.0.*`로 낮음
 * ssl_stapling 옵션 지원 안됨.
 ```
 nginx           x86_64           1.0.15-12.el6           @epel           1.1 M
@@ -177,6 +177,16 @@ http {
 }
 ```
 
+## CentOS on GCP
+* [err]
+`connect() to 127.0.0.1:5601 failed (13: Permission denied) while connecting to upstream, client`
+
+```
+# grep nginx /var/log/audit/audit.log | audit2allow -M nginx
+# yum install policycoreutils-python -y
+# semodule -i nginx.pp
+```
+
 ## 관련
 * elk https://okdevtv.com/mib/elk
 * letsencrypt https://okdevtv.com/mib/letsencrypt
@@ -184,4 +194,3 @@ http {
 ## 참고
 * http://nginx.org/
 * https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-ubuntu-14-04
-
