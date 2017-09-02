@@ -4,8 +4,8 @@
 * mimic of Unix
 * for pc
 
-## Basic command
-|basic command	| mac	| windows |
+## Basic commands
+|basic commands	| mac	| windows |
 |----|----|----|
 |change directory	| cd	| cd|
 |list files	|ls	|dir|
