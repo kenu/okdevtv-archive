@@ -1,5 +1,20 @@
 # Linux
 
+* 1991 Linus Torvalds
+* mimic of Unix
+* for pc
+
+## Basic command
+|basic command	| mac	| windows |
+|----|----|----|
+|change directory	| cd	| cd|
+|list files	|ls	|dir|
+|list files info	|ls -l	|dir|
+|view file content	|cat filename	|type filename|
+|open site	|open http://www.naver.com	|explorer http://www.naver.com|
+|edit file	|nano filename	|notepad filename|
+
+
 ## File Encoding
 * 확인
   `file -bi filename`
@@ -77,16 +92,6 @@ tar cvfz img.tgz -T list_img.txt
 ```
 
 
-
-## Basic command
-|basic command	| mac	| windows |
-|----|----|----|
-|change directory	| cd	| cd|
-|list files	|ls	|dir|
-|list files info	|ls -l	|dir|
-|view file content	|cat filename	|type filename|
-|open site	|open http://www.naver.com	|explorer http://www.naver.com|
-|edit file	|nano filename	|notepad filename|
 
 ## htop
 

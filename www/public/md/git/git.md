@@ -1,5 +1,5 @@
 # Git
-* 2005.04 Linus Torvaldz
+* 2005.04 Linus Torvalds
 * https://git-scm.com
 
 ## 시작하기
