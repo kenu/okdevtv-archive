@@ -16,6 +16,6 @@ git config core.longpaths true
 
 * Invalid argument such as `:`
 ```
-error: unable to create file shop/lib/:q: Invalid argument
+error: unable to create file lib/:q: Invalid argument
 ```
   * change filename
