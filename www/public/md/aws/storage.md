@@ -4,15 +4,17 @@
 
 * 참고 : http://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/ebs-using-volumes.html
 
+* Actions > Attach Volume
+
 ```
 # 볼륨 확인하기
 lsblk
 
 [ec2-user@ip-172-31-19-36 ~]$ lsblk
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-xvda    202:0    0    8G  0 disk 
+xvda    202:0    0    8G  0 disk
 └─xvda1 202:1    0    8G  0 part /
-xvdf    202:80   0  100G  0 disk 
+xvdf    202:80   0  100G  0 disk
 [ec2-user@ip-172-31-19-36 ~]$ sudo file -s /dev/xvdf
 /dev/xvdf: data
 
@@ -20,8 +22,8 @@ xvdf    202:80   0  100G  0 disk
 mke2fs 1.42.12 (29-Aug-2014)
 Creating filesystem with 26214400 4k blocks and 6553600 inodes
 Filesystem UUID: 2a502a3e-e07e-4f9c-8590-e8f9bcd4f0a0
-Superblock backups stored on blocks: 
-	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+Superblock backups stored on blocks:
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
 	4096000, 7962624, 11239424, 20480000, 23887872
 
 Allocating group tables: done
@@ -52,6 +54,5 @@ devpts      /dev/pts    devpts  gid=5,mode=620  0   0
 sysfs       /sys        sysfs   defaults        0   0
 proc        /proc       proc    defaults        0   0
 /dev/xvdf   /opt/elk    ext4    defaults,nofail 0   2
-[ec2-user@ip-172-31-19-36 ~]$ 
+[ec2-user@ip-172-31-19-36 ~]$
 ```
-
