@@ -30,6 +30,7 @@
   * `git checkout -b dev`
   * `git branch dev && git checkout dev`
 * 원격 브랜치 가져오기
+  * `git pull origin`
   * `git checkout -b dev origin/dev`
 * 태깅하기
   * 가벼운 태그
