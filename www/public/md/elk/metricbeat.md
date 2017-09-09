@@ -30,5 +30,19 @@ sudo ./metricbeat -e -c metricbeat.yml -d "publish"
 ./scripts/import_dashboards
 ```
 
+## Apache module
+```
+metricbeat.modules:
+- module: apache
+  metricsets: ["status"]
+  enabled: true
+  period: 10s
+
+  # Apache hosts
+  hosts: ["http://127.0.0.1"]
+```
+
 ## ref
 * https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-getting-started.html
+* Apache httpd
+* https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-module-apache.html
