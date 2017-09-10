@@ -30,12 +30,19 @@ location ~ \.php$ {
 ### start
 
 ```
-nginx
+start nginx
 ```
 
 ```
 php-cgi.exe -b 127.0.0.1:9000
 ```
+
+## check process
+
+```
+tasklist /fi "imagename eq nginx.exe"
+```
+
 
 * stop
 ```
@@ -46,4 +53,6 @@ nginx -s stop
 
 ## ref
 * 윈도우(Windows) nginx와 php 연동하기
-  * http://homaki.tistory.com/65
+  * http://homaki.tistory.com/
+* nginx for Windows
+  * http://nginx.org/en/docs/windows.html
