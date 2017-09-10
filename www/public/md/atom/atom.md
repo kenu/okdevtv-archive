@@ -25,3 +25,9 @@ atom .
 'atom-workspace, atom-workspace atom-text-editor':
   'ctrl-shift-M': 'markdown-preview:toggle'
 ```
+
+## Atom Package Manager
+```
+apm install emmet
+Installing emmet to /Users/kenu/.atom/packages ✓
+```
