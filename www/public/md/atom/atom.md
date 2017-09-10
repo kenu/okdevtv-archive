@@ -4,6 +4,7 @@
 * Read big file fast
 * Git support
 * Plugin support
+* competitors : brackets, visual studio code
 
 ## open atom in terminal
 ```
