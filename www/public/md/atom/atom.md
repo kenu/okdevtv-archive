@@ -32,3 +32,11 @@ atom .
 apm install emmet
 Installing emmet to /Users/kenu/.atom/packages ✓
 ```
+
+## image embed
+* ctrl + shift + i
+
+```
+<img src="https://cdn-images-1.medium.com/max/1600/1*4lHHyfEhVB0LnQ3HlhSs8g.png">
+<img src="data:image/png;base64,iVBORw0KGgo....">
+```
