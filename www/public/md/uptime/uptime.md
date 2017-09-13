@@ -9,9 +9,9 @@
 ```
 sudo yum update -y
 mkdir local && cd local/
-wget https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-x64.tar.xz
-tar xvf node-v4.4.7-linux-x64.tar.xz
-ln -s node-v4.4.7-linux-x64 node
+wget https://nodejs.org/dist/v6.11.3/node-v6.11.3-linux-x64.tar.xz
+tar xvf node-v6.11.3-linux-x64.tar.xz
+ln -s node-v6.11.3-linux-x64 node
 ```
 
 * Linux Dev Tools
@@ -24,9 +24,9 @@ sudo yum install git -y
 * MongoDB
 
 ```
-wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.2.8.tgz
-tar xvfz mongodb-linux-x86_64-amazon-3.2.8.tgz
-ln -s mongodb-linux-x86_64-amazon-3.2.8 mongodb
+wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.4.9.tgz
+tar xvfz mongodb-linux-x86_64-amazon-3.4.9.tgz
+ln -s mongodb-linux-x86_64-amazon-3.4.9 mongodb
 ```
 
 * set Path
@@ -34,7 +34,7 @@ ln -s mongodb-linux-x86_64-amazon-3.2.8 mongodb
 ```
 vi ~/.bash_profile
 ```
-  
+
 ```
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
