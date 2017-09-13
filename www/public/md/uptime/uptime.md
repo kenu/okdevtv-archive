@@ -76,6 +76,7 @@ npm install -g pm2
 ```
 git clone git://github.com/fzaninotto/uptime.git
 cd uptime/
+npm install
 ```
 
 * configure DB info
