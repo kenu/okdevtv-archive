@@ -11,6 +11,7 @@
 * Chicken.java
 
 * Animal.java
+
 ```
 public class Animal {
   String name;
@@ -22,6 +23,7 @@ public class Animal {
 ```
 
 * Tiger.java
+
 ```
 public class Tiger extends Animal {
 
@@ -29,8 +31,14 @@ public class Tiger extends Animal {
 ```
 
 * Chicken.java
+
 ```
 public class Chicken extends Animal {
   int wings;
+  
+  @Override
+  String getInfo() {
+    return name + ", " + legs + " legs, " + wings + " wings";
+  }
 }
 ```
