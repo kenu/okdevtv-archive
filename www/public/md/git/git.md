@@ -13,6 +13,12 @@
 * http://rankedin.kr
   * GitHub 활동하는 한국인 개발자
 
+## install
+* https://git-scm.com
+* `brew install git`
+* `yum install git`
+* `apt install git`
+
 ## 저장소 구조
 * local workspace
 * local stage
