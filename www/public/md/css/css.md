@@ -22,12 +22,15 @@
 * white, black, gray, red, green, blue, yellow, orange
 * #RGB 레드, 그린, 블루
 * 0,1,2,...,9,a,b,c,d,e,f 16진수
-* #000 #000000 black
-* #888 #888888 gray
-* #fff #ffffff white
-* #f00 #ff0000 red
-* #0f0 #00ff00 green
-* #00f #0000ff blue
+
+| #RGB | #RRGGBB | color |
+|---|---|---|
+| #000 | #000000 | black |
+| #888 | #888888 | gray  |
+| #fff | #ffffff | white |
+| #f00 | #ff0000 | red   |
+| #0f0 | #00ff00 | green |
+| #00f | #0000ff | blue  |
 
 ## 크기
 * 16px 12pt 1.0em 100%
