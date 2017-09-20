@@ -485,7 +485,7 @@ sudo vi /etc/nginx/nginx.conf
         }
 ```
 * nginx 재시작
-  * `sudo service nginx restart`
+  * `sudo service nginx start`
 * 5601 포트는 막고 80으로만 접속
 
 ## Kibana with PM2
