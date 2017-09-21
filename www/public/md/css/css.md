@@ -16,6 +16,7 @@
 * HTML 요소(element)를 선택하는 기술
 * 타입, id, 클래스 3가지 기본 방식
 * 속성, 유사 클래스, 유사 요소, 조합으로 선택
+* CSS Selector https://okky.kr/article/197120
 
 ## 색상
 * 색상 영어 단어 또는 칼라코드
