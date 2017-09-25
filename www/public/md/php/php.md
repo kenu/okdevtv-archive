@@ -37,7 +37,7 @@ start nginx
 php-cgi.exe -b 127.0.0.1:9000
 ```
 
-## check process
+### check process
 
 ```
 tasklist /fi "imagename eq nginx.exe"
@@ -50,6 +50,20 @@ nginx -s stop
 ```
 
   * close `php-cgi.exe` window
+
+
+## Reserved Keywords
+
+* Read Environment Variables
+```
+$_ENV["USER"]
+```
+
+* Web root path
+```
+$_SERVER['DOCUMENT_ROOT']
+```
+
 
 ## ref
 * 윈도우(Windows) nginx와 php 연동하기
