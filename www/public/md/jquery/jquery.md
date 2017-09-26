@@ -11,7 +11,7 @@
 ## jQuery 기본
 * selector
 * utility
-* `<script src="http://code.jquery.com/jquery-1.11.1.js"></script>`
+* `<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>`
 * `jQuery === $`
 * DOM을 찾아서,
 * 제어한다
