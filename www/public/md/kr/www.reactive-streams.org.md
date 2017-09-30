@@ -1,10 +1,11 @@
 ## 리액티브 스트림 Reactive Streams
+원본: http://www.reactive-streams.org/
 
 리액티브 스트림은 non-blocking back pressure으로 비동기 스트림 처리를 위한 표준을 제공하기 위한 이니셔티브입니다. 여기에는 런타임 환경 (JVM 및 JavaScript)과 네트워크 프로토콜을 위한 노력이 포함됩니다.
 
-뉴스 : JDK9 `java.util.concurrent.Flow`
+## 뉴스 : JDK9 `java.util.concurrent.Flow`
 
-JDK9의 `java.util.concurrent.Flow` 에서 사용할 수 있는 인터페이스는 각각의 리액티브 스트림 대응물과 의미 상으로 1:1입니다. 즉, 철학 기간이 있을 것이며 라이브러리는 JDK에서 새로운 유형을 채택하기 위해 이동하지만 이 기간은 곧 라이브러리의 전체 의미론적 동일성 및 곧 출시될 리액티브 스트림 릴리스로 인해 짧을 것으로 예상됩니다. 컨버터 라이브러리는 물론 JDK 유형과 직접 호환되는 TCK를 지원합니다.
+JDK9의 <a href="http://download.java.net/java/jdk9/docs/api/java/util/concurrent/Flow.html">`java.util.concurrent.Flow`</a> 에서 사용할 수 있는 인터페이스는 각각의 리액티브 스트림 대응물과 의미상으로 1:1입니다. 즉, 철학 기간이 있을 것이며 라이브러리는 JDK에서 새로운 유형을 채택하기 위해 이동하지만 이 기간은 곧 라이브러리의 전체 의미론적 동일성 및 곧 출시될 리액티브 스트림 릴리스로 인해 짧을 것으로 예상됩니다. 컨버터 라이브러리는 물론 JDK 유형과 직접 호환되는 TCK를 지원합니다.
 
 JVM용 `Reactive Streams`에 대해 더 자세히 배우고 싶다면 <a href="https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.1/README.md">이 글</a>을 읽으십시오.
 
@@ -26,10 +27,10 @@ JVM용 `Reactive Streams`에 대해 더 자세히 배우고 싶다면 <a href="h
 
 ### 워킹 그룹
 #### 기본 의미
-기본 의미론은 역류를 통해 흐름 요소의 전달이 조절되는 방법을 정의합니다. 요소가 전송되는 방법, 전송 중 표시 또는 역 압력이 신호되는 방법은 이 스펙의 일부가 아닙니다.
+기본 의미론은 back-pressure를 통해 흐름 요소의 전달이 조절되는 방법을 정의합니다. 요소가 전송되는 방법, 전송 중 표시 또는 back-pressure의 신호 방법은 이 스펙의 일부가 아닙니다.
 
 #### JVM 인터페이스 (완료)
-이 워킹 그룹은 공유 메모리 힙을 사용하여 JVM 내의 객체와 스레드간에 스트림을 전달하기 위해 서로 다른 구현 및 언어 바인딩의 상호 운용을 허용하는 것을 주된 목적으로 하는 프로그래밍 인터페이스 세트에 기본 의미를 적용합니다.
+이 워킹 그룹은 공유 메모리 힙을 사용하여 JVM 내의 객체와 스레드 간에 스트림을 전달하기 위해 서로 다른 구현 및 언어 바인딩의 상호 운용을 허용하는 것을 주된 목적으로 하는 프로그래밍 인터페이스 세트에 기본 의미를 적용합니다.
 
 현재 2017년 8월 9일 우리는 자바를 포함한 JVM에 대한 반응성 스트림 버전 1.0.1을 릴리스했습니다. <a href="http://www.reactive-streams.org/reactive-streams-1.0.1-javadoc">API</a>, 텍스트 <a href="https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.1/README.md#specification">스펙</a>, <a href="http://www.reactive-streams.org/reactive-streams-tck-1.0.1-javadoc">TCK 및 <a href="http://www.reactive-streams.org/reactive-streams-examples-1.0.1-javadoc">구현 예제</a>. Maven Central에서 해당 코드 아티팩트를 사용할 수 있습니다:
 
