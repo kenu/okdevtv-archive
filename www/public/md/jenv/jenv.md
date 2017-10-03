@@ -10,6 +10,7 @@
 * `jenv list java`
 
 ## set jdk
+* for redistribution issue download and install from oracle http://java.sun.com
 ```
 mkdir -p $HOME/.jenv/candidates/java
 ln -s /Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home $HOME/.jenv/candidates/java/9
@@ -22,3 +23,12 @@ java version "9"
 Java(TM) SE Runtime Environment (build 9+181)
 Java HotSpot(TM) 64-Bit Server VM (build 9+181, mixed mode)
 ```
+
+```
+jenv list
+jenv default java 1.8.0_144
+```
+
+
+## ref
+* http://www.jenv.be/ Another jenv 
