@@ -11,6 +11,7 @@
 
 ## set jdk
 * for redistribution issue download and install from oracle http://java.sun.com
+
 ```
 mkdir -p $HOME/.jenv/candidates/java
 ln -s /Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home $HOME/.jenv/candidates/java/9
@@ -31,4 +32,4 @@ jenv default java 1.8.0_144
 
 
 ## ref
-* http://www.jenv.be/ Another jenv 
+* http://www.jenv.be/ Another jenv
