@@ -1,8 +1,9 @@
 # Regular Expressions
 * 정규 표현식
-* `\d`
-* `\w`
+* `\d` : digits
+* `\w` : [a-zA-Z0-9_]
 * `.` : all
+* `\s` : whitespaces
 * `//` : pattern
 * `(a|b)` : a or b
 * `^` : line start
