@@ -5,9 +5,6 @@
 * `.` : all
 * `\s` : whitespaces
 * `//` : pattern
-* `(a|b)` : a or b
-* `^` : line start
-* `$` : line end
 
 ## Flags
 * `//g` : global
@@ -18,6 +15,12 @@
 * `[^abc]` : Matches any character except for an a, b or c
 * `a{3}` : Matches exactly 3 consecutive `a` characters.
 * `a{3,}` : Matches at least 3 consecutive `a` characters.
+* `(a|b)` : a or b
+
+## anchor tokens
+* `\b` : word boundary
+* `^` : line start
+* `$` : line end
 
 ## ref
 * https://regex101.com
