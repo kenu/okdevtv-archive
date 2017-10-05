@@ -6,6 +6,18 @@
 
 ## Install
 * Docker.dmg 엔진 다운받아 복사 후 실행
+* mac
+```
+brew install docker docker-compose docker-machine xhyve docker-machine-driver-xhyve
+sudo chown root:wheel /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+sudo chmod u+s /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve\nsudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+docker-machine create default --driver xhyve --xhyve-experimental-nfs-share
+eval $(docker-machine env default)
+docker run hello-world
+```
+
+## Basic keywords
 ```
 docker ps
 docker info
