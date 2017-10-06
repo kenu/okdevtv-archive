@@ -34,7 +34,7 @@ brew cask install webpquicklook
 
 ## limit
 * only in Chrome and Android, not Safari, Firefox and IE  
-<img src="images/caniuse.png" alt="webp limited" style="width: 80%"/>
+<img src="images/caniuse.png" alt="webp limited" class="img"/>
 * check : http://caniuse.com/#feat=webp
 
 ## ref

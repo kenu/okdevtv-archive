@@ -38,14 +38,14 @@
 * 다양한 안드로이드 버전 중에서 개발할 버전 선택
 * 느린 에뮬레이터 사용보다는 실제 기기 연결 권장
 * 또는 VirtualBox 기반의 Genymotion 권장 ( http://www.genymotion.com/ )
-* <img src="/images/android/android-sdk-01.png" alt="SDK Manager" style="max-width: 320px;">
+* <img src="/images/android/android-sdk-01.png" alt="SDK Manager" class="img">
 * <img src="/images/android/android-sdk-02.png" alt="Select and install target version">
 * <img src="/images/android/android-sdk-03.png" alt="SDK installed">
-* <img src="/images/android/android-avd-01.png" alt="AVD Manager" style="max-width: 320px;">
+* <img src="/images/android/android-avd-01.png" alt="AVD Manager" class="img">
 
 ## 실행
-* <img src="/images/android/android-studio-01.png" alt="Run" style="max-width: 320px;">
-* <img src="/images/android/android-studio-02-choose.png" alt="Choose Devices" style="max-width: 490px;">
+* <img src="/images/android/android-studio-01.png" alt="Run" class="img">
+* <img src="/images/android/android-studio-02-choose.png" alt="Choose Devices" class="img">
 
 ## 참고
 * 안드로이드 스튜디오 가이드

@@ -4,12 +4,12 @@
 * Call Stack
 * Heap Memory
 
-<img src="https://cdn-images-1.medium.com/max/1600/1*OnH_DlbNAPvB9KLxUCyMsA.png" alt="JS Engine" style="width: 90%; max-width: 480px;">
+<img src="https://cdn-images-1.medium.com/max/1600/1*OnH_DlbNAPvB9KLxUCyMsA.png" alt="JS Engine" class="img">
 
 ## Browser
 * Engine + WebAPI + Event Loop + Callback Queue
 
-<img src="https://cdn-images-1.medium.com/max/1600/1*4lHHyfEhVB0LnQ3HlhSs8g.png" alt="Browser components" style="width: 90%; max-width: 480px;">
+<img src="https://cdn-images-1.medium.com/max/1600/1*4lHHyfEhVB0LnQ3HlhSs8g.png" alt="Browser components" class="img">
 
 ## JS Engines
 * V8 — open source, developed by Google, written in C++

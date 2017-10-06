@@ -14,12 +14,12 @@
 ## node.js 개요
 
 ```
-Node.js® is a platform 
-built on Chrome's JavaScript runtime 
-for easily building fast, scalable network applications. 
-Node.js uses an event-driven, non-blocking I/O model 
-that makes it lightweight and efficient, perfect 
-for data-intensive real-time applications 
+Node.js® is a platform
+built on Chrome's JavaScript runtime
+for easily building fast, scalable network applications.
+Node.js uses an event-driven, non-blocking I/O model
+that makes it lightweight and efficient, perfect
+for data-intensive real-time applications
 that run across distributed devices.
 ```
 
@@ -67,7 +67,7 @@ that run across distributed devices.
   * L1: 3 cycles
   * L2: 14 cycles
   * RAM: 250 cycles
-  * DISK: 41,000,000 cycles 
+  * DISK: 41,000,000 cycles
   * NETWORK: 240,000,000 cycles
 
 from: https://www.dropbox.com/s/o9g4m7tug3yt1xx/jsconf2009-nodejs.pdf?dl=0
@@ -80,7 +80,7 @@ var result = db.query("select * from T");
 
 * non-blocking code
 ```
-db.query("select * from T", 
+db.query("select * from T",
   function(result) {
     // use result
   }
@@ -90,7 +90,7 @@ db.query("select * from T",
 
 ### 이벤트 루프
 
-<img src="images/event-loop.png" alt="event loop" style="width: 80%"/>
+<img src="images/event-loop.png" alt="event loop" class="img"/>
 
 from [blog.udemy.com/learn-node-js/](https://lh4.googleusercontent.com/pwtI1uBbT5Gthva6sGtKu_L3Ih3w2oxt-LA28mEamjrz6dKl87NFKiTxgzlHfGhIuFF107PxLFeWMdc8z3dchWtpqpcaqE4D4nrcSx3UQmfEDmJTL_LzNKQVjg)
 
@@ -102,11 +102,11 @@ from [blog.udemy.com/learn-node-js/](https://lh4.googleusercontent.com/pwtI1uBbT
 
 ### 안티 패턴
 ```
-“헤이, probablyExpensiveFunction(), 니 일을 해줘. 
-하지만 나 Single Node.js 쓰레드는 네가 끝낼 때까지 여기서 기다리지 않을거야. 
-네 아래에 있는 코드 라인을 계속 실행할거야. 
-그러니 여기 이 callbackFunction()을 가져가서 
-네가 너의 비싼 일을 모두 끝냈을 때 호출해 주겠니? 
+“헤이, probablyExpensiveFunction(), 니 일을 해줘.
+하지만 나 Single Node.js 쓰레드는 네가 끝낼 때까지 여기서 기다리지 않을거야.
+네 아래에 있는 코드 라인을 계속 실행할거야.
+그러니 여기 이 callbackFunction()을 가져가서
+네가 너의 비싼 일을 모두 끝냈을 때 호출해 주겠니?
 고마워!”
 ```
 from: http://www.nodebeginner.org/index-kr.html#how-to-not-do-it
@@ -253,10 +253,10 @@ app.listen(3000, function () {
   * express.js의 scafold 코드 생성
   * `express myweb`
   * `cd myweb && npm install`
-  * run `npm start` 
-    * or `node bin/www` 
-    * or `DEBUG=myweb:* node bin/www` 
-  
+  * run `npm start`
+    * or `node bin/www`
+    * or `DEBUG=myweb:* node bin/www`
+
 ### basic routing
 * `app.METHOD(PATH, HANDLER)`
   * app is an instance of express.
@@ -302,9 +302,9 @@ app.delete('/user', function (req, res) {
 * http://expressjs.com/en/guide/routing.html
 
 ### methods
-get, post, put, head, delete, options, trace, 
-copy, lock, mkcol, move, purge, propfind, proppatch, 
-unlock, report, mkactivity, checkout, merge, m-search, 
+get, post, put, head, delete, options, trace,
+copy, lock, mkcol, move, purge, propfind, proppatch,
+unlock, report, mkactivity, checkout, merge, m-search,
 notify, subscribe, unsubscribe, patch, search, connect.
 
 * all
@@ -419,7 +419,7 @@ console.log('hello');
 
 ## email
 * node-emailer
-* gmail smtp 설정 필요 
+* gmail smtp 설정 필요
   * https://www.google.com/settings/security/lesssecureapps
 
 ## Test Frameworks
@@ -482,9 +482,9 @@ $ npm install
 
 
 ## 영상
-1. 개요, 설치  https://www.youtube.com/watch?v=Z8cOppJwOeU 
-2. socket.io, express.js https://www.youtube.com/watch?v=YWaoLdoqSWE 
-3. express.js basic routing https://www.youtube.com/watch?v=KOtEZ0j0cic 
+1. 개요, 설치  https://www.youtube.com/watch?v=Z8cOppJwOeU
+2. socket.io, express.js https://www.youtube.com/watch?v=YWaoLdoqSWE
+3. express.js basic routing https://www.youtube.com/watch?v=KOtEZ0j0cic
 4. express.js api https://www.youtube.com/watch?v=-nHp0D4n4Do
 5. express.js resources https://www.youtube.com/watch?v=4bIIX07vN-8
 6. mariadb 연결(Windows) https://www.youtube.com/watch?v=VTBACySodEc
@@ -494,7 +494,7 @@ $ npm install
 10. jade 2 ejs template https://www.youtube.com/watch?v=IeOoN1LZ4f0
 11. Express + MariaDB(mysql) Web App https://www.youtube.com/watch?v=UocHh8604Lc
 12. Async, Nested SQL https://www.youtube.com/watch?v=PJ7fQnDLmWg
-13. email 
+13. email
 
 ## 참고
 * node.js

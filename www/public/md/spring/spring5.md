@@ -2,7 +2,7 @@
 * for reactive
 * Spring WebFlux
 
-* <img src="https://spring.io/img/homepage/diagram-boot-reactor.svg" alt="boot-reactor" />
+* <img src="https://spring.io/img/homepage/diagram-boot-reactor.svg" alt="boot-reactor" class="img"/>
 
 * Reactive
   * http://www.reactive-streams.org/

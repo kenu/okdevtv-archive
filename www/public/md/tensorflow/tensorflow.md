@@ -92,17 +92,17 @@ for step in range(201):
 * code from : https://www.tensorflow.org/get_started/
 
 ## Linear Regression
-<img src="images/Linear_regression.png" style="width: 80%; max-width: 500px;"/>
+<img src="images/Linear_regression.png" class="img"/>
 
 ### Gradient Descent Method
 * 경사하강법
 * `tf.train.GradientDescentOptimizer()`
-* <img src="images/Gradient_descent.png" style="width: 80%; max-width: 500px;"/>
-* <img src="images/Gradient_descent_2d.jpg" style="width: 80%; max-width: 500px;"/>
+* <img src="images/Gradient_descent.png" class="img"/>
+* <img src="images/Gradient_descent_2d.jpg" class="img"/>
 
 ## Logistic Regression
 * <img src="images/logistic-equation.png" />
-* <img src="images/Logistic-curve.png" style="width: 80%; max-width: 500px;"/>
+* <img src="images/Logistic-curve.png" class="img"/>
 * 0 or 1
 * True of False
 
@@ -157,9 +157,9 @@ for step in range(201):
 * 레이어간 영향을 주는 NN
 * speech recognition, language modeling, translation, image captioning…
 * loop rnn
-  * <img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-rolled.png" style="width: 100px;">
+  * <img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-rolled.png" class="img">
 * unrolled
-  * <img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png" style="width: 650px;">
+  * <img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png" class="img">
 * image from: http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
 
