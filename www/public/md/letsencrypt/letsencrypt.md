@@ -46,8 +46,6 @@ certbot-auto certonly --standalone --debug -d okdevtest.net
 ```
 cd /etc/letsencrypt/archive/okdevtest.net
 openssl dhparam -out dhparams.pem 2048
-cd /etc/letsencrypt/live/okdevtest.net
-ln -s ../../archive/okdevtest.net/dhparams.pem dhparams.pem
 ```
 
 ## 인증서 확인
