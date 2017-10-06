@@ -50,7 +50,7 @@ openssl dhparam -out dhparams.pem 2048
 
 ## 인증서 확인
 ```
-# sudo ls /etc/letsencrypt/live/okdevtest.net/
+# ls /etc/letsencrypt/live/okdevtest.net/
 cert.pem  chain.pem  fullchain.pem  privkey.pem
 ```
 
