@@ -5,7 +5,7 @@
 * Continous Integration Tool
 
 ## Requirements
-* JVM
+* java 8+
 
 ## Install and Run
 * mac
@@ -15,14 +15,14 @@ jenkins
 ```
 
 * others
-* download `jenkins.war`
-* run
+  * download `jenkins.war`
+  * run
 ```
-java -jar jenkins.war
+java -jar jenkins.war --httpPort=9090
 ```
 
 ## Configure admin
 * copy code and paste it
 
 ## ref
-* http://okjsp.tistory.com/tag/hudson 
+* http://okjsp.tistory.com/tag/hudson
