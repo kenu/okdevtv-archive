@@ -25,3 +25,9 @@ Spring FrameWork(전부)
 * Aspect Oriented Programming
 * Advice, Pointcut, Weaving
 * Portable Service Abstractions
+
+CI
+* Automation
+
+SonarQube
+* Code Quality
