@@ -1,12 +1,19 @@
 # Regular Expressions
 * 정규 표현식
+
+## Syntax
+```
+/pattern/modifiers
+```
+
+## Pattern
 * `\d` : digits
 * `\w` : [a-zA-Z0-9_]
 * `.` : all
 * `\s` : whitespaces
 * `//` : pattern
 
-## Flags
+## Modifiers(Flags)
 * `//g` : global
 * `//i` : ignore case
 * `//m` : multi line
@@ -21,6 +28,15 @@
 * `\b` : word boundary
 * `^` : line start
 * `$` : line end
+
+## replace
+```javascript
+var re = /(\w+)\s(\w+)/;
+var str = 'John Smith';
+str.replace(re, '$2, $1'); // "Smith, John"
+RegExp.$1; // "John"
+RegExp.$2; // "Smith"
+```
 
 ## ref
 * https://regex101.com
