@@ -114,7 +114,7 @@ public class ExampleBean implements InitializingBean {
 ```java
 public class ExampleBean implements DisposableBean {
         public void destroy() {
-           // do some destruction work
+           System.out.println("destroy");
         }
 }
 ```
