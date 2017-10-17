@@ -1,3 +1,5 @@
+# Linux command
+
 # Linux
 
 * 1991 Linus Torvalds
@@ -24,6 +26,13 @@
 
 ## Port check
 * `lsof -i tcp:3000`
+
+* 열린 포트 확인
+```
+lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
+*:27017 mongod
+*:8082 node
+```
 
 ## LC_CTYPE warning
 * /etc/environment
@@ -109,6 +118,14 @@ htop -p "$(pgrep -vfd, 'java|python')"
   * https://okdevtv.com/mib/linux/curl
 * cron
   * https://okdevtv.com/mib/linux/cron
+
+* 열린 포트 확인
+```
+lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
+*:27017 mongod
+*:8082 node
+```
+
 
 ## Ref
 * vi 에디터에서 utf8, euc-kr 전환하기
