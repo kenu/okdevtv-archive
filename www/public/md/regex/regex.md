@@ -40,3 +40,4 @@ RegExp.$2; // "Smith"
 
 ## ref
 * https://regex101.com
+* https://www.w3schools.com/js/js_regexp.asp
