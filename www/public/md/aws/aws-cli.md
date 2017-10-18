@@ -1,9 +1,18 @@
 # aws cli
+* https://aws.amazon.com/ko/cli/
+* AWS Command Line Interface
+* EC2, S3 등을 명령어로 제어
 
+## 절차
+* IAM에서 계정 생성
+  * https://console.aws.amazon.com/iam/home
+* credentials 등록 후 사용
 
+## 설치
+*
 ```
 wget https://bootstrap.pypa.io/get-pip.py
-sudo python get-pip.py 
+sudo python get-pip.py
 sudo pip install awscli
 ```
 
@@ -16,26 +25,7 @@ Default output format [None]: json
 
 aws ec2 describe-instances
 ```
-
-### EC2 security key 생성
-
-```
-aws ec2 create-security-group --group-name okdevtv-sg --description "okdevtv security group"
-aws ec2 authorize-security-group-ingress --group-name okdevtv-sg --protocol tcp --port 22 --cidr 0.0.0.0/0
-aws ec2 describe-security-groups
-#devenv-key.pem 생성 후 퍼미션 400으로 조정
-aws ec2 create-key-pair --key-name devenv-key --query 'KeyMaterial' --output text > devenv-key.pem
-chmod 400 devenv-key.pem
-```
-
-### EC2 instance 생성
-
-```
-#ami-4d1fd123 이미지 목록에서 확인
-aws ec2 describe-images --owners self amazon --filter "Name=root-device-type,Values=ebs" | grep ami-4d1fd123
-#EC2 t2.micro 인스턴스 생성
-aws ec2 run-instances --image-id ami-4d1fd123 --security-group-ids okdevtv-sg --count 1 --instance-type t2.micro --key-name devenv-key --query 'Instances[0].InstanceId'
-```
+## S3
 
 ### s3 create-bucket
 ```
@@ -57,7 +47,29 @@ aws configure
 aws s3 cp file s3://bucketName/
 ```
 
-## 참고: 
+## EC2
+
+### EC2 security key 생성
+
+```
+aws ec2 create-security-group --group-name okdevtv-sg --description "okdevtv security group"
+aws ec2 authorize-security-group-ingress --group-name okdevtv-sg --protocol tcp --port 22 --cidr 0.0.0.0/0
+aws ec2 describe-security-groups
+#devenv-key.pem 생성 후 퍼미션 400으로 조정
+aws ec2 create-key-pair --key-name devenv-key --query 'KeyMaterial' --output text > devenv-key.pem
+chmod 400 devenv-key.pem
+```
+
+### EC2 instance 생성
+
+```
+#ami-4d1fd123 이미지 목록에서 확인
+aws ec2 describe-images --owners self amazon --filter "Name=root-device-type,Values=ebs" | grep ami-4d1fd123
+#EC2 t2.micro 인스턴스 생성
+aws ec2 run-instances --image-id ami-4d1fd123 --security-group-ids okdevtv-sg --count 1 --instance-type t2.micro --key-name devenv-key --query 'Instances[0].InstanceId'
+```
+
+## 참고:
 * Deploying a Development Environment in Amazon EC2 Using the AWS Command Line Interface
   * http://docs.aws.amazon.com/cli/latest/userguide/tutorial-ec2-ubuntu.html
 * Finding a Linux AMI
