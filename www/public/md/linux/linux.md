@@ -24,6 +24,12 @@
 ## File opened count
 * `lsof | wc -l`
 
+## inode file rm
+```
+ls -altri
+find . -inum 782263 -exec rm -i {} \;
+```
+
 ## Port check
 * `lsof -i tcp:3000`
 
