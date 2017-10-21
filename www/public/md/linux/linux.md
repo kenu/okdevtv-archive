@@ -119,12 +119,6 @@ htop
 htop -p "$(pgrep -vfd, 'java|python')"
 ```
 
-## other topics
-* curl
-  * https://okdevtv.com/mib/linux/curl
-* cron
-  * https://okdevtv.com/mib/linux/cron
-
 * 열린 포트 확인
 ```
 lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
@@ -132,6 +126,10 @@ lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
 *:8082 node
 ```
 
+## other topics
+* [cron](https://okdevtv.com/mib/linux/cron)
+* [curl](https://okdevtv.com/mib/linux/curl)
+* [pigz](https://okdevtv.com/mib/linux/pigz) : parallel gzip
 
 ## Ref
 * vi 에디터에서 utf8, euc-kr 전환하기
