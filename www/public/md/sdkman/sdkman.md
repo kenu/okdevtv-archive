@@ -8,3 +8,4 @@
 
 ## version
 * `sdk install springboot 1.5.6.RELEASE`
+* `sdk default springboot 1.5.8.RELEASE`
