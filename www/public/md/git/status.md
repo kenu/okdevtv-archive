@@ -7,11 +7,13 @@ Your branch and 'origin/master' have diverged,
 and have 2 and 7 different commits each, respectively.
   (use "git pull" to merge the remote branch into yours)
 ```
+
 * Status
 <img src="images/branch-diverged.png" alt="branch diverged" class="img">
 
 
 * Solve
+
 ```
 # folder backup
 # git local commit
