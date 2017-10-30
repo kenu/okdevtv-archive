@@ -45,7 +45,7 @@ pip install jupyter matplotlib
 jupyter notebook
 deactivate
 
-# install nginx 
+# install nginx
 yum install epel-release
 yum install nginx -y
 cd /etc/nginx/conf.d
@@ -55,12 +55,16 @@ vi default.conf
 
 ```
     location / {
-        proxy_pass http://localhost:8888;
+        sendfile off;
+        proxy_pass         http://127.0.0.1:8888;
+        proxy_redirect     default;
         proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Real-IP         $remote_addr;
+        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
         proxy_cache_bypass $http_upgrade;
+        proxy_max_temp_file_size 0;
     }
 ```
 

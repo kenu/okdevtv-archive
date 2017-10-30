@@ -118,12 +118,16 @@ http {
         include /etc/nginx/default.d/*.conf;
 
         location / {
-                proxy_pass http://localhost:8080;
+                sendfile off;
+                proxy_pass         http://127.0.0.1:8080;
+                proxy_redirect     default;
                 proxy_http_version 1.1;
-                proxy_set_header Upgrade $http_upgrade;
-                proxy_set_header Connection 'upgrade';
-                proxy_set_header Host $host;
+                proxy_set_header   Host              $host;
+                proxy_set_header   X-Real-IP         $remote_addr;
+                proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+                proxy_set_header   X-Forwarded-Proto $scheme;
                 proxy_cache_bypass $http_upgrade;
+                proxy_max_temp_file_size 0;
         }
 
         # redirect server error pages to the static page /40x.html
@@ -160,12 +164,16 @@ ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA
         access_log  /var/log/nginx/access.log  main;
 
         location / {
-            proxy_pass http://localhost:8080;
+            sendfile off;
+            proxy_pass         http://127.0.0.1:9090;
+            proxy_redirect     default;
             proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection 'upgrade';
-            proxy_set_header Host $host;
+            proxy_set_header   Host              $host;
+            proxy_set_header   X-Real-IP         $remote_addr;
+            proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+            proxy_set_header   X-Forwarded-Proto $scheme;
             proxy_cache_bypass $http_upgrade;
+            proxy_max_temp_file_size 0;
         }
 
 
