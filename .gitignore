@@ -11,3 +11,5 @@ class
 .DS_Store
 .sonar
 .scannerwork
+.idea
+*.iml
