@@ -78,6 +78,7 @@ TZ='Asia/Seoul'; export TZ
 * for cron
 ```
 sudo cp -p /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+sudo service crond restart
 ```
 
 ## sudo
