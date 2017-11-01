@@ -75,6 +75,11 @@ date -d "3days ago" '+%Y-%m-%d %H' # bash
 TZ='Asia/Seoul'; export TZ
 ```
 
+* for cron
+```
+sudo cp -p /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+```
+
 ## sudo
 ```
 # vi /etc/sudoers
