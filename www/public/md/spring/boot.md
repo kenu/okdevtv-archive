@@ -91,6 +91,46 @@ public class Example {
 </project>
 ```
 
+## Executable JAR,WAR
+* 리눅스에서 단독 실행 가능한 `*.jar`, `*.war`
+* 윈도우는 `java -jar` 필요
+* `pom.xml`
+```
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <version>1.5.8.RELEASE</version>
+    <configuration>
+        <executable>true</executable>
+    </configuration>
+</plugin>
+```
+
+* 실행
+```
+./spring-boot-jsp.jar
+```
+
+## Spring Boot as a Service
+* Executable JAR 필요
+* 심볼릭 링크 이용
+* `sudo service myapp start`, `stop`, `restart` 가능
+```
+chmod 755 /path/to/myspringboot.jar
+sudo ln -s /path/to/myspringboot.jar /etc/init.d/myapp
+```
+* run
+```
+sudo service myapp start
+curl localhost:8080
+```
+* stop
+```
+sudo service myapp stop
+sudo rm /etc/init.d/myapp
+```
+
+* ref : https://stackoverflow.com/questions/21503883/spring-boot-application-as-a-service
 
 ## Migration to Spring Boot
 * http://www.baeldung.com/spring-boot-migration
