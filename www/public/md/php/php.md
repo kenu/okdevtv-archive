@@ -64,6 +64,8 @@ $_ENV["USER"]
 $_SERVER['DOCUMENT_ROOT']
 ```
 
+## function
+
 
 ## ref
 * 윈도우(Windows) nginx와 php 연동하기
