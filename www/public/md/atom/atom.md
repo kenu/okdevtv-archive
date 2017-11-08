@@ -16,6 +16,7 @@ atom .
 * open Settings : ctrl + `,`, cmd + `,`
 
 ## Useful plugins
+* https://atom.io/packages/platformio-ide-terminal
 * markdown-preview
 * emmet
 
@@ -32,6 +33,9 @@ atom .
 apm install emmet
 Installing emmet to /Users/kenu/.atom/packages ✓
 ```
+
+## Git
+* Toggle git tab : `^` + `(`
 
 ## image embed
 * ctrl + shift + i
