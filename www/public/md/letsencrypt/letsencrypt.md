@@ -108,7 +108,7 @@ http {
         listen       80;
         listen       [::]:80;
         server_name  okdevtest.net;
-        return 301 https://$host$request_uri;
+#        return 301 https://$host$request_uri;
 
 
 
@@ -258,6 +258,9 @@ pip install virtualenv
 * http vs https
 * http://www.wireshark.org
 
+## 크롬 https 도메인 캐쉬 삭제 방법
+* 주소창에서 `chrome://net-internals/#hsts` 입력
+* delete domain 에서 도메인 입력 후 delete 하면 http로 접속 가능
 
 ## 참고
 * SSL Test
