@@ -30,6 +30,12 @@ ls -altri
 find . -inum 782263 -exec rm -i {} \;
 ```
 
+## nobody 소유의 폴더 찾기
+```
+find  . -type d  -user nobody
+```
+
+
 ## Port check
 * `lsof -i tcp:3000`
 
