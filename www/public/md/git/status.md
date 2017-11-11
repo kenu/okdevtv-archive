@@ -78,3 +78,17 @@ git diff commit_id HEAD
 git difftool HEAD^ HEAD
 ```
 * from https://stackoverflow.com/questions/9903541/finding-diff-between-current-and-last-versions
+
+## errors
+* The remote end hung up unexpectedly
+```
+fatal: The remote end hung up unexpectedly
+fatal: early EOF
+fatal: index-pack failed
+```
+
+* Solve
+
+```
+git config http.postBuffer 724288000
+```
