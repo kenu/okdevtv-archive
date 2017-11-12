@@ -32,9 +32,13 @@ find . -inum 782263 -exec rm -i {} \;
 
 ## nobody 소유의 폴더 찾기
 ```
-find  . -type d  -user nobody
+find . -type d  -user nobody
 ```
 
+## 심볼릭 링크 찾기
+```
+find . -type l
+```
 
 ## Port check
 * `lsof -i tcp:3000`
@@ -66,6 +70,7 @@ for file in *.csv; do
     iconv -f euc-kr -t utf-8 "$file" > "utf8/${file%.csv}.utf8.csv"
 done
 ```
+
 ## date
 ```
 date '+%Y%m%d %H%M%S' # today
