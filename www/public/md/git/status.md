@@ -52,10 +52,20 @@ gitk
 git checkout b1fea8b -- server.js
 ```
 
+## 파일 하나 unstage
+```
+git checkout -- server.js
+```
+
 ## git diff
 * 이전 파일과 비교
 ```
 git diff HEAD^ HEAD
+```
+
+* 브랜치 파일 비교
+```
+git diff develop master path/to/file
 ```
 
 * As of Git 1.8.5, @ is an alias for HEAD, so you can use:
