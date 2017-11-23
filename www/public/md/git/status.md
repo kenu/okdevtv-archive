@@ -52,6 +52,12 @@ gitk
 git checkout b1fea8b -- server.js
 ```
 
+## Commit 롤백
+```
+git revert HEAD
+git revert hashhash
+```
+
 ## 파일 하나 unstage
 ```
 git checkout -- server.js
