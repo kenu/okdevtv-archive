@@ -36,6 +36,12 @@ GRANT SELECT, SHOW VIEW ON devdb.* TO devuser2@localhost
 IDENTIFIED BY 'devpass';
 ```
 
+* role account
+```
+GRANT TRIGGER, SELECT, SHOW VIEW ON devdb.* TO devuser2@localhost
+IDENTIFIED BY 'devpass';
+```
+
 
 ## Timezone
 ```
@@ -43,6 +49,11 @@ sudo cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 sudo service mysql restart
 ```
 
+
+## all process
+```
+show processlist;
+```
 
 ## MariaDB on ubuntu
 * https://downloads.mariadb.org/mariadb/repositories/#mirror=kaist
