@@ -17,6 +17,7 @@ atom .
 
 ## Useful plugins
 * https://atom.io/packages/platformio-ide-terminal
+* https://atom.io/packages/open-terminal-here
 * markdown-preview
 * emmet
 
