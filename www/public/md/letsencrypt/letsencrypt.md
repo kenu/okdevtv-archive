@@ -235,6 +235,7 @@ service nginx stop && certbot-auto renew && service nginx start
 ```
 unset PYTHON_INSTALL_LAYOUT
 /root/.local/share/letsencrypt/bin/pip install --upgrade certbot
+/opt/eff.org/certbot/venv/local/bin/pip install --upgrade certbot
 ```
 
 
