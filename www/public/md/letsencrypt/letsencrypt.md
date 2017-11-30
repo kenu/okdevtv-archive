@@ -62,6 +62,12 @@ vi /etc/nginx/nginx.conf
 vi /etc/nginx/conf.d/default.conf
 ```
 
+## WebSocket 추가
+```
+proxy_set_header Upgrade $http_upgrade; # ws
+proxy_set_header Connection "upgrade"; # ws
+```
+
 * nginx.conf 교체, **domain 변경 필요**
 
 ```
@@ -205,7 +211,7 @@ server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
 	server_name _;
-	return 301 https://$host$request_uri;
+	return 307 https://$host$request_uri;
 }
 ```
 * https://bjornjohansen.no/redirect-to-https-with-nginx
