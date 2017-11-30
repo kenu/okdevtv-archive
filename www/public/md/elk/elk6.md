@@ -182,6 +182,8 @@ nohup bin/logstash -f logconf/nginx.conf &
 * Metricbeat : Ship and analyze metrics.
 * Heartbeat : Ping your Infrastructure.
 * Auditbeat : Send audit data to Elasticsearch.
+![Filebeat](images/filebeat.jpg)
+
 
 ## Filebeat with logstash
 * (Optional)
@@ -195,7 +197,7 @@ cd ~/local/logstash
 
 * filebeat 설치
   - log 파일 접근을 위한 권한 필요
- 
+
 ```
 cd ~/local
 wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.0.0-linux-x86_64.tar.gz
