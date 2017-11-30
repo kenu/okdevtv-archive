@@ -174,6 +174,15 @@ bin/logstash -f logconf/nginx.conf
 nohup bin/logstash -f logconf/nginx.conf &
 ```
 
+## Filebeat
+* http://www.elastic.co/downloads/beats/filebeat
+* **Filebeat** : Real-time insight into log data.
+* Packetbeat : Analyze network packet data.
+* Winlogbeat : Analyze Windows event logs.
+* Metricbeat : Ship and analyze metrics.
+* Heartbeat : Ping your Infrastructure.
+* Auditbeat : Send audit data to Elasticsearch.
+
 ## Filebeat with logstash
 * (Optional)
 * logstash forwarder(deprecated) 의 경량(lightweight) 버전
@@ -184,7 +193,7 @@ cd ~/local/logstash
 ```
 
 * filebeat 설치
-
+  - log 파일 접근을 위한 권한 필요
 ```
 cd ~/local
 wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.0.0-linux-x86_64.tar.gz
