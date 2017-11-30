@@ -187,6 +187,7 @@ nohup bin/logstash -f logconf/nginx.conf &
 * (Optional)
 * logstash forwarder(deprecated) 의 경량(lightweight) 버전
 * logstash plugin 설치
+
 ```
 cd ~/local/logstash
 ./bin/logstash-plugin install logstash-input-beats
@@ -194,6 +195,7 @@ cd ~/local/logstash
 
 * filebeat 설치
   - log 파일 접근을 위한 권한 필요
+ 
 ```
 cd ~/local
 wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.0.0-linux-x86_64.tar.gz
