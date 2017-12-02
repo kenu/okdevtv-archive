@@ -83,6 +83,10 @@
 </html>
 ```
 
+## related
+* [Promise](/mib/js/promise)
+
+
 ## ref
 * JS the right way
   * http://jstherightway.org/
