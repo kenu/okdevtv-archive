@@ -123,7 +123,17 @@ find . -type f | grep -v list_files |egrep "gif$|jpg$|jpeg$|svg$|png$|ico$" > li
 tar cvfz img.tgz -T list_img.txt
 ```
 
+## Process 확인
+```
+ps -ef | grep httpd
+ps x -o  "%p %r %c"
+```
 
+* group process kill
+```
+ps -ef | grep httpd
+kill -TERM -- -22590
+```
 
 ## htop
 
