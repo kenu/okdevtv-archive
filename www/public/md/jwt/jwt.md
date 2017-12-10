@@ -54,6 +54,9 @@ Authorization: Bearer <token>
 * `npm install jsonwebtoken`
   * https://github.com/auth0/node-jsonwebtoken
 
+## Usage
+* `jwt.sign(payload, secretOrPrivateKey, [options, callback])`
+
 ## example
 ```javascript
 // sign with default (HMAC SHA256)
