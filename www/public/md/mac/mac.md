@@ -8,14 +8,14 @@
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-* brew install tree
-* brew install wget
+* `brew install tree`
+* `brew install wget`
 
-* brew update
-* brew upgrade
+* `brew update`
+* `brew upgrade`
 
 * 문서
-  * https://git.io/brew-docs
+  * https://docs.brew.sh/
 * 트러블슈팅
   * First, please run `brew update` and `brew doctor`
 
