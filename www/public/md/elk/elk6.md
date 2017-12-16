@@ -174,6 +174,62 @@ bin/logstash -f logconf/nginx.conf
 nohup bin/logstash -f logconf/nginx.conf &
 ```
 
+* **after 6.0**
+  * https://github.com/looplab/logspout-logstash/issues/56
+
+```
+curl 'http://localhost:9200/_template'
+curl -XDELETE 'http://localhost:9200/_template/logstash'
+
+curl -XPUT 'localhost:9200/_template/logstash?pretty' -H 'Content-Type: application/json' -d'
+{
+  "template" : "logstash-*",
+  "version" : 60001,
+  "settings" : {
+    "index.refresh_interval" : "5s"
+  },
+  "mappings" : {
+    "_default_" : {
+      "dynamic_templates" : [ {
+        "message_field" : {
+          "path_match" : "message",
+          "match_mapping_type" : "string",
+          "mapping" : {
+            "type" : "text",
+            "norms" : false
+          }
+        }
+      }, {
+        "string_fields" : {
+          "match" : "*",
+          "match_mapping_type" : "string",
+          "mapping" : {
+            "type" : "text", "norms" : false,
+            "fields" : {
+              "keyword" : { "type": "keyword", "ignore_above": 256 }
+            }
+          }
+        }
+      } ],
+      "properties" : {
+        "@timestamp": { "type": "date"},
+        "@version": { "type": "keyword"},
+        "geoip"  : {
+          "dynamic": true,
+          "properties" : {
+            "ip": { "type": "ip" },
+            "location" : { "type" : "geo_point" },
+            "latitude" : { "type" : "half_float" },
+            "longitude" : { "type" : "half_float" }
+          }
+        }
+      }
+    }
+  }
+}
+'
+```
+
 ## Filebeat
 * http://www.elastic.co/downloads/beats/filebeat
 * **Filebeat** : Real-time insight into log data.
