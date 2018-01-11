@@ -95,6 +95,17 @@ git difftool HEAD^ HEAD
 ```
 * from https://stackoverflow.com/questions/9903541/finding-diff-between-current-and-last-versions
 
+## git log
+* 최근 2일간 계정에 대한 변경 이력
+```
+git log --pretty=format:"%h - %an, %ar : %s" --author kenu.heo --since=2.days
+```
+
+* commit별 변경 파일 목록
+```
+git log --name-only -1 f002a898
+```
+
 ## errors
 * The remote end hung up unexpectedly
 ```
