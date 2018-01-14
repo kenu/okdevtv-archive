@@ -95,7 +95,7 @@ sudo reboot
 ```
 mkdir ~/local
 cd ~/local
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.0.0.tar.gz
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.1.1.tar.gz
 tar xvfz elasticsearch-6.0.0.tar.gz
 ln -s elasticsearch-6.0.0 elasticsearch
 cd elasticsearch
