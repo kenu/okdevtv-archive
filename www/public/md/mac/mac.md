@@ -20,7 +20,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
   * First, please run `brew update` and `brew doctor`
 
 
-## Roll back ro Back Tick(\`) from (₩)
+## Roll back to Back Tick(\`) from (₩)
 ```
 mkdir -p ~/Library/KeyBindings
 vi ~/Library/KeyBindings/DefaultkeyBinding.dict

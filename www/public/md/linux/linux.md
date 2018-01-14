@@ -146,12 +146,17 @@ htop
 htop -p "$(pgrep -vfd, 'java|python')"
 ```
 
-* 열린 포트 확인
+## 열린 포트 확인
 ```
 lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
 *:27017 mongod
 *:8082 node
 ```
+
+## ls for second
+```
+ls -la --time-style=full-iso
+``` 
 
 ## other topics
 * [cron](https://okdevtv.com/mib/linux/cron)

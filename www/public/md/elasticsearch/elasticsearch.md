@@ -88,7 +88,7 @@ curl -XPOST http://localhost:9200/books/book/1 -d '
 curl -XDELETE http://localhost:9200/books/book/1
 ```
 
-## 데이터 배치 입력(_bulk API)
+## 데이터 배치 입력(`_bulk` API)
 * data.txt
 
 ```
@@ -857,7 +857,7 @@ curl 'localhost:9200/books/_search?pretty' -d '
 ```
 
 
-* geo 
+* geo
   * geo_bounding_box
 ```
 curl 'localhost:9200/hotels/_search?pretty' -d '
@@ -930,7 +930,7 @@ curl -XPUT 'http://localhost:9200/books/_mapping/book' -d '
 ### 내장필드
 * 도큐먼트 데이터의 스키마 구조를 정의
 
-* _source
+* `_source`
   * 원본 저장 여부 결정
 
 ```
@@ -979,7 +979,7 @@ curl -XPUT 'http://localhost:9200/books' -d '
 ```
 
 
-* _all
+* `_all`
 ```
 curl -XPUT 'http://localhost:9200/books' -d '
 {
@@ -2198,6 +2198,9 @@ bin/plugin install file:/path/to/master.zip
 * 시작하세요! 엘라스틱서치 by 김종민
   * https://github.com/wikibook/elasticsearch
 * http://elastic.co
+
+* Elasticsearch에서 아리랑 한글 분석기 사용하기
+  * https://www.elastic.co/kr/blog/arirang-analyzer-with-elasticsearch 
 
 * 은전한닢+elasticsearch
   * https://bitbucket.org/eunjeon/seunjeon/raw/master/elasticsearch/
