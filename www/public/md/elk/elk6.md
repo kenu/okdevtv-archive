@@ -2,7 +2,7 @@
 * Elasticsearch + Logstash + Kibana
 * Elasticsearch는 Apache의 Lucene을 바탕으로 개발한 실시간 분산 검색 엔진이며,
 * Logstash는 각종 로그를 가져와 JSON형태로 만들어 Elasticsearch로 전송하고,
-* Kibana는 Elasticsearch에 저장된 Data를 사용자에게 Dashboard 형태로 보여주는 솔루션이다.
+* Kibana는 Elasticsearch에 저장된 Data를 사용자에게 Chart 형태로 보여주는 시각화 솔루션이다.
 ![ELK Architecture](images/elk_arch.jpg)
 * http://elastic.co 사이트 오픈소스 제품
 
@@ -95,15 +95,9 @@ sudo reboot
 ```
 mkdir ~/local
 cd ~/local
-<<<<<<< HEAD
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.1.1.tar.gz
-tar xvfz elasticsearch-6.0.0.tar.gz
-ln -s elasticsearch-6.0.0 elasticsearch
-=======
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.1.0.tar.gz
-tar xvfz elasticsearch-6.1.0.tar.gz
-ln -s elasticsearch-6.1.0 elasticsearch
->>>>>>> b93359d14ef33f7634b3c4d68d4f1bb7b74509f4
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.1.2.tar.gz
+tar xvfz elasticsearch-6.1.2.tar.gz
+ln -s elasticsearch-6.1.2 elasticsearch
 cd elasticsearch
 bin/elasticsearch -d
   # 데몬(백그라운드)로 실행. 옵션 -d를 빼면 터미널 접속해 있는 동안만 실행
@@ -118,9 +112,9 @@ curl -i http://localhost:9200/
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/kibana/kibana-6.1.0-linux-x86_64.tar.gz
-tar xvfz kibana-6.1.0-linux-x86_64.tar.gz
-ln -s kibana-6.1.0-linux-x86_64 kibana
+wget https://artifacts.elastic.co/downloads/kibana/kibana-6.1.2-linux-x86_64.tar.gz
+tar xvfz kibana-6.1.2-linux-x86_64.tar.gz
+ln -s kibana-6.1.2-linux-x86_64 kibana
 cd kibana
 ```
 
@@ -137,9 +131,9 @@ nohup bin/kibana &
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/logstash/logstash-6.1.0.tar.gz
-tar xvfz logstash-6.1.0.tar.gz
-ln -s logstash-6.1.0 logstash
+wget https://artifacts.elastic.co/downloads/logstash/logstash-6.1.2.tar.gz
+tar xvfz logstash-6.1.2.tar.gz
+ln -s logstash-6.1.2 logstash
 cd logstash
 ```
 
@@ -262,9 +256,9 @@ cd ~/local/logstash
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.1.0-linux-x86_64.tar.gz
-tar xvfz filebeat-6.1.0-linux-x86_64.tar.gz
-ln -s filebeat-6.1.0-linux-x86_64 filebeat
+wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.1.2-linux-x86_64.tar.gz
+tar xvfz filebeat-6.1.2-linux-x86_64.tar.gz
+ln -s filebeat-6.1.2-linux-x86_64 filebeat
 cd filebeat
 # elasticsearch 부분 #으로 주석 처리
   # output.elasticsearch:

@@ -2,15 +2,9 @@
 
 ```
 cd ~/local
-<<<<<<< HEAD
-wget https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.1.1-linux-x86_64.tar.gz
-tar xvfz metricbeat-6.1.1-linux-x86_64.tar.gz
-ln -s metricbeat-6.1.1-linux-x86_64 metricbeat
-=======
-wget https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.1.0-linux-x86_64.tar.gz
-tar xvfz metricbeat-6.1.0-linux-x86_64.tar.gz
-ln -s metricbeat-6.1.0-linux-x86_64 metricbeat
->>>>>>> b93359d14ef33f7634b3c4d68d4f1bb7b74509f4
+wget https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.1.2-linux-x86_64.tar.gz
+tar xvfz metricbeat-6.1.2-linux-x86_64.tar.gz
+ln -s metricbeat-6.1.2-linux-x86_64 metricbeat
 cd metricbeat
 ```
 
