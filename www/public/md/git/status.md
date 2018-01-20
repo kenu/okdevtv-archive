@@ -119,3 +119,15 @@ fatal: index-pack failed
 ```
 git config http.postBuffer 724288000
 ```
+
+or 
+
+```
+git config --global core.compression 0
+git clone --depth 1 https://github.com/kenu/okdevtv
+cd okdevtv
+git fetch --unshallow
+git pull --all
+```
+* from: https://stackoverflow.com/a/22317479/510222
+

@@ -25,7 +25,7 @@
 * local repository
 * remote repository
 
-<img src="https://www.git-tower.com/learn/content/01-git/01-ebook/en/01-command-line/04-remote-repositories/01-introduction/basic-remote-workflow.png" alt="git repository" />
+<img src="https://www.git-tower.com/learn/content/01-git/01-ebook/en/01-command-line/04-remote-repositories/01-introduction/basic-remote-workflow.png" alt="git repository" class="img"/>
   * image from : https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/introduction
 
 ## 시작하기
