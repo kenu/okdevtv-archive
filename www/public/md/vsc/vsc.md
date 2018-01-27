@@ -10,5 +10,11 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 EOF
 ```
 
+## Auto Guess Encoding
+* settings
+```
+"files.autoGuessEncoding": true
+```
+
 ## ref
 * https://code.visualstudio.com/docs/setup/mac
