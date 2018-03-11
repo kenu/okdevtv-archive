@@ -20,7 +20,7 @@ sudo vi /etc/yum.repos.d/MariaDB.repo
 ```
 [mariadb]
 name = MariaDB
-baseurl = http://yum.mariadb.org/10.0/centos6-amd64
+baseurl = http://yum.mariadb.org/10.2/centos6-amd64
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
@@ -61,6 +61,7 @@ sudo vi /etc/my.cnf.d/server.cnf
 
 ```
 [mysqld]
+default_time_zone=Asia/Seoul
 collation-server=utf8mb4_unicode_ci
 init-connect='SET NAMES utf8mb4'
 character-set-server=utf8mb4
