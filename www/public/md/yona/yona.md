@@ -88,9 +88,13 @@ default-character-set=utf8mb4
 
 ```
 mkdir local && cd local
-wget https://github.com/yona-projects/yona/releases/download/v1.8.1/yona-v1.8.1-bin.zip
-unzip yona-v1.8.1-bin.zip
-ln -s yona-1.8.1/ yona
+# MariaDB 10.1
+wget https://github.com/yona-projects/yona/releases/download/v1.9.0/yona-v1.9.0-mariadb-10.1.bin.zip
+# MariaDB 10.1
+wget https://github.com/yona-projects/yona/releases/download/v1.9.0/yona-v1.9.0-mariadb-10.2.bin.zip
+
+unzip yona-v1.9.0-mariadb-10.?.bin.zip
+ln -s yona-1.9.0/ yona
 cd yona
 bin/yona # first for unarchive folders
 vi conf/application.conf
@@ -126,12 +130,12 @@ nohup bin/yona &
 ## Yona in Windows
 * 환경변수
 ```
-SET YONA_HOME=c:\yona\yona-1.8.1
+SET YONA_HOME=c:\yona\yona-1.9.0
 SET JAVA_OPTS=-Dyona.home=%YONA_HOME% -Dconfig.file=%YONA_HOME%\conf\application.conf -Dlogger.file=%YONA_HOME%\conf\application-logger.xml
 ```
 
 ## 참고
-* yona-1.8.1 설치 영상
+* yona-1.4.1 설치 영상
   * https://youtu.be/B3Q2FVXZWBM
 * gmail 보안 설정 조정법
   * http://okky.kr/article/343036
