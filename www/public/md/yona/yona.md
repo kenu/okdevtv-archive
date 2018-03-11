@@ -90,7 +90,7 @@ default-character-set=utf8mb4
 mkdir local && cd local
 # MariaDB 10.1
 wget https://github.com/yona-projects/yona/releases/download/v1.9.0/yona-v1.9.0-mariadb-10.1.bin.zip
-# MariaDB 10.1
+# MariaDB 10.2
 wget https://github.com/yona-projects/yona/releases/download/v1.9.0/yona-v1.9.0-mariadb-10.2.bin.zip
 
 unzip yona-v1.9.0-mariadb-10.?.bin.zip
