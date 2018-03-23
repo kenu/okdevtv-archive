@@ -89,12 +89,12 @@ default-character-set=utf8mb4
 ```
 mkdir local && cd local
 # MariaDB 10.1
-wget https://github.com/yona-projects/yona/releases/download/v1.9.0/yona-v1.9.0-mariadb-10.1.bin.zip
+wget https://github.com/yona-projects/yona/releases/download/v1.9.1/yona-v1.9.1-mariadb-10.1.bin.zip
 # MariaDB 10.2
-wget https://github.com/yona-projects/yona/releases/download/v1.9.0/yona-v1.9.0-mariadb-10.2.bin.zip
+wget https://github.com/yona-projects/yona/releases/download/v1.9.1/yona-v1.9.1-mariadb-10.2.bin.zip
 
-unzip yona-v1.9.0-mariadb-10.?.bin.zip
-ln -s yona-1.9.0/ yona
+unzip yona-v1.9.1-mariadb-10.?.bin.zip
+ln -s yona-1.9.1/ yona
 cd yona
 bin/yona # first for unarchive folders
 vi conf/application.conf
@@ -130,7 +130,7 @@ nohup bin/yona &
 ## Yona in Windows
 * 환경변수
 ```
-SET YONA_HOME=c:\yona\yona-1.9.0
+SET YONA_HOME=c:\yona\yona-1.9.1
 SET JAVA_OPTS=-Dyona.home=%YONA_HOME% -Dconfig.file=%YONA_HOME%\conf\application.conf -Dlogger.file=%YONA_HOME%\conf\application-logger.xml
 ```
 
