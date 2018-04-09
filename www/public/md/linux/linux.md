@@ -163,8 +163,14 @@ ls -la --time-style=full-iso
 * [curl](https://okdevtv.com/mib/linux/curl)
 * [pigz](https://okdevtv.com/mib/linux/pigz) : parallel gzip
 
+## Mail
+* 파일첨부
+  * `mutt -s "subject" -i body.txt -a attachment.txt recipient@example.com`
+
 ## Ref
 * vi 에디터에서 utf8, euc-kr 전환하기
   * http://egloos.zum.com/indirock/v/3791689
 * Linux file descriptors
   * https://www.cyberciti.biz/tips/linux-procfs-file-descriptors.html
+* Mutt
+  * https://www.thegeekdiary.com/linux-unix-send-mail-with-attachment-using-mutt/
