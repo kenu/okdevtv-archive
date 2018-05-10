@@ -179,6 +179,11 @@ http {
 }
 ```
 
+### max file upload
+```
+client_max_body_size 200M;
+```
+
 ## CentOS on GCP
 * [err]
 `connect() to 127.0.0.1:5601 failed (13: Permission denied) while connecting to upstream, client`
