@@ -165,6 +165,11 @@ gpgcheck=0
 enabled=1
 ```
 
+## 자동 시작
+```
+sudo chkconfig nginx on
+```
+
 ## config
 
 ### gzip
