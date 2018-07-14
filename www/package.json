@@ -17,6 +17,7 @@
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "pug": "^2.0.0-beta5",
+    "redis": "^2.8.0",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
