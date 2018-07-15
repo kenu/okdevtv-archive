@@ -13,6 +13,11 @@
   * CentOS
 ```
 sudo yum update -y
+# for aws ec2 with 10.2.16
+rpm -ev --nodeps mariadb-libs-5.5.56-2.amzn2.x86_64
+wget https://rpmfind.net/linux/Mandriva/official/2010.0/x86_64/media/main/release/lib64boost5-1.39.0-2mdv2010.0.x86_64.rpm
+rpm -iv --nodeps lib64boost5-1.39.0-2mdv2010.0.x86_64.rpm
+
 sudo vi /etc/yum.repos.d/MariaDB.repo
 ```
 
@@ -88,13 +93,11 @@ default-character-set=utf8mb4
 
 ```
 mkdir local && cd local
-# MariaDB 10.1
-wget https://github.com/yona-projects/yona/releases/download/v1.9.1/yona-v1.9.1-mariadb-10.1.bin.zip
-# MariaDB 10.2
-wget https://github.com/yona-projects/yona/releases/download/v1.9.1/yona-v1.9.1-mariadb-10.2.bin.zip
+# MariaDB 10.2 required
+wget https://github.com/yona-projects/yona/releases/download/v1.10.0/yona-v1.10.0b-mariadb-10.2-bin.zip
 
-unzip yona-v1.9.1-mariadb-10.?.bin.zip
-ln -s yona-1.9.1/ yona
+unzip yona-v1.10.0b-mariadb-10.2-bin.zip
+ln -s yona-1.10.0/ yona
 cd yona
 bin/yona # first for unarchive folders
 vi conf/application.conf
@@ -130,7 +133,7 @@ nohup bin/yona &
 ## Yona in Windows
 * 환경변수
 ```
-SET YONA_HOME=c:\yona\yona-1.9.1
+SET YONA_HOME=c:\yona\yona-1.10.0
 SET JAVA_OPTS=-Dyona.home=%YONA_HOME% -Dconfig.file=%YONA_HOME%\conf\application.conf -Dlogger.file=%YONA_HOME%\conf\application-logger.xml
 ```
 
