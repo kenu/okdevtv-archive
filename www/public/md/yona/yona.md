@@ -65,7 +65,6 @@ sudo vi /etc/my.cnf.d/server.cnf
 
 ```
 [mysqld]
-default_time_zone=Asia/Seoul
 collation-server=utf8mb4_unicode_ci
 init-connect='SET NAMES utf8mb4'
 character-set-server=utf8mb4
