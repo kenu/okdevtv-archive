@@ -17,7 +17,6 @@ sudo yum update -y
 rpm -ev --nodeps mariadb-libs-5.5.56-2.amzn2.x86_64
 wget https://rpmfind.net/linux/Mandriva/official/2010.0/x86_64/media/main/release/lib64boost5-1.39.0-2mdv2010.0.x86_64.rpm
 rpm -iv --nodeps lib64boost5-1.39.0-2mdv2010.0.x86_64.rpm
-
 sudo vi /etc/yum.repos.d/MariaDB.repo
 ```
 
