@@ -236,6 +236,21 @@ service nginx stop && certbot-auto renew && service nginx start
   * thanks to @shjxenoside
 
 ## when stuck
+
+* do it first
+
+```
+rm -rf ~/.local/share/letsencrypt
+rm -rf /opt/eff.org/certbot/
+certbot-auto renew --debug
+unset PYTHON_INSTALL_LAYOUT
+/opt/eff.org/certbot/venv/local/bin/pip install --upgrade certbot
+certbot-auto renew --debug
+service nginx stop
+certbot-auto renew --debug
+service nginx start
+```
+
 * such as zope.interface no module named interface
 
 ```
