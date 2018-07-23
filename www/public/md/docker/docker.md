@@ -5,7 +5,9 @@
 * 개발자와 시스템어드민을 위한 분산 애플리케이션용 오픈 플랫폼
 
 ## Install
-* Docker.dmg 엔진 다운받아 복사 후 실행
+* https://hub.docker.com/ id 생성
+* Docker.dmg 엔진 다운받아 복사 후 실행 (login 필요)
+  * https://www.docker.com/community-edition#/download
 
 ## Basic keywords
 ```
@@ -14,9 +16,7 @@ docker info
 docker images
 docker version
 ```
-* Docker Toolbox 다운로드
-* https://www.docker.com/products/docker-toolbox
-* docker quick start terminal 실행
+
 * `docker run hello-world`
   * docker : 시스템에 있는 docker 사용
   * run : 서브명령, 컨테이너 실행
@@ -28,6 +28,7 @@ docker version
   * 우분투 OS
 * `docker run -d -p 80:80 --name webserver nginx`
 * stop
+
 ```
 ➜  ~ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                         NAMES
@@ -151,17 +152,20 @@ https://index.docker.io
 ```
 
 ## ref
-* docker for mac
-  * https://pilsniak.com/how-to-install-docker-on-mac-os-using-brew/
 * Getting Started for non-technical
   * https://docs.docker.com/mac/
   * https://docs.docker.com/docker-for-windows/
 * https://docs.docker.com/mac/step_three/
 * docker/whalesay
   * https://hub.docker.com/r/docker/whalesay/
-
+* docker for mac
+  * https://pilsniak.com/how-to-install-docker-on-mac-os-using-brew/
 
 ## deprecated
+
+* Docker Toolbox 다운로드
+* https://www.docker.com/products/docker-toolbox
+* docker quick start terminal 실행
 
 ```
 brew install docker docker-compose docker-machine xhyve docker-machine-driver-xhyve
