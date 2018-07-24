@@ -42,6 +42,12 @@ GRANT TRIGGER, SELECT, SHOW VIEW ON devdb.* TO devuser2@localhost
 IDENTIFIED BY 'devpass';
 ```
 
+## DB backup
+```
+mysqldump -h localhost -u devuser -p devpass devdb > okdevdb-20180724.sql
+# low CPU
+mysqldump -h localhost -u devuser -p devpass --single-transaction --quick --lock-tables=false $DBNAME > okdevdb-20180724.sql
+```
 
 ## Timezone
 ```
