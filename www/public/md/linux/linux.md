@@ -16,6 +16,13 @@
 |open site	|open http://www.naver.com	|explorer http://www.naver.com|
 |edit file	|nano filename	|notepad filename|
 
+## File extract 1 line
+```
+sed -n '3p' file
+
+# Here's another:
+head -n 3 file | tail -n 1
+```
 
 ## File Encoding
 * 확인
