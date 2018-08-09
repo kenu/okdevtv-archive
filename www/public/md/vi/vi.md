@@ -13,6 +13,9 @@
 * no highlight
   * `:noh`
 
+* change encoding
+  * `:e ++enc=euc-kr`
+  * `:set fileencoding=utf-8`
 
 ## ref
 * Switching case of characters
