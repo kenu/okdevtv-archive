@@ -6,7 +6,7 @@
 * 장점은 오프라인에서 버전관리 가능
 * 단점은 또 배워야 됨
 * Git을 엔진으로 사용하는 서비스 다수
-  * GitHub, BitBucket, GitLab, Yobi
+  * GitHub, BitBucket, GitLab, Yona
 * GitHub.com
   * git을 엔진으로 하는 개발 소셜 플랫폼
   * follow, watch, Pull Request
