@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/js/jquery.min.js"></script>
+    <title>JavaScript Inside</title>
+</head>
+<body>
+    <select name="jsi" id="chap7">
+        <option value="7-1">Chapter_07</option>
+        <option value="7-1">7-1</option>
+        <option value="7-2-1">7-2-1</option>
+        <option value="7-2-2">7-2-2</option>
+        <option value="7-2-3">7-2-3</option>
+        <option value="7-2-4">7-2-4</option>
+        <option value="7-3-1">7-3-1</option>
+        <option value="7-3-2">7-3-2</option>
+        <option value="7-3-3">7-3-3</option>
+        <option value="7-4">7-4</option>
+        <option value="7-5">7-5</option>
+        <option value="7-6">7-6</option>
+        <option value="7-7">7-7</option>
+        <option value="7-8">7-8</option>
+        <option value="7-9">7-9</option>
+        <option value="7-10">7-10</option>
+        <option value="7-11">7-11</option>
+        <option value="7-12">7-12</option>
+        <option value="7-13">7-13</option>
+    </select>
+    <div id="source">
+        <pre style="font-size: 1.5em"></pre>
+    </div>
+    <script>
+        function loadFile() {
+            var num = $('#chap7').val();
+            $('<script>').attr('src', './ex' + num + '.js').appendTo('head');
+            $('#source pre').load('./ex' + num + '.js');
+        }
+        $(function(){
+            $('#chap7').on('change', loadFile);
+        });
+    </script>
+</body>
+</html>

@@ -1,9 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/js/jquery.min.js"></script>
+    <title>JavaScript Inside</title>
 </head>
 <body>
-    <script type="text/javascript" src="4-44.js"></script>
+    <select name="jsi" id="chap4">
+        <option value="4-1">Chapter_04</option>
+        <option value="4-1">4-1</option>
+        <option value="4-2">4-2</option>
+        <option value="4-3">4-3</option>
+        <option value="4-4">4-4</option>
+        <option value="4-5">4-5</option>
+        <option value="4-6">4-6</option>
+        <option value="4-7">4-7</option>
+        <option value="4-8">4-8</option>
+        <option value="4-9">4-9</option>
+        <option value="4-10">4-10</option>
+        <option value="4-11">4-11</option>
+        <option value="4-12">4-12</option>
+        <option value="4-13">4-13</option>
+        <option value="4-14">4-14</option>
+        <!-- <option value="4-15">4-15</option> -->
+        <option value="4-16">4-16</option>
+        <option value="4-17">4-17</option>
+        <option value="4-18">4-18</option>
+        <option value="4-19">4-19</option>
+        <option value="4-20">4-20</option>
+        <option value="4-21">4-21</option>
+        <option value="4-22">4-22</option>
+        <option value="4-23">4-23</option>
+        <option value="4-24">4-24</option>
+        <option value="4-25">4-25</option>
+        <option value="4-26">4-26</option>
+        <option value="4-27">4-27</option>
+        <option value="4-28">4-28</option>
+        <option value="4-29">4-29</option>
+        <option value="4-30">4-30</option>
+        <option value="4-31">4-31</option>
+        <option value="4-32">4-32</option>
+        <option value="4-33">4-33</option>
+        <option value="4-34">4-34</option>
+        <option value="4-35">4-35</option>
+        <option value="4-36">4-36</option>
+        <option value="4-37">4-37</option>
+        <option value="4-38">4-38</option>
+        <option value="4-39">4-39</option>
+        <option value="4-40">4-40</option>
+        <option value="4-41">4-41</option>
+        <option value="4-42">4-42</option>
+        <option value="4-43">4-43</option>
+        <option value="4-44">4-44</option>
+    </select>
+    <div id="source">
+        <pre style="font-size: 1.5em"></pre>
+    </div>
+    <script>
+        function loadFile() {
+            var num = $('#chap4').val();
+            $('<script>').attr('src', './' + num + '.js').appendTo('head');
+            $('#source pre').load('./' + num + '.js');
+        }
+        $(function(){
+            $('#chap4').on('change', loadFile);
+        });
+    </script>
 </body>
 </html>

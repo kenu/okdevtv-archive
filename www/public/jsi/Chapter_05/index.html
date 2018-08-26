@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/js/jquery.min.js"></script>
+    <title>JavaScript Inside</title>
+</head>
+<body>
+    <select name="jsi" id="chap5">
+        <option value="5-1">Chapter_05</option>
+        <option value="5-1">5-1</option>
+        <option value="5-2">5-2</option>
+        <option value="5-3">5-3</option>
+        <option value="5-4">5-4</option>
+        <option value="5-5">5-5</option>
+        <option value="5-6">5-6</option>
+        <option value="5-7">5-7</option>
+        <option value="5-8">5-8</option>
+        <option value="5-9">5-9</option>
+        <option value="5-10">5-10</option>
+        <option value="5-11">5-11</option>
+        <option value="5-12">5-12</option>
+        <option value="5-13">5-13</option>
+        <option value="5-14">5-14</option>
+        <option value="5-15">5-15</option>
+        <option value="5-16">5-16</option>
+    </select>
+    <div id="source">
+        <pre style="font-size: 1.5em"></pre>
+    </div>
+    <script>
+        function loadFile() {
+            var num = $('#chap5').val();
+            $('<script>').attr('src', './ex' + num + '.js').appendTo('head');
+            $('#source pre').load('./ex' + num + '.js');
+        }
+        $(function(){
+            $('#chap5').on('change', loadFile);
+        });
+    </script>
+</body>
+</html>

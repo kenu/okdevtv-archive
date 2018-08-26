@@ -8,7 +8,8 @@
     <title>JavaScript Inside</title>
 </head>
 <body>
-    <select name="jsi" id="1">
+    <select name="jsi" id="chap3">
+        <option value="3-1">Chapter_03</option>
         <option value="3-1">3-1</option>
         <option value="3-2">3-2</option>
         <option value="3-3">3-3</option>
@@ -40,5 +41,18 @@
         <option value="3-29">3-29</option>
         <option value="3-30">3-30</option>
     </select>
+    <div id="source">
+        <pre style="font-size: 1.5em"></pre>
+    </div>
+    <script>
+        function loadFile() {
+            var num = $('#chap3').val();
+            $('<script>').attr('src', './' + num + '.js').appendTo('head');
+            $('#source pre').load('./' + num + '.js');
+        }
+        $(function(){
+            $('#chap3').on('change', loadFile);
+        });
+    </script>
 </body>
 </html>

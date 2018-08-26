@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/js/jquery.min.js"></script>
+    <title>JavaScript Inside</title>
+</head>
+<body>
+    <select name="jsi" id="chap8">
+        <option value="8-1">Chapter_08</option>
+        <option value="jquery-1.0">jquery-1.0</option>
+    </select>
+    <div id="source">
+        <pre style="font-size: 1.5em"></pre>
+    </div>
+    <script>
+        function loadFile() {
+            var num = $('#chap8').val();
+            $('<script>').attr('src', './' + num + '.js').appendTo('head');
+            $('#source pre').load('./' + num + '.js');
+        }
+        $(function(){
+            $('#chap8').on('change', loadFile);
+        });
+    </script>
+</body>
+</html>
