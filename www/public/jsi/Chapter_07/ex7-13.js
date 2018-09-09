@@ -8,7 +8,6 @@ Array.prototype.reduce = function (callback) {
 
 	for (var i = 0; i < obj.length; i++) {
 		value = obj[i];
-		//console.log("exe");
 		accumulated_value = callback.call(null, accumulated_value, value);
 	}
 
