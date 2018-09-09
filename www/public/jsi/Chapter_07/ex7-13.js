@@ -1,23 +1,24 @@
 
   Array.prototype.reduce = function(callback) { 
-	// this °¡ null ÀÎÁö, ¹è¿­ÀÎÁö Ã¼Å© 
-	// callbackÀÌ ÇÔ¼öÀÎÁö Ã¼Å© 
-  
-	var obj = this;
-	var value, accumulated_value = 0;
- 
-	for ( var i = 0; i < obj.length; i++ ) {
-		value = obj[i];
-		//console.log("exe");
-		accumulated_value = callback.call(null, accumulated_value, value); 
-	}
+		// this ê°€ null ì¸ì§€, ë°°ì—´ì¸ì§€ ì²´í¬ 
+		// callbackì´ í•¨ìˆ˜ì¸ì§€ ì²´í¬ 
+		
+		var obj = this;
+		var value, accumulated_value = 0;
 	 
-    return accumulated_value;
-  };  
-
-var arr = [1,2,3];
-var accumulated_val = arr.reduce(function(a, b) {
-	return a + b*b;
-});
-
-console.log(accumulated_val);
+		for ( var i = 0; i < obj.length; i++ ) {
+			value = obj[i];
+			//console.log("exe");
+			accumulated_value = callback.call(null, accumulated_value, value); 
+		}
+		 
+			return accumulated_value;
+		};  
+	
+	var arr = [1,2,3];
+	var accumulated_val = arr.reduce(function(a, b) {
+		return a + b*b;
+	});
+	
+	console.log(accumulated_val);
+	

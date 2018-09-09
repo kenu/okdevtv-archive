@@ -1,6 +1,6 @@
-  Array.prototype.map = function(callback) { 
-	/* this °¡ null ÀÎÁö, ¹è¿­ÀÎÁö Ã¼Å© */
-	/* callbackÀÌ ÇÔ¼öÀÎÁö Ã¼Å© */
+Array.prototype.map = function(callback) { 
+	/* this ê°€ null ì¸ì§€, ë°°ì—´ì¸ì§€ ì²´í¬ */
+	/* callbackì´ í•¨ìˆ˜ì¸ì§€ ì²´í¬ */
   
 	var obj = this;
 	var value, mapped_value;
