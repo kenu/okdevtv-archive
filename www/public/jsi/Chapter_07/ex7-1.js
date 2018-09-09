@@ -1,26 +1,23 @@
 
-var f1 = function(input) {
-	/* */
+var f1 = function (input) {
 	var result = 1;
 	return result;
 }
 
-var f2 = function(input) {
-	/* */
+var f2 = function (input) {
 	var result = 2;
 	return result;
 }
 
-var f3 = function(input) {
-	/* */
+var f3 = function (input) {
 	var result = 3;
 	return result;
 }
 
-var get_encrypted = function(func) {
+var get_encrypted = function (func) {
 	var str = 'zzoon';
 
-	return function() {
+	return function () {
 		return func.call(this, str);
 	}
 }

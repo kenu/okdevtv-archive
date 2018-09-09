@@ -7,13 +7,13 @@ function Calculate(key, input, func) {
     return Calculate.data[key];
 }
 
-var result = Calculate(1, 5, function(input) {
+var result = Calculate(1, 5, function (input) {
     return input * input;
 });
 
 console.log(result);
 
-result = Calculate(2, 5, function(input) {
+result = Calculate(2, 5, function (input) {
     return input * input / 4;
 });
 

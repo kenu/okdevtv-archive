@@ -1,17 +1,15 @@
-var fact = function() {
-	var cache = {'0' : 1};
-	var func = function(n) {
+var fact = function () {
+	var cache = { '0': 1 };
+	var func = function (n) {
 		var result = 0;
 
-		if (typeof(cache[n]) === 'number') {
+		if (typeof (cache[n]) === 'number') {
 			result = cache[n];
 		} else {
-			result = cache[n] = n * func(n-1);
+			result = cache[n] = n * func(n - 1);
 		}
-
 		return result;
 	}
-
 	return func;
 }();
 

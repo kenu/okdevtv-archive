@@ -1,6 +1,6 @@
-var cacher = function(cache, func) {
-	var calculate = function(n) {
-		if (typeof(cache[n]) === 'number') {
+var cacher = function (cache, func) {
+	var calculate = function (n) {
+		if (typeof (cache[n]) === 'number') {
 			result = cache[n];
 		} else {
 			result = cache[n] = func(calculate, n);
@@ -8,7 +8,7 @@ var cacher = function(cache, func) {
 
 		return result;
 	}
-	
+
 	return calculate;
 };
 

@@ -1,4 +1,4 @@
-Function.prototype.memoization = function(key) {
+Function.prototype.memoization = function (key) {
     var arg = Array.prototype.slice.call(arguments, 1);
     this.data = this.data || {};
 
