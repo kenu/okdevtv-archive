@@ -4,7 +4,8 @@
 sudo yum install nginx -y
 sudo service nginx start
 curl -i http://localhost
-sudo chown -R ec2-user:ec2-user /var/log/nginx /usr/share/nginx/html
+sudo chmod 644 /var/log/nginx
+sudo chown -R ec2-user:ec2-user /usr/share/nginx/html
 echo "<h1>Hello World</h1>" > /usr/share/nginx/html/hello.html
 ```
 

@@ -9,7 +9,8 @@ sudo yum install php-fpm -y
 ```
 
 ```
-sudo chown -R ec2-user:ec2-user /var/log/nginx /usr/share/nginx/html
+sudo chmod 644 /var/log/nginx
+sudo chown -R ec2-user:ec2-user /usr/share/nginx/html
 echo "<?php phpinfo(); ?>" > /usr/share/nginx/html/info.php
 ```
 
