@@ -1,0 +1,29 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Mocha Tests",
+            "program": "${workspaceFolder}/www/node_modules/mocha/bin/_mocha",
+            "args": [
+                "-u",
+                "tdd",
+                "--timeout",
+                "999999",
+                "--colors",
+                "${workspaceFolder}/www/tests/test.js"
+            ],
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "프로그램 시작",
+            "program": "${workspaceFolder}/www/tests/test.js"
+        }
+    ]
+}
