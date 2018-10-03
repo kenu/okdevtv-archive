@@ -46,6 +46,61 @@
 
 ## 이벤트 이해하기
 
+* `event.js`
+
+```js
+const EventEmitter = require('events');
+
+const myEvent = new EventEmitter();
+myEvent.addListener('event1', () => {
+  console.log('이벤트 1');
+});
+
+myEvent.on('event2', () => {
+  console.log('이벤트 2');
+});
+
+myEvent.on('event2', () => {
+  console.log('이벤트 2 추가');
+});
+
+myEvent.emit('event1');
+myEvent.emit('event2');
+
+myEvent.once('event3', () => {
+  console.log('이벤트 3');
+});
+
+myEvent.emit('event3');
+myEvent.emit('event3');
+
+myEvent.on('event4', () => {
+  console.log('이벤트 4');
+});
+
+myEvent.removeAllListeners('event4');
+myEvent.emit('event4');
+
+const listener = () => {
+  console.log('event5');
+}
+myEvent.on('event5', listener);
+myEvent.removeListener('event5', listener);
+myEvent.emit('event5');
+
+console.log(myEvent.listenerCount('event2'));
+```
+
+* `on(이벤트명, 콜백)`
+* `addListener(이벤트명, 콜백)`
+* `emit(이벤트명)`
+* `once(이벤트명, 콜백)`
+* `removeAllListeners(이벤트명)`
+* `removeListener(이벤트명, 리스너)`
+* `off(이벤트명, 콜백)`
+* `listenCount(이벤트명)`
+
+
 ## 예외 처리하기
 
 * 예외 처리 못하면 Node 프로세스 멈춤. 예) 서버 다운
@@ -56,7 +111,8 @@
 * 문법상의 에러 없다고 가정 - 실제 배포용 코드에 문법 에러가 있다는 것은 말이 안됨
 * 좋은 에디터, 좋은 문법 검사 도구
 
-```JS
+* `error1.js`
+```js
 setInterval(() => {
   console.log('시작');
   try {
@@ -67,6 +123,42 @@ setInterval(() => {
 }, 1000);
 ```
 
+* `error2.js`
+```js
+const fs = require('fs');
+
+setInterval(() => {
+  fs.unlink('./abcdefg.js', (err) => {
+    if (err) {
+      console.error(err);
+    }
+  });
+}, 1000);
+```
+* 없는 파일 지우지만, 내장 모듈의 에러는 실행 중인 프로세스를 멈추지 않음
+
+* `error3.js`
+```js
+process.on('uncaughtException', (err) => {
+  console.error('예기지 못한 에러', err);
+});
+
+setInterval(() => {
+  throw new Error('서버를 고장내주마!');
+}, 1000);
+
+setTimeout(() => {
+  console.log('실행됩니다.')
+}, 2000);
+```
+
+* `uncaughtException` 이벤트 리스너로 모든 에러 처리 가능
+* 하지만 노드 공식 문서에서는 최후의 수단으로 권함
+* 에러 발생시 철저히 기록하는 습관과 주기적 확인과 보완
+
 ## 함께 보면 좋은 자료
 
 * http://bit.ly/oknodejs
+* https://nodejs.org/dist/latest-v10.x/docs/api/
+* https://nodejs.org/dist/latest-v10.x/docs/api/process.html#process_event_uncaughtexception
+* https://nodejs.org/dist/lastest-v10.x/docs/api/fs.html#fs_fs_promises_api
