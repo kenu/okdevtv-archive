@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Priority</title>
+    <style>
+        table {
+            margin-left: 40px;
+            width: 300px;
+            height: 200px;
+            text-align: center;
+            border: solid 1px #888;
+            padding: 0;
+        }
+
+        td {
+            width: 50%;
+        }
+
+        .critical {
+            background-color: #9c27b0;
+        }
+
+        .major {
+            background-color: #ff9800;
+        }
+
+        .blocking {
+            background-color: #f44336;
+        }
+
+        .minor {
+            background-color: #cddc39;
+        }
+
+        #priority {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        #urgency {
+            position: absolute;
+            left: 320px;
+        }
+
+        #base {
+            position: absolute;
+            left: 38px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td class="major">1-Major</td>
+            <td class="critical">0-Critical</td>
+        </tr>
+        <tr>
+            <td class="minor">3-Minor</td>
+            <td class="blocking">2-Blocking</td>
+        </tr>
+    </table>
+    <div id="priority">중요</div>
+    <div id="urgency">시급</div>
+    <div id="base">0</div>
+</body>
+
+</html>
