@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test:watch": "jest tests/ -o --watch"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
