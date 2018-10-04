@@ -61,6 +61,13 @@ sudo service mysql restart
 show processlist;
 ```
 
+## Table stats
+```sql
+select TABLE_NAME, TABLE_ROWS 
+from information_schema.tables
+order by 2 desc;
+```
+
 ## MariaDB on ubuntu
 * https://downloads.mariadb.org/mariadb/repositories/#mirror=kaist
 ```
