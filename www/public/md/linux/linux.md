@@ -57,6 +57,15 @@ lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
 *:8082 node
 ```
 
+* 원격 열린 포트 확인
+```
+# dest
+nc -l -p 7555 > myfile.txt
+
+# source
+nc 172.31.95.135 7555 < myfile.txt
+```
+
 ## LC_CTYPE warning
 * /etc/environment
 ```
@@ -151,13 +160,6 @@ sudo yum install htop
 ```
 htop
 htop -p "$(pgrep -vfd, 'java|python')"
-```
-
-## 열린 포트 확인
-```
-lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
-*:27017 mongod
-*:8082 node
 ```
 
 ## ls for second
