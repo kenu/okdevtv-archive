@@ -16,7 +16,7 @@
 
 
 ## 사전 준비
-* 로그수집 서버(AWS 추천)
+* 로그수집 서버(AWS Linux 2 추천)
   * aws 접속 key가 있는 경우
   * 윈도우에서 git bash 추천(http://git-scm.com). putty 접속보다 쉬움
 * 리눅스 서버 CentOS 또는 Ubuntu
@@ -24,18 +24,16 @@
 
 ## nginx 설치(샘플용)
 ```
-sudo yum install nginx -y
-sudo service nginx start
-curl -i http://localhost
+sudo yum update -y
+sudo amazon-linux-extras install nginx1.12
+sudo systemctl start nginx
+curl -i localhost
 sudo chmod 644 /var/log/nginx
-sudo chown -R ec2-user:ec2-user /usr/share/nginx/html
-echo "<h1>Hello World</h1>" > /usr/share/nginx/html/hello.html
 ```
 * more [nginx 설치](https://okdevtv.com/mib/nginx/nginx)
 
 ## jdk 1.8
 ```
-sudo yum remove java-1.7.0-openjdk.x86_64 -y
 sudo yum install java-1.8.0-openjdk-devel.x86_64 -y
 ```
 * more [install](https://okdevtv.com/mib/java)
@@ -106,7 +104,7 @@ bin/elasticsearch -d
 
 * 실행 확인
 ```
-curl -i http://localhost:9200/
+curl -i localhost:9200
 ```
 
 ## Kibana 설치
@@ -261,6 +259,15 @@ wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.4.2-linux-
 tar xvfz filebeat-6.4.2-linux-x86_64.tar.gz
 ln -s filebeat-6.4.2-linux-x86_64 filebeat
 cd filebeat
+```
+
+* `filebeat.yml`
+```
+  # Change to true to enable this input configuration.
+  enabled: true
+
+# filebeat.yml 내용 중 로그 위치 변경 `/var/log/nginx/*.log`
+
 # elasticsearch 부분 #으로 주석 처리
   # output.elasticsearch:
     #hosts: ["localhost:9200"]
@@ -268,7 +275,6 @@ cd filebeat
   output.logstash:
     hosts: ["localhost:5044"]
 
-# filebeat.yml 내용 중 로그 위치 변경 `/var/log/nginx/*.log`
 ```
 
 
@@ -559,20 +565,8 @@ sudo vi /etc/nginx/nginx.conf
         }
 ```
 * nginx 재시작
-  * `sudo service nginx start`
+  * `sudo systemctl start nginx`
 * 5601 포트는 막고 80으로만 접속
-
-## Kibana with PM2
-
-* download from http://nodejs.org and install node.js
-```
-npm install -g pm2
-cd ~/local/kibana
-pm2 start bin/cli
-```
-* check kibana status with `pm2 list`
-* pm2 logs path is placed in ~/.pm2/logs
-
 
 
 ## 참고
