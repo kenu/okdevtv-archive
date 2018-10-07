@@ -2,33 +2,165 @@
 
 ## REPL 사용하기
 
+* JS는 스크립트 언어
+* 컴파일 하지 않아도 코드실행 가능
+* REPL(Read Eval Print Loop)
+* `node` 로 REPL 실행. ctrl+D로 종료
+* 한두 줄 코드 실행하기는 좋음
+
 ## JS 파일 실행하기
 
+* 아무 위치에서나 실행 가능
+* `helloWorld.js`
+```js
+function helloWorld() {
+  console.log('Hello World');
+  helloNode();
+}
+function helloNode() {
+  console.log('Hello Node');
+}
+helloWorld();
+```
+
+* node [JS 파일 경로]
+* `.js` 생략 가능
+* `node helloWorld`
+
+
 ## 모듈로 만들기
+* 모듈로 만들어두면 여러 프로그램에서 재사용 가능
+* 브라우저의 모듈은 크롬 60부터 사용가능, 하지만 아직 사용은 비추천. ex) IE
+* `var.js`
+```js
+const odd = '홀수입니다';
+const even = '짝수입니다';
+
+module.exports = {
+  odd,
+  even
+};
+```
+* `func.js`
+```js
+const {odd, even} = require('./var');
+
+function checkOddOrEven(num) {
+  if (num % 2) { // 홀수면
+    return odd;
+  }
+  return even;
+}
+
+module.exports = checkOddOrEven;
+```
+* `index.js`
+```js
+const {odd, even} = require('./var');
+const checkNumber = require('./func');
+
+function checkStringOddOrEven(str) {
+  if (str.length % 2) {
+    return odd;
+  }
+  return even;
+}
+
+console.log(checkNumber(10));
+console.log(checkStringOddOrEven('hello');
+```
+
+* 모듈로부터 값을 불러올 때 변수 이름을 다르게 지정할 수 있음
+* `checkOddOrEven`이 `checkNumber`로 사용
+* `*.mjs` ES2015에 도입된 모듈 시스템. 
+  * `node --experimental-modules 파일명` 처럼 옵션 필요
 
 ## 노드 내장 객체 알아보기
+* 내장 객체와 내장 모듈
+* 브라우저의 `window` 객체와 비슷
 
 ### `global`
+* 전역객체
+* 생략 가능 
+  * `global.require` -> `require`
+  * `global.console` -> `console`
+* node.js에는 DOM(Document Object Model), BOM(Browser Object Model)이 없기 때문에 `window`, `document` 사용할 수 없음
+* `global` 에는 수십 가지 속성이 담겨 있음
+
+* `globalA.js`
+```js
+module.exports = () => global.message;
+```
+
+* `globalB.js`
+```js
+const A = require('./globalA');
+
+global.message = '안녕하세요';
+console.log(A());
+```
+
+* `golbalB`에 넣은 `global.message` 값을 `globalA`에서 접근 가능
 
 ### `console`
+* `console` 디버깅을 위해 사용
+* `console.js`
 
 ### 타이머
+* `timer.js`
+
 
 ### `__filename`, `__dirname`
+* `filename.js`
+
 
 ### module, exports
+* exports 객체로도 모듈 생성 가능
+* `var.js`
+```js
+exports.odd = '홀수입니다';
+exports.even = '짝수입니다';
+```
+* `console.log(module.exports === exports)` 
+
 
 ### process
+* 현재 실행되고 있는 노드 프로세스에 대한 정보를 담고 있음
+
+#### `process.env`
+* 시스템 환경 변수
+* API 키를 코드 대신 환경변수에 설정해서 활용
+
+#### `process.nextTick(콜백)`
+* 이벤트 루프가 다른 콜백 함수들보다 `nextTick`의 콜백 함수를 우선으로 처리하도록 만듬
+* `nextTick.js`
+* `process.nextTick`은 `setImmediate`나 `setTimeout`보다 먼저 실행됨.
+* 코드 맨 밑에 `Promise`를 넣은 것은 `resolve`된 `Promise`도 `nextTick`처럼 다른 콜백들보다 우선시되기 때문
+* `process.nextTick`과 `Promise`를 `마이크로태스크(microtask)`라고 따로 구분지어 부름
+
+#### `process.exit(코드)`
+* 실행중인 노드 프로세스 종료
+* `exit.js`
 
 ## 내장 모듈 사용하기
+* 운영체제 정보에도 접근, 클라이언트가 요청한 주소에 대한 정보도 가져올 수 있음
+* 노드 버전마다 차이가 있음
 
 ### `os`
+* `os.js`
 
 ### `path`
+* `path.js`
 
 ### `url`
+<img src="images/whatwg-url.png" alt="whatwg url" class="img"/>
+
+* `url.js`
+* `searchParams.js`
+
 
 ### `querystring`
+* `querystring.js`
 
 ### `crypto`
 
