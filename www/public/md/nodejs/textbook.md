@@ -254,7 +254,7 @@ fs.copyFile('readme4.txt', 'writeme4.txt', (error) => {
   if (error) {
     return console.error(error);
   }
-  console.log('ë³µì‚¬ ì™„ë£Œ');
+  console.log('복사 완료');
 });
 ```
 
