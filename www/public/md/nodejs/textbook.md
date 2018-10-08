@@ -163,15 +163,41 @@ exports.even = '짝수입니다';
 * `querystring.js`
 
 ### `crypto`
+* 다양한 방식의 암호화 도와주는 모듈
+* 고객의 비밀번호 등
+
+#### 단방향 암호화
+* `hash.js`
+* `pbkdf2.js`
+
+#### 양방향 암호화
+* `cipher.js`
 
 ### `util`
+* `util.js`
 
 
 ## 파일 시스템 접근하기
 
+* `readme.txt`
+* `readFile.js`
+* `writeFile.js`
+
 ### 동기 메서드와 비동기 메서드
+* `readme2.txt`
+* `async.js`
+* `sync.js`
+* `asyncOrder.js`
+
 
 ### 버퍼와 스트림 이해하기
+* `buffer.js`
+* `readme3.txt`
+* `createReadStream.js`
+* `createWriteStream.js`
+* `readme4.txt`
+* `pipe.js`
+* `gzip.js`
 
 ### 기타 fs 메서드
 
