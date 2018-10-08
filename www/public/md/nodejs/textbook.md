@@ -12,6 +12,7 @@
 
 * 아무 위치에서나 실행 가능
 * `helloWorld.js`
+
 ```js
 function helloWorld() {
   console.log('Hello World');
@@ -32,6 +33,7 @@ helloWorld();
 * 모듈로 만들어두면 여러 프로그램에서 재사용 가능
 * 브라우저의 모듈은 크롬 60부터 사용가능, 하지만 아직 사용은 비추천. ex) IE
 * `var.js`
+
 ```js
 const odd = '홀수입니다';
 const even = '짝수입니다';
@@ -41,7 +43,9 @@ module.exports = {
   even
 };
 ```
+
 * `func.js`
+
 ```js
 const {odd, even} = require('./var');
 
@@ -54,7 +58,9 @@ function checkOddOrEven(num) {
 
 module.exports = checkOddOrEven;
 ```
+
 * `index.js`
+
 ```js
 const {odd, even} = require('./var');
 const checkNumber = require('./func');
@@ -88,11 +94,13 @@ console.log(checkStringOddOrEven('hello');
 * `global` 에는 수십 가지 속성이 담겨 있음
 
 * `globalA.js`
+
 ```js
 module.exports = () => global.message;
 ```
 
 * `globalB.js`
+
 ```js
 const A = require('./globalA');
 
@@ -117,6 +125,7 @@ console.log(A());
 ### module, exports
 * exports 객체로도 모듈 생성 가능
 * `var.js`
+
 ```js
 exports.odd = '홀수입니다';
 exports.even = '짝수입니다';
@@ -202,6 +211,7 @@ exports.even = '짝수입니다';
 ### 기타 fs 메서드
 
 * `fsCreate.js`
+
 ```js
 const fs = require('fs');
 
@@ -237,6 +247,7 @@ fs.access('./folder', fs.constants.F_OK | fs.constants.R_OK | fs.constants.W_OK,
 ```
 
 * `fsDelete.js`
+
 ```js
 const fs = require('fs');
 
@@ -269,7 +280,7 @@ fs.copyFile('readme4.txt', 'writeme4.txt', (error) => {
   if (error) {
     return console.error(error);
   }
-  console.log('ë³µì‚¬ ì™„ë£Œ');
+  console.log('복사 완료');
 });
 ```
 
@@ -342,6 +353,7 @@ console.log(myEvent.listenerCount('event2'));
 * 좋은 에디터, 좋은 문법 검사 도구
 
 * `error1.js`
+
 ```js
 setInterval(() => {
   console.log('시작');
@@ -354,6 +366,7 @@ setInterval(() => {
 ```
 
 * `error2.js`
+
 ```js
 const fs = require('fs');
 
@@ -368,6 +381,7 @@ setInterval(() => {
 * 없는 파일 지우지만, 내장 모듈의 에러는 실행 중인 프로세스를 멈추지 않음
 
 * `error3.js`
+
 ```js
 process.on('uncaughtException', (err) => {
   console.error('예기지 못한 에러', err);
