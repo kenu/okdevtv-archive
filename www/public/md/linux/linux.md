@@ -17,6 +17,7 @@
 |edit file	|nano filename	|notepad filename|
 
 ## File extract 1 line
+
 ```
 sed -n '3p' file
 
@@ -32,17 +33,20 @@ head -n 3 file | tail -n 1
 * `lsof | wc -l`
 
 ## inode file rm
+
 ```
 ls -altri
 find . -inum 782263 -exec rm -i {} \;
 ```
 
 ## nobody 소유의 폴더 찾기
+
 ```
 find . -type d  -user nobody
 ```
 
 ## 심볼릭 링크 찾기
+
 ```
 find . -type l
 ```
@@ -51,6 +55,7 @@ find . -type l
 * `lsof -i tcp:3000`
 
 * 열린 포트 확인
+
 ```
 lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
 *:27017 mongod
@@ -58,6 +63,7 @@ lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
 ```
 
 * 원격 열린 포트 확인
+
 ```
 # dest
 nc -l -p 7555 > myfile.txt
@@ -67,13 +73,16 @@ nc 172.31.95.135 7555 < myfile.txt
 ```
 
 ## LC_CTYPE warning
+
 * /etc/environment
+
 ```
 LANG=en_US.utf-8
 LC_ALL=en_US.utf-8
 ```
 
 ## change file encoding
+
 ```
 iconv -f euc-kr -t utf-8 kimchi.txt > kimchi_utf8.txt
 ```
@@ -88,6 +97,7 @@ done
 ```
 
 ## date
+
 ```
 date '+%Y%m%d %H%M%S' # today
 date -v-3d '+%Y%m%d %H%M%S' # 1 days before
@@ -96,19 +106,23 @@ date -d "3days ago" '+%Y-%m-%d %H' # bash
 ```
 
 ## Timezone
+
 * ~/.bash_profile
+
 ```
 # .bash_profile
 TZ='Asia/Seoul'; export TZ
 ```
 
 * for cron
+
 ```
 sudo cp -p /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 sudo service crond restart
 ```
 
 ## sudo
+
 ```
 # vi /etc/sudoers
 ```
@@ -120,17 +134,20 @@ sudo service crond restart
 ```
 
 ## VGA 확인
+
 ```
 sudo yum install pciutils
 lspci | grep -i vga
 ```
 
 ## file filter
+
 ```
 find . -type f | egrep "gif$|jpg$|jpeg$|svg$|png$" | wc -l
 ```
 
 ## archive filtered list containing spaces in file name
+
 ```
 find . -type f | grep -v list_files |egrep "php$|html$|htm$|js$|css$|inc$" > list.txt
 tar cvfz text.tgz -T list.txt
@@ -140,12 +157,14 @@ tar cvfz img.tgz -T list_img.txt
 ```
 
 ## Process 확인
+
 ```
 ps -ef | grep httpd
 ps x -o  "%p %r %c"
 ```
 
 * group process kill
+
 ```
 ps -ef | grep httpd
 kill -TERM -- -22590
@@ -163,20 +182,24 @@ htop -p "$(pgrep -vfd, 'java|python')"
 ```
 
 ## ls for second
+
 ```
 ls -la --time-style=full-iso
 ``` 
 
 ## other topics
+
 * [cron](https://okdevtv.com/mib/linux/cron)
 * [curl](https://okdevtv.com/mib/linux/curl)
 * [pigz](https://okdevtv.com/mib/linux/pigz) : parallel gzip
 
 ## Mail
+
 * 파일첨부
   * `mutt -s "subject" -i body.txt -a attachment.txt recipient@example.com`
 
 ## Ref
+
 * vi 에디터에서 utf8, euc-kr 전환하기
   * http://egloos.zum.com/indirock/v/3791689
 * Linux file descriptors
