@@ -304,9 +304,10 @@ exports.even = '짝수입니다';
 
 
 ## 파일 시스템 접근하기
-
+* `const fs = require('fs')`
 * `readme.txt`
 * `readFile.js`
+  * `readFile()` 결과는 버퍼(메모리의 데이터) 형식, `.toString()` 을 통해서 문자열로 변환  
 * `writeFile.js`
 
 ### 동기 메서드와 비동기 메서드
@@ -317,7 +318,16 @@ exports.even = '짝수입니다';
 
 
 ### 버퍼와 스트림 이해하기
+* 로딩중일 때 버퍼링, 송출할 때는 스트리밍
+* 버퍼를 직접 다루는 클래스 : `Buffer`
 * `buffer.js`
+  * `from(문자열)` : 문자열을 버퍼로 변환
+  * `toString(인코딩)` : 버퍼를 다시 문자열로 `base64`, `hex` 인코딩 가능
+  * `concat(배열)` : 배열 안에 든 버퍼들을 하나로 합침
+  * `alloc(바이트)` : 빈 버퍼 생성
+* 버퍼의 크기를 작게 만들어서 여러 번에 나눠서 보내는 방식
+  * 1MB 메모리로 100MB 파일 전송
+  * 이 작업을 편리하게 만든 것이 **스트림**
 * `readme3.txt`
 * `createReadStream.js`
 * `createWriteStream.js`
