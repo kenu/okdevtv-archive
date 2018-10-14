@@ -173,14 +173,131 @@ exports.even = '짝수입니다';
 
 ### `crypto`
 * 다양한 방식의 암호화 도와주는 모듈
-* 고객의 비밀번호 등
 
 #### 단방향 암호화
+* 비밀번호 등 복호화가 필요하지 않은 경우
+* 암호화된 문자열로만 비교
 * `hash.js`
+  * `crypto.createHash('sha512')` : ~~`md5`~~, ~~`sha1`~~, `sha256`, `sha512`
+  * `update(문자열)` : 비밀번호 등 변환할 문자열
+  * `digest(인코딩)` : `base64`, `hex`, `latin1`
 * `pbkdf2.js`
+  * node.js에서 기본 지원
+  * salt라고 불리는 문자열을 붙인 후 해시 알고리즘을 반복 적용해서 암호화
+  * `randomBytes()` : 64바이트 길이의 문자열 생성 `salt`
+  * `crypto.pbkdf2(비밀번호, salt, 반복횟수, 출력바이트, 해시알고리즘)`
 
 #### 양방향 암호화
+* 전화번호, 이메일 등 복호화가 필요한 경우
+* key 사용해서 암호화하고 같은 key 사용해서 복호화
 * `cipher.js`
+  * `crypto.createCipher(알고리즘, 키)`
+  * `crypto.getCiphers()` : 사용 가능한 알고리즘 목록
+
+```
+> crypto.getCiphers()
+[ 'aes-128-cbc',
+  'aes-128-cbc-hmac-sha1',
+  'aes-128-cbc-hmac-sha256',
+  'aes-128-ccm',
+  'aes-128-cfb',
+  'aes-128-cfb1',
+  'aes-128-cfb8',
+  'aes-128-ctr',
+  'aes-128-ecb',
+  'aes-128-gcm',
+  'aes-128-ofb',
+  'aes-128-xts',
+  'aes-192-cbc',
+  'aes-192-ccm',
+  'aes-192-cfb',
+  'aes-192-cfb1',
+  'aes-192-cfb8',
+  'aes-192-ctr',
+  'aes-192-ecb',
+  'aes-192-gcm',
+  'aes-192-ofb',
+  'aes-256-cbc',
+  'aes-256-cbc-hmac-sha1',
+  'aes-256-cbc-hmac-sha256',
+  'aes-256-ccm',
+  'aes-256-cfb',
+  'aes-256-cfb1',
+  'aes-256-cfb8',
+  'aes-256-ctr',
+  'aes-256-ecb',
+  'aes-256-gcm',
+  'aes-256-ofb',
+  'aes-256-xts',
+  'aes128',
+  'aes192',
+  'aes256',
+  'bf',
+  'bf-cbc',
+  'bf-cfb',
+  'bf-ecb',
+  'bf-ofb',
+  'blowfish',
+  'camellia-128-cbc',
+  'camellia-128-cfb',
+  'camellia-128-cfb1',
+  'camellia-128-cfb8',
+  'camellia-128-ecb',
+  'camellia-128-ofb',
+  'camellia-192-cbc',
+  'camellia-192-cfb',
+  'camellia-192-cfb1',
+  'camellia-192-cfb8',
+  'camellia-192-ecb',
+  'camellia-192-ofb',
+  'camellia-256-cbc',
+  'camellia-256-cfb',
+  'camellia-256-cfb1',
+  'camellia-256-cfb8',
+  'camellia-256-ecb',
+  'camellia-256-ofb',
+  'camellia128',
+  'camellia192',
+  'camellia256',
+  'cast',
+  'cast-cbc',
+  'cast5-cbc',
+  'cast5-cfb',
+  'cast5-ecb',
+  'cast5-ofb',
+  'des',
+  'des-cbc',
+  'des-cfb',
+  'des-cfb1',
+  'des-cfb8',
+  'des-ecb',
+  'des-ede',
+  'des-ede-cbc',
+  'des-ede-cfb',
+  'des-ede-ofb',
+  'des-ede3',
+  'des-ede3-cbc',
+  'des-ede3-cfb',
+  'des-ede3-cfb1',
+  'des-ede3-cfb8',
+  'des-ede3-ofb',
+  'des-ofb',
+  'des3',
+  'desx',
+  'desx-cbc',
+  'id-aes128-CCM',
+  'id-aes128-GCM',
+  'id-aes128-wrap',
+  'id-aes192-CCM',
+  'id-aes192-GCM',
+  'id-aes192-wrap',
+  'id-aes256-CCM',
+  'id-aes256-GCM',
+  'id-aes256-wrap',
+  'id-smime-alg-CMS3DESwrap',
+  'idea',
+  ... 19 more items ]
+```
 
 ### `util`
 * `util.js`
