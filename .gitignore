@@ -13,3 +13,4 @@ class
 .scannerwork
 .idea
 *.iml
+credentials.json

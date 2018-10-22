@@ -421,6 +421,8 @@ console.log('hello');
 * node-emailer
 * gmail smtp 설정 필요
   * https://www.google.com/settings/security/lesssecureapps
+* OAuth2
+  * https://developers.google.com/gmail/api/quickstart/nodejs
 
 ## Test Frameworks
 * QUnit
