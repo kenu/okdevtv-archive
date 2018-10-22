@@ -67,6 +67,8 @@ lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
 ```
 # dest
 nc -l -p 7555 > myfile.txt
+# mac
+nc -l 7555 > myfile.txt
 
 # source
 nc 172.31.95.135 7555 < myfile.txt
