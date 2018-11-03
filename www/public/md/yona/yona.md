@@ -135,6 +135,19 @@ SET YONA_HOME=c:\yona\yona-1.10.1
 SET JAVA_OPTS=-Dyona.home=%YONA_HOME% -Dconfig.file=%YONA_HOME%\conf\application.conf -Dlogger.file=%YONA_HOME%\conf\application-logger.xml
 ```
 
+## Yona restart shell
+```
+#!/bin/bash
+source /home/ec2-user/.bash_profile
+
+cd /home/ec2-user/local/yona
+sudo kill -9 `cat RUNNING_PID`
+sudo rm -rf RUNNING_PID
+sleep 5
+/usr/bin/nohup /home/ec2-user/local/yona/bin/yona &
+
+```
+
 ## 참고
 * yona-1.4.1 설치 영상
   * https://youtu.be/B3Q2FVXZWBM
