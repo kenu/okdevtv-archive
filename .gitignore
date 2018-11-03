@@ -14,5 +14,5 @@ class
 .idea
 *.iml
 credentials.json
-tonken.json
+token.json
 *.bak
