@@ -186,9 +186,21 @@ http {
 ```
 
 ### max file upload
+
 ```
 client_max_body_size 200M;
 ```
+
+### http to https
+
+```
+server {
+    # ...
+    if ($http_x_forwarded_proto = 'http'){
+        return 301 https://$host$request_uri;
+    }
+```
+* https://aws.amazon.com/ko/premiumsupport/knowledge-center/redirect-http-https-elb/
 
 ## CentOS on GCP
 * [err]
