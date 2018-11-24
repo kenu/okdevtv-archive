@@ -202,6 +202,13 @@ server {
 ```
 * https://aws.amazon.com/ko/premiumsupport/knowledge-center/redirect-http-https-elb/
 
+## WebSocket 추가
+
+```
+proxy_set_header Upgrade $http_upgrade; # ws
+proxy_set_header Connection "upgrade"; # ws
+```
+
 ## CentOS on GCP
 * [err]
 `connect() to 127.0.0.1:5601 failed (13: Permission denied) while connecting to upstream, client`
