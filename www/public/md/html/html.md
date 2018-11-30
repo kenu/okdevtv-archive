@@ -64,6 +64,9 @@ title, meta, link, script
 ```
 
 ## 참고
+* HTML5 템플릿
+  * https://html5.net
+  * [list](/mib/html/html5net)
 * A history of HTML
   * http://www.w3.org/People/Raggett/book4/ch02.html
 * w3schools
