@@ -22,6 +22,7 @@
 * `[^abc]` : Matches any character except for an a, b or c
 * `a{3}` : Matches exactly 3 consecutive `a` characters.
 * `a{3,}` : Matches at least 3 consecutive `a` characters.
+* `a{3,5}` : Matches between 3 and 5 consecutive `a` characters.
 * `(a|b)` : a or b
 
 ## anchor tokens
