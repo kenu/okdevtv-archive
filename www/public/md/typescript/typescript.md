@@ -30,3 +30,5 @@ console.log(greeter(user));
 ## ref
 * in 5 minutes
   * https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+* TypeScript Deep Dive
+  * https://basarat.gitbooks.io/typescript/content/
