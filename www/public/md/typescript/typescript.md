@@ -5,19 +5,27 @@
 * `greeter.ts`
 
 ```typescript
-function greeter(person) {
+function greeter(person: string) {
     return "Hello, " + person;
 }
 
-let user = "Jane User";
+let user = "Kenu";
 
-document.body.innerHTML = greeter(user);
+console.log(greeter(user));
 ```
 
 ## install, compile and run
 * `npm install -g typescript`
 * `tsc greeter.ts`
 * `node greeter.js`
+
+## ts-node
+* `npm i -g ts-node`
+* `ts-node  greeter.js`
+
+## TypeScript Type 계층도
+<img src="images/typescript.mmd.png">
+* image from: https://github.com/bcherny/language-types-comparison
 
 ## ref
 * in 5 minutes
