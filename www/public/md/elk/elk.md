@@ -4,3 +4,4 @@
 * https://okdevtv.com/mib/elk/kibana
 * https://okdevtv.com/mib/elk/timelion
 * https://okdevtv.com/mib/elk/metricbeat
+* https://okdevtv.com/mib/elk/upgrade
