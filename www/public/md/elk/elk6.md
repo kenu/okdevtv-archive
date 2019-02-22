@@ -22,6 +22,15 @@
 * 리눅스 서버 CentOS 또는 Ubuntu
 * Java 1.8 이상
 
+## 통합설치
+
+* elasticsearch + kibana + logstash with openjdk1.8 + nginx
+* for AWS t2.medium : minimum 4G RAM
+
+```bash
+curl -L https://okdevtv.com/md/elk/elastic-setup.sh | sh
+```
+
 ## nginx 설치(샘플용)
 ```
 sudo yum install nginx -y
