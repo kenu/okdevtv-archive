@@ -25,6 +25,19 @@ var workbook = XLSX.readFile('test.xlsx');
 /* DO SOMETHING WITH workbook HERE */
 ```
 
+## SpreadSheet 구조
+
+* File WorkBook
+  * Sheet
+    * Cell
+      * Content
+
+```js
+let workbook = XLSX.readFile("test.xlx");
+let worksheet = XLSX.Sheets[0];
+```
+
+
 ## API, Documents
 
 * https://docs.sheetjs.com/
