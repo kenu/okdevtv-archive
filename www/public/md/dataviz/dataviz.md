@@ -22,6 +22,13 @@
 * python matplotlib, folium
 * JavaScript d3.js, three.js, leaflet.js, ...
 
+## 데이터 시각화 단계
+1. raw 데이터
+2. 데이터 기준 지표 정하기
+3. 데이터 조합 통계표 만들기
+4. 통계표를 시각화 차트
+
+
 ## 시각화 애플리케이션
 * Kibana (Elastic Stack) : Open Source
 * Tableau : Grossing Application

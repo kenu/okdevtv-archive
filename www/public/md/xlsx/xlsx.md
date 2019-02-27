@@ -34,7 +34,7 @@ var workbook = XLSX.readFile('test.xlsx');
 
 ```js
 let workbook = XLSX.readFile("test.xlx");
-let worksheet = XLSX.Sheets[0];
+let worksheet = workbook.Sheets[0];
 ```
 
 
