@@ -57,6 +57,7 @@ ec2-user soft nproc 65536
 ```
 
 ```
+sudo chmod +x /etc/rc.d/rc.local
 sudo vi /etc/rc.local
 ```
 *
