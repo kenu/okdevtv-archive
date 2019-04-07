@@ -46,7 +46,15 @@ echo "<h1>Hello World</h1>" > /usr/share/nginx/html/hello.html
 ```
 sudo yum remove java-1.7.0-openjdk.x86_64 -y
 sudo yum install java-1.8.0-openjdk-devel.x86_64 -y
+which javac
+readfile -f `which javac`
 ```
+* set JAVA_HOME in ~/.bash_profile
+
+```
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.201.b09-0.43.amzn1.x86_64
+```
+
 * more [install](https://okdevtv.com/mib/java)
 
 ## system env

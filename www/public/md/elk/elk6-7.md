@@ -35,7 +35,16 @@ sudo chmod 644 /var/log/nginx
 ## jdk 1.8
 ```
 sudo yum install java-1.8.0-openjdk-devel.x86_64 -y
+which javac
+readfile -f `which javac`
 ```
+
+* set JAVA_HOME in ~/.bash_profile
+
+```
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.201.b09-0.43.amzn1.x86_64
+```
+
 * more [install](https://okdevtv.com/mib/java)
 
 ## system env
