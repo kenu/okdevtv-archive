@@ -78,7 +78,7 @@ npm i --save @types/jquery @types/underscore jquery underscore
 npm i --save-dev html-webpack-plugin ts-loader typescript webpack uglifyjs-webpack-plugin
 ```
 
-## AngularJS 기반 프로젝ㅌ트 구성
+## AngularJS 기반 프로젝트 구성
 
 ```
 mkdir list-angularjs
