@@ -9,9 +9,13 @@ router.get('/tips', function (req, res) {
 
 /* POST save tip */
 router.post('/tip', function (req, res) {
-    tip.save(res, req.body);
+    let data = req.body;
+    data.clientip = req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress;
+    tip.save(res, data);
     res.json({
-        "data": req.body
+        "status": 200
     });
 });
 
