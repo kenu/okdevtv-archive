@@ -11,16 +11,14 @@
 ### Prerequisite
 * MariaDB 설치
   * CentOS
+
 ```
 sudo yum update -y
-# for aws ec2 with 10.2.16
-rpm -ev --nodeps mariadb-libs-5.5.56-2.amzn2.x86_64
-wget https://rpmfind.net/linux/Mandriva/official/2010.0/x86_64/media/main/release/lib64boost5-1.39.0-2mdv2010.0.x86_64.rpm
-rpm -iv --nodeps lib64boost5-1.39.0-2mdv2010.0.x86_64.rpm
 sudo vi /etc/yum.repos.d/MariaDB.repo
 ```
 
-    * MariaDB.repo
+  * MariaDB.repo
+
 ```
 [mariadb]
 name = MariaDB
@@ -29,7 +27,8 @@ gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
 
-    * MariaDB config
+  * MariaDB config
+
 ```
 sudo yum install MariaDB-server
 ```
@@ -58,10 +57,11 @@ create database yona DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_bin;
 ```
 
   * Server config
+
 ```
 sudo vi /etc/my.cnf.d/server.cnf
 ```
-    * ubuntu : `sudo vi /etc/mysql/my.cnf`
+  * ubuntu : `sudo vi /etc/mysql/my.cnf`
 
 ```
 [mysqld]
@@ -74,6 +74,7 @@ innodb_large_prefix=on
 ```
 
   * Client config
+
 ```
 sudo vi /etc/my.cnf.d/mysql-clients.cnf
 ```
@@ -92,10 +93,10 @@ default-character-set=utf8mb4
 ```
 mkdir local && cd local
 # MariaDB 10.2 required
-wget https://github.com/yona-projects/yona/releases/download/v1.11.0/yona-v1.11.0-bin.zip
+wget https://github.com/yona-projects/yona/releases/download/v1.12.0/yona-v1.12.0-bin.zip
 
-unzip yona-v1.11.0-bin.zip
-ln -s yona-1.11.0/ yona
+unzip yona-v1.12.0-bin.zip
+ln -s yona-1.12.0/ yona
 cd yona
 bin/yona # first for unarchive folders
 vi conf/application.conf
@@ -128,10 +129,20 @@ nohup bin/yona &
 에러메시지를 만나면, MariaDB 삭제했다가 다시 설치
 * `sudo yum uninstall -y MariaDB-server MariaDB-client`
 
+## AMI Linux 2
+
+```
+# for aws ec2 with 10.2.16
+rpm -ev --nodeps mariadb-libs-5.5.56-2.amzn2.x86_64
+wget https://rpmfind.net/linux/Mandriva/official/2010.0/x86_64/media/main/release/lib64boost5-1.39.0-2mdv2010.0.x86_64.rpm
+rpm -iv --nodeps lib64boost5-1.39.0-2mdv2010.0.x86_64.rpm
+```
+
 ## Yona in Windows
 * 환경변수
+
 ```
-SET YONA_HOME=c:\yona\yona-1.11.0
+SET YONA_HOME=c:\yona\yona-1.12.0
 SET JAVA_OPTS=-Dyona.home=%YONA_HOME% -Dconfig.file=%YONA_HOME%\conf\application.conf -Dlogger.file=%YONA_HOME%\conf\application-logger.xml
 ```
 
