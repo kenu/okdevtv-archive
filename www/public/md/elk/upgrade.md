@@ -10,8 +10,8 @@
 cd local
 ls -altr
 cd ~/local
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0.tar.gz
-tar xfz elasticsearch-7.0.0.tar.gz
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-linux-x86_64.tar.gz
+tar xfz elasticsearch-7.0.0-linux-x86_64.tar.gz
 cd ~/local
 wget https://artifacts.elastic.co/downloads/kibana/kibana-7.0.0-linux-x86_64.tar.gz
 tar xfz kibana-7.0.0-linux-x86_64.tar.gz 

@@ -11,8 +11,8 @@ sudo yum install java-1.8.0-openjdk-devel.x86_64 -y
 mkdir ~/local
 cd ~/local
 rm -rf elasticsearch kibana logstash
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0.tar.gz
-tar xfz elasticsearch-7.0.0.tar.gz
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-linux-x86_64.tar.gz
+tar xfz elasticsearch-7.0.0-linux-x86_64.tar.gz
 ln -s elasticsearch-7.0.0 elasticsearch
 cd elasticsearch
 bin/elasticsearch -d

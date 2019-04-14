@@ -113,8 +113,8 @@ sudo reboot
 ```
 mkdir ~/local
 cd ~/local
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0.tar.gz
-tar xvfz elasticsearch-7.0.0.tar.gz
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-linux-x86_64.tar.gz
+tar xvfz elasticsearch-7.0.0-linux-x86_64.tar.gz
 ln -s elasticsearch-7.0.0 elasticsearch
 cd elasticsearch
 bin/elasticsearch -d
