@@ -104,9 +104,9 @@ sudo reboot
 ```
 mkdir ~/local
 cd ~/local
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.7.1.tar.gz
-tar xvfz elasticsearch-6.7.1.tar.gz
-ln -s elasticsearch-6.7.1 elasticsearch
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0.tar.gz
+tar xvfz elasticsearch-7.0.0.tar.gz
+ln -s elasticsearch-7.0.0 elasticsearch
 cd elasticsearch
 bin/elasticsearch -d
   # 데몬(백그라운드)로 실행. 옵션 -d를 빼면 터미널 접속해 있는 동안만 실행
@@ -121,9 +121,9 @@ curl -i localhost:9200
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/kibana/kibana-6.7.1-linux-x86_64.tar.gz
-tar xvfz kibana-6.7.1-linux-x86_64.tar.gz
-ln -s kibana-6.7.1-linux-x86_64 kibana
+wget https://artifacts.elastic.co/downloads/kibana/kibana-7.0.0-linux-x86_64.tar.gz
+tar xvfz kibana-7.0.0-linux-x86_64.tar.gz
+ln -s kibana-7.0.0-linux-x86_64 kibana
 cd kibana
 ```
 
@@ -140,9 +140,9 @@ nohup bin/kibana &
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/logstash/logstash-6.7.1.tar.gz
-tar xvfz logstash-6.7.1.tar.gz
-ln -s logstash-6.7.1 logstash
+wget https://artifacts.elastic.co/downloads/logstash/logstash-7.0.0.tar.gz
+tar xvfz logstash-7.0.0.tar.gz
+ln -s logstash-7.0.0 logstash
 cd logstash
 ```
 
@@ -265,9 +265,9 @@ cd ~/local/logstash
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.7.1-linux-x86_64.tar.gz
-tar xvfz filebeat-6.7.1-linux-x86_64.tar.gz
-ln -s filebeat-6.7.1-linux-x86_64 filebeat
+wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.0.0-linux-x86_64.tar.gz
+tar xvfz filebeat-7.0.0-linux-x86_64.tar.gz
+ln -s filebeat-7.0.0-linux-x86_64 filebeat
 cd filebeat
 ```
 

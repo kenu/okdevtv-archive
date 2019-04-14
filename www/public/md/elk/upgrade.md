@@ -10,14 +10,14 @@
 cd local
 ls -altr
 cd ~/local
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.7.1.tar.gz
-tar xfz elasticsearch-6.7.1.tar.gz
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0.tar.gz
+tar xfz elasticsearch-7.0.0.tar.gz
 cd ~/local
-wget https://artifacts.elastic.co/downloads/kibana/kibana-6.7.1-linux-x86_64.tar.gz
-tar xfz kibana-6.7.1-linux-x86_64.tar.gz 
+wget https://artifacts.elastic.co/downloads/kibana/kibana-7.0.0-linux-x86_64.tar.gz
+tar xfz kibana-7.0.0-linux-x86_64.tar.gz 
 cd ~/local
-wget https://artifacts.elastic.co/downloads/logstash/logstash-6.7.1.tar.gz
-tar xvfz logstash-6.7.1.tar.gz
+wget https://artifacts.elastic.co/downloads/logstash/logstash-7.0.0.tar.gz
+tar xvfz logstash-7.0.0.tar.gz
 ```
 
 * Kill old version processes
@@ -40,11 +40,11 @@ df -h
 
 ```bash
 rm -rf elasticsearch
-ln -s elasticsearch-6.7.1 elasticsearch
+ln -s elasticsearch-7.0.0 elasticsearch
 ls -altr
 rm -rf kibana logstash
-ln -s logstash-6.7.1 logstash
-ln -s kibana-6.7.1-linux-x86_64 kibana
+ln -s logstash-7.0.0 logstash
+ln -s kibana-7.0.0-linux-x86_64 kibana
 ls -altr
 ```
 
