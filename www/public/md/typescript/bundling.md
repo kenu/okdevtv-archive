@@ -16,28 +16,6 @@
 document.write("hello World!");
 ```
 
-* 명령
-
-```
-webpack entry1.js build1.js
-```
-
-* 샘플 파일 `sec/entry2.js`
-
-```js
-document.write(require("./entry2-subb.js"));
-```
-
-```js
-module.exports = "hello World!";
-```
-
-* 명령
-
-```
-webpack entry2.js build2.js
-```
-
 ## webpack config
 
 * `webpack.config.js`
@@ -52,6 +30,8 @@ module.exports = {
   }
 };
 ```
+
+* 명령
 
 ```
 webpack
