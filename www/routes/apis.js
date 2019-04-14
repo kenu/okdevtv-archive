@@ -13,6 +13,7 @@ router.post('/tip', function (req, res) {
     data.clientip = req.headers['x-forwarded-for'] ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress;
+    console.log('ip', req.headers['x-forwarded-for'], req.connection.remoteAddress, req.socket.remoteAddress);
     tip.save(res, data);
     res.json({
         "status": 200
