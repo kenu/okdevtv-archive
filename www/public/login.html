@@ -60,6 +60,14 @@
 
   };
 
+  function logout() {
+    console.log('log out');
+    FB.logout(function(response) {
+      // Person is now logged out
+      console.log(response);
+    });
+  }
+
   // Load the SDK asynchronously
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -77,7 +85,11 @@
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
+      document.getElementById('logout').style.display = '';
     });
+  }
+  window.onload = function() {
+    document.getElementById('logout').addEventListener('click', logout);
   }
 </script>
 
@@ -92,6 +104,8 @@
 
 <div id="status">
 </div>
-
+<div id="logout" style="display: none;">
+    <button id="logoutBtn">Log out</button>
+</div>
 </body>
 </html>
