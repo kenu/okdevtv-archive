@@ -1,10 +1,11 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-const frameguard = require('frameguard')
+const express = require('express');
+const session = require('express-session')
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const frameguard = require('frameguard');
 
 var app = express();
 
@@ -20,6 +21,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(frameguard({ action: 'sameorigin' }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+var sess = {
+  secret: 'okdevtv cat',
+  resave: true,
+  saveUninitialized: true,
+  cookie: {}
+}
+if (app.get('env') === 'production') {
+  app.set('trust proxy', 1) // trust first proxy
+  sess.cookie.secure = true // serve secure cookies
+}
+app.use(session(sess));
 
 app.use('/', require('./routes/index'));
 app.use('/apis', require('./routes/apis'));
