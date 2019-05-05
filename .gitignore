@@ -17,3 +17,4 @@ credentials.json
 token.json
 *.bak
 package-lock.json
+yarn.lock
