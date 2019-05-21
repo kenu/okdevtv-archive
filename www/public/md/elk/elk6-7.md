@@ -1,10 +1,12 @@
 # ELK
-* Elasticsearch + Logstash + Kibana
+* Elastic Stack
+* http://elastic.co 사이트 오픈소스 제품
+* Elasticsearch + Logstash + Kibana + Beats
 * Elasticsearch는 Apache의 Lucene을 바탕으로 개발한 실시간 분산 검색 엔진이며,
 * Logstash는 각종 로그를 가져와 JSON형태로 만들어 Elasticsearch로 전송하고,
 * Kibana는 Elasticsearch에 저장된 Data를 사용자에게 Chart 형태로 보여주는 시각화 솔루션이다.
+
 ![ELK Architecture](images/elastic-stack.png)
-* http://elastic.co 사이트 오픈소스 제품
 
 
 ## 장점
@@ -49,6 +51,7 @@ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.201.b09-0.43.amzn1.x86_64
 
 ## system env
 * check env
+
 ```
 ulimit -a
 ```
@@ -57,7 +60,7 @@ ulimit -a
 ```
 sudo vi /etc/security/limits.conf
 ```
-*
+
 ```
 ec2-user hard nofile 65536
 ec2-user soft nofile 65536
@@ -69,7 +72,7 @@ ec2-user soft nproc 65536
 sudo chmod +x /etc/rc.d/rc.local
 sudo vi /etc/rc.local
 ```
-*
+
 ```
 echo 1048575 > /proc/sys/vm/max_map_count
 ```
@@ -93,6 +96,7 @@ sudo reboot
 * Elasticsearch
 * Kibana
 * Logstash (FluentD로 대치 가능)
+* Filebeat
 
 * 버전을 맞춰서 작업하는 것이 좋지만, 최신 버전으로 작업해도 동작함(2016/04/03 현재)
 * Elasticsearch와 Kibana는 권장 버전을 맞춰야 함
@@ -272,6 +276,7 @@ cd filebeat
 ```
 
 * `filebeat.yml`
+
 ```
   # Change to true to enable this input configuration.
   enabled: true
@@ -329,6 +334,7 @@ chmod +x start.sh
 
 ### Logstash
 * 필드 추가
+
 ```
 field{
     mutate {
@@ -340,6 +346,7 @@ field{
 ```
 
 * 분리
+
 ```
 field{
     mutate {
@@ -352,6 +359,7 @@ field{
 ```
 
 * 필드 제거
+
 ```
     mutate {
         remove_field => [
@@ -363,6 +371,7 @@ field{
 
 
 * 파라미터 필드 만들기
+
 ```
 filter {
     mutate {
@@ -405,6 +414,7 @@ filter {
 ```
 
 * 이미지 제거
+
 ```
 filter {
     if [message] =~ "^#|\.(css|js|ico|png|xml|jpg|JPG|gif|jpeg|eot|htc\?) " {
@@ -414,6 +424,7 @@ filter {
 ```
 
 * 문자열 체크
+
 ```
 if [agent] =~ "Mediapartners" {
     drop {}
@@ -424,6 +435,7 @@ if [device] == "Spider" {
 ```
 
 * useragent 파싱
+
 ```
     useragent {
         source => "agent"
@@ -431,6 +443,7 @@ if [device] == "Spider" {
 ```
 
 * timestamp 조정(apache log)
+
 ```
     date {
         match => [ "timestamp", "dd/MMM/yyyy:HH:mm:ss Z" ]
@@ -439,6 +452,7 @@ if [device] == "Spider" {
 * https://www.elastic.co/guide/en/logstash/current/plugins-filters-date.html
 
 * urldecode
+
 ```
    urldecode {
        field => "params"
@@ -446,6 +460,7 @@ if [device] == "Spider" {
 ```
 
 * to integer
+
 ```
     mutate {
         convert => [ "bytes", "integer" ]
@@ -453,6 +468,7 @@ if [device] == "Spider" {
 ```
 
 * 하나 이상의 로그 포맷
+
 ```
 filter {
     grok {
@@ -465,6 +481,7 @@ filter {
 ```
 
 * elsasticsearch index 설정
+
 ```
 output {
   elasticsearch {
@@ -477,6 +494,7 @@ output {
 ```
 
 * replace
+
 ```
     mutate {
         gsub => [ 'message', '\\x22', '']
@@ -488,6 +506,7 @@ output {
 
 ### geo_point
 * elasticsearch mappings
+
 ```
 curl -XPUT http://localhost:9200/my_index/ -d '
 {
@@ -500,7 +519,9 @@ curl -XPUT http://localhost:9200/my_index/ -d '
   }
 }'
 ```
+
 * logstash conf
+
 ```
 filter {
     csv {
@@ -518,6 +539,7 @@ filter {
     }
 }
 ```
+
 * sample log
 
 ```
@@ -548,6 +570,7 @@ sudo yum install httpd-tools -y
 sudo htpasswd -c /etc/nginx/htpasswd.users kibanaadmin
 ```
 * 사용자 추가
+
 ```
 sudo htpasswd /etc/nginx/htpasswd.users kenuheo
 ```
@@ -557,6 +580,7 @@ sudo htpasswd /etc/nginx/htpasswd.users kenuheo
 sudo vi /etc/nginx/nginx.conf
 ```
 * `server_name:` 아래 kibana 프록시 설정
+
 ```
         auth_basic "Restricted Access";
         auth_basic_user_file /etc/nginx/htpasswd.users;
