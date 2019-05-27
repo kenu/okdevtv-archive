@@ -120,7 +120,7 @@ fatal: index-pack failed
 git config http.postBuffer 724288000
 ```
 
-or 
+or
 
 ```
 git config --global core.compression 0
@@ -131,3 +131,15 @@ git pull --all
 ```
 * from: https://stackoverflow.com/a/22317479/510222
 
+## git pull push timeout
+
+* `ssh -T -p 443 git@ssh.github.com`
+
+```
+# ~/.ssh/config
+Host github.com
+    Hostname ssh.github.com
+    Port 443
+```
+
+* https://bengsfort.github.io/articles/fixing-git-push-pull-timeout/
