@@ -237,6 +237,18 @@ service nginx stop && certbot-auto renew && service nginx start
 
 ## when stuck
 
+* error "ImportError: No module named cryptography"
+  * solution
+  
+```
+cd /opt/eff.org/certbot/venv/lib64/python2.7
+rmdir site-packages
+ln -s dist-packages site-packages
+```
+
+  * from: https://github.com/certbot/certbot/issues/2544#issuecomment-405954031
+
+
 * do it first
 
 ```
