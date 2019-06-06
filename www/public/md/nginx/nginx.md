@@ -219,6 +219,30 @@ proxy_set_header Connection "upgrade"; # ws
 # semodule -i nginx.pp
 ```
 
+## http forward to https
+
+```
+server {
+
+    listen         80;
+    server_name  okdevtest.net www.okdevtest.net;
+    return         301 https://$host$request_uri;
+
+
+}
+
+server {
+    listen 443 ssl;
+    server_name www.okdevtest.net okdevtest.net;
+
+    if ($host = 'www.okdevtest.net' ) {
+        rewrite  ^/(.*)$  http://okdevtest.net/$1  permanent;
+    }
+
+```
+
+* from: https://rsec.kr/?p=182
+
 ## 관련
 * elk https://okdevtv.com/mib/elk
 * letsencrypt https://okdevtv.com/mib/letsencrypt
