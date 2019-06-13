@@ -10,7 +10,16 @@
 ## Excel
 * Microsoft 사 출시
 * Stackoverflow의 창시자도 참여한 프로젝트
-* 각설하고 라이선스
+* 각설하고 라이선스 때문에
+* 구글스프레드시트로 
+* 오늘의 진도 나갑니다.
+
+### `vlookup`
+* `v`ertically `look up` = 세로로 데이터 그룹 비교할 때 사용
+
+#### 문법
+
+* `=vlookup(값, 라인, 1, false)`
 
 ## ref
 * https://www.google.com/search?q=직장인+엑셀+강좌
