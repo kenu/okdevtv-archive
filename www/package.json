@@ -20,7 +20,7 @@
     "mysql": "^2.16.0",
     "node-fetch": "^2.2.0",
     "passport": "^0.4.0",
-    "passport-facebook": "^2.1.1",
+    "passport-facebook": "^3.0.0",
     "redis": "^2.8.0",
     "serve-favicon": "^2.5.0"
   },
