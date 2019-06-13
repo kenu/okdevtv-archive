@@ -62,7 +62,7 @@ router.use(express.static(__dirname + '/public'));
 
 router.get('/', function(req, res){
   console.log(req.session.passport);
-  res.render('index', { user: req.user });
+  res.render('login', { user: req.user });
 });
 
 router.get('/account', ensureAuthenticated, function(req, res){
