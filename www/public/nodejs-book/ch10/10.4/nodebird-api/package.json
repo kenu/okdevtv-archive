@@ -23,7 +23,7 @@
     "passport-kakao": "0.0.5",
     "passport-local": "^1.0.0",
     "pug": "^2.0.1",
-    "sequelize": "^4.31.2",
+    "sequelize": ">=5.3.0",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
