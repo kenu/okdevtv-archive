@@ -21,5 +21,18 @@
 
 * `=vlookup(값, 라인, 1, false)`
 
+### `피봇테이블`
+* pivot table
+* 데이터 통계
+
+#### example
+
+* 날씨 데이터
+
+```
+http://www.weather.go.kr/weather/lifenindustry/sevice_rss.jsp
+curl http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp\?stnId\=109 | grep -E 'city|tmEf|tmx'
+```
+
 ## ref
 * https://www.google.com/search?q=직장인+엑셀+강좌
