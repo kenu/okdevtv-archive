@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OKdevTV 회원가입</title>
+    <script src="/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#signupform').on('submit', function (e) {
+                $('#message').html('submitted');
+                e.preventDefault();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>OKdevTV 회원가입</h1>
+    <form id="signupform">
+        <input type="email" id="email" name="email" placeholder="input user email">
+        <br />
+        * 위 이메일로 등록 안내 메일이 발송됩니다.
+        <br />
+        <button id="signin">회원가입</button>
+        <div id="message"></div>
+    </form>
+</body>
+
+</html>
