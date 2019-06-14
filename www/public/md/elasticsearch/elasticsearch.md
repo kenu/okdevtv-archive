@@ -2155,16 +2155,14 @@ curl -XPOST 'localhost:9200/${ES}/_analyze?analyzer=korean&pretty' -d '동해물
 
 ### 부분삭제
 * query 된 목록 삭제
-* `delete-by-query` 플러그인 설치 후 elasticsearch 재시작 필요
-```
-./bin/plugin install delete-by-query
-```
+* `_delete-by-query`
+  * https://www.elastic.co/guide/en/elasticsearch/reference/6.7/docs-delete-by-query.html
 
 ```
-curl -XDELETE 'http://localhost:9200/twitter/tweet/_query?q=user:kimchy'
+curl -XDELETE 'http://localhost:9200/twitter/tweet/_delete_by_query?q=user:kimchy'
 
 #or
-curl -XDELETE 'http://localhost:9200/twitter/tweet/_query' -d '
+curl -XPOST 'http://localhost:9200/twitter/tweet/_delete_by__query' -d '
 {
   "query" : {
     "term" : {
@@ -2172,7 +2170,6 @@ curl -XDELETE 'http://localhost:9200/twitter/tweet/_query' -d '
     }
   }
 }'
-
 ```
 
 ## cluster
