@@ -89,16 +89,18 @@ Apple의 발표 에서 알 수 있듯이 Sign In With Apple 기능을 채택하�
 ### 전제 조건
 제시된 단계를 따르는 데 관심이 있다면 주로 다음 두 가지가 필요합니다. 사용할 수 있는 도메인 (예 : `brunokrebs.com`)과 작성하려는 웹 응용 프로그램을 가리 킵니다. 앱을 실행하고이 도메인을 대신하여 응답하는 "실제"서버 (인터넷에 액세스할 수 있는 실제 서버처럼)가 있습니다.
 
-게다가이 서버는 TLS 인증서 (Apple은 보안되지 않은 HTTP 연결을 허용하지 않음)와 npm 및 Node.js (웹 응용 프로그램을 실행할 수 있도록)로 구성해야 합니다. 마지막으로 Email Relay Service를 사용하려면 SPF (Sender Policy Framework) DNS TXT 레코드로 도메인을 구성해야 합니다. Apple 설명서와 함께 공식 로그인하면 어떻게 얻을 수 있는지 설명되어 있습니다.
+게다가 이 서버는 TLS 인증서 (Apple은 보안되지 않은 HTTP 연결을 허용하지 않음)와 npm 및 Node.js (웹 응용 프로그램을 실행할 수 있도록)로 구성해야 합니다. 마지막으로 Email Relay Service를 사용하려면 SPF (Sender Policy Framework) DNS TXT 레코드로 도메인을 구성해야 합니다. Apple 설명서와 함께 공식 로그인하면 어떻게 얻을 수 있는지 설명되어 있습니다.
 
 참고 : 이 디지털 오션 (와 같은 일부 자습서를 사용하는 것처럼 쉬운 방법은 설정까지 얻는 이것 과 이것 ), Freenom 및 하자 암호화를.
 
 계속하기 전에 올바르게 구성했는지 확인하십시오.
 
 ### Apple 개발자 계정 구성
-우선, 플랫폼에 응용 프로그램을 등록하는 데 사용할 수 있는 Apple 개발자 계정 이 필요합니다. 유감스럽게도 이러한 유형의 계정은 유료이며 iOS 개발자 아카데미 프로그램에 참여하지 않는 한 무료 평가판을 사용할 수 없습니다.
+우선, 플랫폼에 응용 프로그램을 등록하는 데 사용할 수 있는 Apple 개발자 계정이 필요합니다. 유감스럽게도 이러한 유형의 계정은 유료이며 iOS 개발자 대학 프로그램에 참여하지 않는 한 무료 평가판을 사용할 수 없습니다.
 
-개발자 계정에 로그인하면 "인증서, ID 및 프로필" 섹션으로 이동하여 왼쪽 메뉴에서 "식별자" 하위 섹션을 선택해야 합니다.
+개발자 계정에 로그인하면 ["인증서, ID 및 프로필" 섹션](https://developer.apple.com/account/resources/certificates/list)으로 이동하여 왼쪽 메뉴에서 ["식별자" 하위 섹션](https://developer.apple.com/account/resources/identifiers/list/serviceId)을 선택해야 합니다.
+
+![Apple Developer - Certificates, IDs, & Profiles page of Developer Account](https://cdn.auth0.com/blog/sign-in-with-apple/certificates-identifiers-and-profiles-section.png)
 
 ### Apple Developer - 개발자 계정의 인증서, ID 및 프로필 페이지
 
