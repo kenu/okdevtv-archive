@@ -10,7 +10,7 @@
   "author": "Zero Cho",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": ">=0.18.1",
     "color-hash": "^1.0.3",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
