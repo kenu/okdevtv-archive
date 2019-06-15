@@ -22,6 +22,7 @@
 * `=vlookup(값, 라인, 1, false)`
 
 ### `피봇테이블`
+
 * pivot table
 * 데이터 통계
 
@@ -33,6 +34,12 @@
 http://www.weather.go.kr/weather/lifenindustry/sevice_rss.jsp
 curl http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp\?stnId\=109 | grep -E 'city|tmEf|tmx'
 ```
+
+### `조건부서식`
+
+* 데이터 구분 편리
+
+
 
 ## ref
 * https://www.google.com/search?q=직장인+엑셀+강좌
