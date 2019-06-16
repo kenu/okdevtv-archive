@@ -40,6 +40,11 @@ curl http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp\?stnId\=109 | g
 * 데이터 구분 편리
 
 
+### `데이터시각화 차트`
+
+* 숫자의 나열보다 나은 비주얼
+
+
 
 ## ref
 * https://www.google.com/search?q=직장인+엑셀+강좌
