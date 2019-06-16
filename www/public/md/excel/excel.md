@@ -43,6 +43,7 @@ curl http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp\?stnId\=109 | g
 ### `데이터시각화 차트`
 
 * 숫자의 나열보다 나은 비주얼
+* https://www.slideshare.net/kenu/elastic-stack
 
 
 
