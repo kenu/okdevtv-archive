@@ -1,15 +1,29 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const user_service = require('../service/user_service');
 
 router.get('/signup', function(req, res) {
   res.render('user/signup', {});
 });
 
-router.post('/signup', function(req, res) {
+router.post('/signup', async function(req, res) {
   let email = req.body.email;
+  let status = 'fail';
+  let msg = '';
+  try {
+    const response = await user_service.signupByEmail(email);
+    if (response === 1) {
+      status = 'ok';
+    }  
+  } catch (e) {
+    msg = e.msg;
+  }
   let result = {
-    status: 'ok',
+    status: status,
     data: email
+  }
+  if (msg) {
+    result.msg = msg;
   }
   res.json(result);
 });

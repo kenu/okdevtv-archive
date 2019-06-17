@@ -15,6 +15,7 @@
     "express-session": "^1.16.1",
     "googleapis": "^34.0.0",
     "helmet": "^3.17.0",
+    "knex": "^0.17.6",
     "marked": "^0.6.2",
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
@@ -22,7 +23,8 @@
     "passport": "^0.4.0",
     "passport-facebook": "^3.0.0",
     "redis": "^2.8.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "mocha": "^5.2.0"
