@@ -275,6 +275,16 @@ unset PYTHON_INSTALL_LAYOUT
 * `from cryptography.hazmat.bindings.openssl.binding import Binding
 ImportError: No module named cryptography.hazmat.bindings.openssl.binding`
 
+### solution 1
+
+```
+$ echo -e "import site\nsite.addsitedir('/opt/eff.org/certbot/venv/lib64/python2.7/dist-packages')" > /opt/eff.org/certbot/venv/lib64/python2.7/site-packages/sitecustomize.py
+```
+
+* https://www.lesstif.com/pages/viewpage.action?pageId=54952117
+
+### solution 2
+
 ```
 ln -s /opt/eff.org/certbot/venv/local/lib64/python2.7/dist-packages/cryptography /opt/eff.org/certbot/venv/local/lib/python2.7/dist-packages/cryptography
 ln -s /opt/eff.org/certbot/venv/local/lib64/python2.7/dist-packages/cryptography-2.0.2.dist-info /opt/eff.org/certbot/venv/local/lib/python2.7/dist-packages/cryptography-2.0.2.dist-info
