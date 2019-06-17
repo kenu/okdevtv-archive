@@ -6,7 +6,12 @@ router.get('/signup', function(req, res) {
 });
 
 router.post('/signup', function(req, res) {
-  res.end('user signup and send mail\n');
+  let email = req.body.email;
+  let result = {
+    status: 'ok',
+    data: email
+  }
+  res.json(result);
 });
 
 router.get('/setup', function(req, res) {

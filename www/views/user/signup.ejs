@@ -10,6 +10,10 @@
     <script>
         $(function () {
             $('#signupform').on('submit', function (e) {
+                $.post('/user/signup',
+                    { email: $('#email').val() })
+                    .done(function (e) { console.log(e); })
+                    .fail(function (e) { console.log(e); });
                 $('#message').html('submitted');
                 e.preventDefault();
             });
