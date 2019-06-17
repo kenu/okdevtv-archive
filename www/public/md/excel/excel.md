@@ -16,6 +16,7 @@
 
 ### `vlookup`
 * `v`ertically `look up` = 세로로 데이터 그룹 비교할 때 사용
+* 영상 : https://www.youtube.com/watch?v=pjun39ady4c
 
 #### 문법
 
@@ -25,6 +26,7 @@
 
 * pivot table
 * 데이터 통계
+* 영상 : https://www.youtube.com/watch?v=nG8sMiKmpzs
 
 #### example
 
@@ -38,16 +40,17 @@ curl http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp\?stnId\=109 | g
 ### `조건부서식`
 
 * 데이터 구분 편리
-
+* 영상 : https://www.youtube.com/watch?v=G2MPTeiKvOg
 
 ### `데이터시각화 차트`
 
 * 숫자의 나열보다 나은 비주얼
 * https://www.slideshare.net/kenu/elastic-stack
-
+* 영상 : https://www.youtube.com/watch?v=kfRNSZGtibA
 
 ### 문자열 다루기
 
+* 영상 : https://www.youtube.com/watch?v=BiPuIR0mk6g
 * 수식 이용
 * `=`으로 시작
 * `+` 대신 `&`
