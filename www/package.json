@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test:watch": "jest tests/ -o --watch"
+    "test:watch": "jest tests/aws-ses.test.js -o --watch"
   },
   "dependencies": {
+    "aws-sdk": "^2.477.0",
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
     "debug": "^4.1.0",
+    "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-session": "^1.16.1",

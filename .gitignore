@@ -18,3 +18,4 @@ token.json
 *.bak
 package-lock.json
 yarn.lock
+.env
