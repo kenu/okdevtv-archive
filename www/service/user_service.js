@@ -12,10 +12,16 @@ module.exports = {
 
         // generate uuid
         const uuid = uuidv4();
-        const message = `https://okdevtv.com/user/setup?q=${uuid}`;
+        const message = `
+        <p>안녕하세요. OKdevTV 가입 안내 메일입니다.</p>
+        <p>아래 링크 페이지로 오셔서 가입을 완료하실 수 있습니다.</p>
+        <p><a href="https://okdevtv.com/user/setup?q=${uuid}" target="_blank">
+        https://okdevtv.com/user/setup?q=${uuid}</a></p>
+        <p></p><p>- Kenu @ OKdevTV`;
 
         // send email
-        await mail.send(email, message);
+        const send_result = await mail.send(email, message);
+        console.log(send_result);
 
         // save sending info
         const save_result = await knex.raw(
