@@ -15,12 +15,12 @@ module.exports = {
         const message = `https://okdevtv.com/user/setup?q=${uuid}`;
 
         // send email
-        const send_result = await mail.send(email, message);
+        await mail.send(email, message);
 
         // save sending info
         const save_result = await knex.raw(
             `insert into user_candidate 
 (seq, email, uuid, created_at) values (null, ?, ?, now());`, [email, uuid]);
-        console.log(save_result);
+        return save_result;
     }
 }

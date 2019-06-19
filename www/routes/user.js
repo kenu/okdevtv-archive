@@ -12,7 +12,8 @@ router.post('/signup', async function(req, res) {
   let msg = '';
   try {
     const response = await user_service.signupByEmail(email);
-    if (response === 1) {
+    console.log(response[0].affectedRows);
+    if (response[0].affectedRows === 1) {
       status = 'ok';
     }  
   } catch (e) {
