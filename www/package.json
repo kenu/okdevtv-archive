@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.477.0",
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
     "debug": "^4.1.0",
