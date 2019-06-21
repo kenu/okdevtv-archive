@@ -17,8 +17,12 @@
                             $('#message')
                                 .html('<p>회원가입 안내 메일이 발송되었습니다.</p><p>감사합니다.</p>');
                         } else {
-                            $('#message')
-                                .html('장애가 발생했습니다. ' + JSON.stringify(res));
+                            let msg = '장애가 발생했습니다.. ' + JSON.stringify(res);
+                            if (res.msg === 'duplicate email') {
+                                msg = '<p>이미 등록된 메일입니다.</p><p><a href="/user/reset_password?email='
+                                     + $('#email').val() + '">비밀번호 변경하기</p>';
+                            }
+                            $('#message').html(msg);
                         }
                     })
                     .fail(function (e) {

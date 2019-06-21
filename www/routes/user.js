@@ -57,7 +57,7 @@ router.post('/setup', async function (req, res) {
   try {
     const result = await user_service.setUpPassword(
       { password, password_confirm, hash });
-      reset = result.reset;
+    reset = result.reset;
     if (result.result[0].affectedRows === 1) {
       status = 'ok';
     }
@@ -76,7 +76,8 @@ router.post('/setup', async function (req, res) {
 });
 
 router.get('/reset_password', async function (req, res) {
-  res.render('user/reset_password');
+  const email = req.query.email;
+  res.render('user/reset_password', { email });
 });
 
 router.post('/reset_password', async function (req, res) {
@@ -124,8 +125,13 @@ router.post('/login', async function (req, res) {
     res.json({ status: 'fail', msg: e });
     return;
   }
+});
 
-  
+router.all('/logout', async function (req, res) {
+  req.session.destroy(function (err) {
+    // cannot access session here
+  });
+  res.redirect('/');
 });
 
 module.exports = router;
