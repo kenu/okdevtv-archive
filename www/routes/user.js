@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const user_service = require('../service/user_service');
+const uuidv4 = require('uuid/v4');
 
 router.get('/signup', function (req, res) {
   res.render('user/signup', {});
@@ -51,10 +52,39 @@ router.post('/setup', async function (req, res) {
   const hash = req.body.hash;
   let status = 'fail';
   let msg = '';
+  let reset = 'N';
 
   try {
-    const response = await user_service.setUpPassword(
+    const result = await user_service.setUpPassword(
       { password, password_confirm, hash });
+      reset = result.reset;
+    if (result.result[0].affectedRows === 1) {
+      status = 'ok';
+    }
+  } catch (e) {
+    msg = e.msg;
+    console.log(e);
+  }
+  let result = {
+    status: status,
+    reset
+  }
+  if (msg) {
+    result.msg = msg;
+  }
+  res.json(result);
+});
+
+router.get('/reset_password', async function (req, res) {
+  res.render('user/reset_password');
+});
+
+router.post('/reset_password', async function (req, res) {
+  let email = req.body.email;
+  let status = 'fail';
+  let msg = '';
+  try {
+    const response = await user_service.resetPassword(email);
     console.log(response[0].affectedRows);
     if (response[0].affectedRows === 1) {
       status = 'ok';
@@ -63,7 +93,8 @@ router.post('/setup', async function (req, res) {
     msg = e.msg;
   }
   let result = {
-    status: status
+    status: status,
+    data: email
   }
   if (msg) {
     result.msg = msg;
@@ -72,11 +103,29 @@ router.post('/setup', async function (req, res) {
 });
 
 router.get('/login', function (req, res) {
-  res.end('user login page\n');
+  res.render('user/login', { user: req.session.user, title: 'hello okdevtv' });
 });
 
-router.post('/login', function (req, res) {
-  res.end('user login check\n');
+router.post('/login', async function (req, res) {
+  const email = req.body.email;
+  const password = req.body.password;
+  try {
+    const result = await user_service.doLogin({ email, password });
+    if (result) {
+      req.session.user = email;
+      console.log(req.session.user);
+      res.json({ status: 'ok', msg: 'login success' });
+      return;
+    } else {
+      res.json({ status: 'fail', msg: '이메일 또는 비번이 맞지 않습니다.' });
+      return;
+    }
+  } catch (e) {
+    res.json({ status: 'fail', msg: e });
+    return;
+  }
+
+  
 });
 
 module.exports = router;
