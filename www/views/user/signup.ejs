@@ -1,38 +1,30 @@
-<!DOCTYPE html>
-<html lang="kr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>OKdevTV 회원가입</title>
-    <script src="/js/jquery.min.js"></script>
-    <script>
-        $(function () {
-            $('#signupform').on('submit', function (e) {
-                $.post('/user/signup',
-                    { email: $('#email').val() })
-                    .done(function (res) {
-                        if (res.status === 'ok') {
-                            $('#message')
-                                .html('<p>회원가입 안내 메일이 발송되었습니다.</p><p>감사합니다.</p>');
-                        } else {
-                            let msg = '장애가 발생했습니다.. ' + JSON.stringify(res);
-                            if (res.msg === 'duplicate email') {
-                                msg = '<p>이미 등록된 메일입니다.</p><p><a href="/user/reset_password?email='
-                                     + $('#email').val() + '">비밀번호 변경하기</p>';
-                            }
-                            $('#message').html(msg);
-                        }
-                    })
-                    .fail(function (e) {
+<%- include('header', {title: 'OKdevTV 회원가입'}) %>
+<script>
+    $(function () {
+        $('#signupform').on('submit', function (e) {
+            $.post('/user/signup',
+                { email: $('#email').val() })
+                .done(function (res) {
+                    if (res.status === 'ok') {
                         $('#message')
-                            .html('장애가 발생했습니다. ' + JSON.stringify(e));
-                    });
-                e.preventDefault();
-            });
+                            .html('<p>회원가입 안내 메일이 발송되었습니다.</p><p>감사합니다.</p>');
+                    } else {
+                        let msg = '장애가 발생했습니다.. ' + JSON.stringify(res);
+                        if (res.msg === 'duplicate email') {
+                            msg = '<p>이미 등록된 메일입니다.</p><p><a href="/user/reset_password?email='
+                                + $('#email').val() + '">비밀번호 변경하기</p>';
+                        }
+                        $('#message').html(msg);
+                    }
+                })
+                .fail(function (e) {
+                    $('#message')
+                        .html('장애가 발생했습니다. ' + JSON.stringify(e));
+                });
+            e.preventDefault();
         });
-    </script>
+    });
+</script>
 </head>
 
 <body>
