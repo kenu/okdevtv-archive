@@ -473,15 +473,16 @@ $ npm install
 
 ```
 
+* PM2
+  * https://github.com/Unitech/PM2
+  * `pm2-dev` : watch and restart
+
 * node server monitor
   * [alternative](https://strongloop.com/strongblog/comparison-tools-to-automate-restarting-node-js-server-after-code-changes-forever-nodemon-nodesupervisor-nodedev/)
   * forever
   * nodemon
   * node-supervisor
   * node-dev
-* PM2
-  * https://github.com/Unitech/PM2
-
 
 ## 영상
 1. 개요, 설치  https://www.youtube.com/watch?v=Z8cOppJwOeU
@@ -510,4 +511,4 @@ $ npm install
 * PM2 (Process Monitor 2)
   * http://devo.ps/blog/goodbye-node-forever-hello-pm2/
 * node.js for other languages
-  * https://okdevtv.com/mib/nodejs/otherlanguages
+  * https://okdevtv.com/mib/nodejs/node4others

@@ -1,0 +1,49 @@
+<%- include('header', {title: 'OKdevTV 로그인'}) %>
+<script>
+    $(function () {
+        $('#form_login').on('submit', function (e) {
+            e.preventDefault();
+            const email = $('#email').val();
+            const password = $('#password').val();
+            if (password.length < 8) {
+                $('#msg').html('비밀번호는 8자리 이상으로 해주세요.');
+                return;
+            }
+            $.post('/user/login',
+                { email, password })
+                .done(function (res) {
+                    if (res.status === 'ok') {
+                        $('#msg').html('로그인이 완료되었습니다.');
+                        setTimeout(function () {
+                            document.location.href = '/';
+                        }, 1000);
+                    } else {
+                        $('#msg').html(res.msg);
+                    }
+                })
+                .fail(function (e) { console.log(e); });
+            $('#msg').html('submitted');
+        });
+    });
+</script>
+</head>
+
+<body>
+    <h1>OKdevTV 로그인</h1>
+    <form id="form_login">
+        <div>
+            <input type="email" required id="email" placeholder="email을 입력하세요.">
+        </div>
+        <div>
+            <input type="password" required id="password" minlength="8" placeholder="8자 이상의 비밀번호를 입력하세요.">
+        </div>
+        <div>
+            <button id="btn_login">로그인</button>
+        </div>
+        <div id="msg"></div>
+    </form>
+    <a href="/user/signup">회원가입</a> |
+    <a href="/user/reset_password">비밀번호 변경</a>
+</body>
+
+</html>

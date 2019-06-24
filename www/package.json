@@ -4,23 +4,31 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test:watch": "jest tests/ -o --watch"
+    "test:watch": "jest tests/aws-ses.test.js -o --watch"
   },
   "dependencies": {
+    "aws-sdk": "^2.477.0",
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
+    "core-js": "^3.1.4",
     "debug": "^4.1.0",
+    "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-session": "^1.16.1",
     "googleapis": "^34.0.0",
-    "marked": "^0.5.1",
+    "helmet": "^3.17.0",
+    "knex": "^0.17.6",
+    "marked": "^0.6.2",
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
     "node-fetch": "^2.2.0",
     "passport": "^0.4.0",
-    "passport-facebook": "^2.1.1",
+    "passport-facebook": "^3.0.0",
     "redis": "^2.8.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "mocha": "^5.2.0"

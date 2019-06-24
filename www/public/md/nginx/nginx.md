@@ -186,8 +186,27 @@ http {
 ```
 
 ### max file upload
+
 ```
 client_max_body_size 200M;
+```
+
+### http to https
+
+```
+server {
+    # ...
+    if ($http_x_forwarded_proto = 'http'){
+        return 301 https://$host$request_uri;
+    }
+```
+* https://aws.amazon.com/ko/premiumsupport/knowledge-center/redirect-http-https-elb/
+
+## WebSocket 추가
+
+```
+proxy_set_header Upgrade $http_upgrade; # ws
+proxy_set_header Connection "upgrade"; # ws
 ```
 
 ## CentOS on GCP
@@ -199,6 +218,30 @@ client_max_body_size 200M;
 # yum install policycoreutils-python -y
 # semodule -i nginx.pp
 ```
+
+## http forward to https
+
+```
+server {
+
+    listen         80;
+    server_name  okdevtest.net www.okdevtest.net;
+    return         301 https://$host$request_uri;
+
+
+}
+
+server {
+    listen 443 ssl;
+    server_name www.okdevtest.net okdevtest.net;
+
+    if ($host = 'www.okdevtest.net' ) {
+        rewrite  ^/(.*)$  http://okdevtest.net/$1  permanent;
+    }
+
+```
+
+* from: https://rsec.kr/?p=182
 
 ## 관련
 * elk https://okdevtv.com/mib/elk

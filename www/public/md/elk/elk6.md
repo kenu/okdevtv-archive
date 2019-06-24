@@ -3,7 +3,7 @@
 * Elasticsearch는 Apache의 Lucene을 바탕으로 개발한 실시간 분산 검색 엔진이며,
 * Logstash는 각종 로그를 가져와 JSON형태로 만들어 Elasticsearch로 전송하고,
 * Kibana는 Elasticsearch에 저장된 Data를 사용자에게 Chart 형태로 보여주는 시각화 솔루션이다.
-![ELK Architecture](images/elk_arch.jpg)
+![ELK Architecture](images/elastic-stack.png)
 * http://elastic.co 사이트 오픈소스 제품
 
 
@@ -22,6 +22,15 @@
 * 리눅스 서버 CentOS 또는 Ubuntu
 * Java 1.8 이상
 
+## 통합설치
+
+* elasticsearch + kibana + logstash with openjdk1.8 + nginx
+* for AWS t2.medium : minimum 4G RAM
+
+```bash
+curl -L https://okdevtv.com/md/elk/elastic-setup.sh | sh
+```
+
 ## nginx 설치(샘플용)
 ```
 sudo yum install nginx -y
@@ -37,7 +46,15 @@ echo "<h1>Hello World</h1>" > /usr/share/nginx/html/hello.html
 ```
 sudo yum remove java-1.7.0-openjdk.x86_64 -y
 sudo yum install java-1.8.0-openjdk-devel.x86_64 -y
+which javac
+readfile -f `which javac`
 ```
+* set JAVA_HOME in ~/.bash_profile
+
+```
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.201.b09-0.43.amzn1.x86_64
+```
+
 * more [install](https://okdevtv.com/mib/java)
 
 ## system env
@@ -96,9 +113,9 @@ sudo reboot
 ```
 mkdir ~/local
 cd ~/local
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.2.tar.gz
-tar xvfz elasticsearch-6.4.2.tar.gz
-ln -s elasticsearch-6.4.2 elasticsearch
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-linux-x86_64.tar.gz
+tar xvfz elasticsearch-7.0.0-linux-x86_64.tar.gz
+ln -s elasticsearch-7.0.0 elasticsearch
 cd elasticsearch
 bin/elasticsearch -d
   # 데몬(백그라운드)로 실행. 옵션 -d를 빼면 터미널 접속해 있는 동안만 실행
@@ -113,9 +130,9 @@ curl -i http://localhost:9200/
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/kibana/kibana-6.4.2-linux-x86_64.tar.gz
-tar xvfz kibana-6.4.2-linux-x86_64.tar.gz
-ln -s kibana-6.4.2-linux-x86_64 kibana
+wget https://artifacts.elastic.co/downloads/kibana/kibana-7.0.0-linux-x86_64.tar.gz
+tar xvfz kibana-7.0.0-linux-x86_64.tar.gz
+ln -s kibana-7.0.0-linux-x86_64 kibana
 cd kibana
 ```
 
@@ -132,9 +149,9 @@ nohup bin/kibana &
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/logstash/logstash-6.4.2.tar.gz
-tar xvfz logstash-6.4.2.tar.gz
-ln -s logstash-6.4.2 logstash
+wget https://artifacts.elastic.co/downloads/logstash/logstash-7.0.0.tar.gz
+tar xvfz logstash-7.0.0.tar.gz
+ln -s logstash-7.0.0 logstash
 cd logstash
 ```
 
@@ -257,9 +274,9 @@ cd ~/local/logstash
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.4.2-linux-x86_64.tar.gz
-tar xvfz filebeat-6.4.2-linux-x86_64.tar.gz
-ln -s filebeat-6.4.2-linux-x86_64 filebeat
+wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.0.0-linux-x86_64.tar.gz
+tar xvfz filebeat-7.0.0-linux-x86_64.tar.gz
+ln -s filebeat-7.0.0-linux-x86_64 filebeat
 cd filebeat
 # elasticsearch 부분 #으로 주석 처리
   # output.elasticsearch:

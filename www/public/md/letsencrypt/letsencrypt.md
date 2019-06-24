@@ -237,6 +237,18 @@ service nginx stop && certbot-auto renew && service nginx start
 
 ## when stuck
 
+* error "ImportError: No module named cryptography"
+  * solution
+  
+```
+cd /opt/eff.org/certbot/venv/lib64/python2.7
+rmdir site-packages
+ln -s dist-packages site-packages
+```
+
+  * from: https://github.com/certbot/certbot/issues/2544#issuecomment-405954031
+
+
 * do it first
 
 ```
@@ -262,6 +274,16 @@ unset PYTHON_INSTALL_LAYOUT
 ## when stuck 2
 * `from cryptography.hazmat.bindings.openssl.binding import Binding
 ImportError: No module named cryptography.hazmat.bindings.openssl.binding`
+
+### solution 1
+
+```
+$ echo -e "import site\nsite.addsitedir('/opt/eff.org/certbot/venv/lib64/python2.7/dist-packages')" > /opt/eff.org/certbot/venv/lib64/python2.7/site-packages/sitecustomize.py
+```
+
+* https://www.lesstif.com/pages/viewpage.action?pageId=54952117
+
+### solution 2
 
 ```
 ln -s /opt/eff.org/certbot/venv/local/lib64/python2.7/dist-packages/cryptography /opt/eff.org/certbot/venv/local/lib/python2.7/dist-packages/cryptography
