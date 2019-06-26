@@ -23,6 +23,7 @@ pre {
     background-color: #eefefe;
     width: 97%;
     font-size: 1.3em;
+    overflow-x: scroll;
 }
 
 p code, li code {
