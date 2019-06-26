@@ -28,6 +28,7 @@ npm install --save @babel/polyfill
 ```
 
 * `babel.config.js`
+
 ```js
 const presets = [
   [
