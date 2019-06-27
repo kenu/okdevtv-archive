@@ -1,3 +1,12 @@
+#wrap {
+    min-width: 576px;
+    width: 80%;
+    margin: auto;
+    padding: 0 12px;
+    border: 1px solid #99e;
+    border-radius: 18px;
+}
+
 table {
     border-collapse: collapse;
 }
@@ -12,7 +21,9 @@ pre {
     padding: 6px 12px;
     border-radius: 5px;
     background-color: #eefefe;
-    width: 92%;
+    width: 97%;
+    font-size: 1.3em;
+    overflow-x: scroll;
 }
 
 p code, li code {
@@ -25,4 +36,9 @@ p code, li code {
 .img {
     width: 50%;
     max-width: 600px;
+}
+
+#whatelse {
+    text-align: center;
+    margin: 20px 0;
 }

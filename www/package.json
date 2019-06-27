@@ -7,11 +7,11 @@
     "test:watch": "jest tests/aws-ses.test.js -o --watch"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "aws-sdk": "^2.477.0",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
-    "core-js": "^3.1.4",
     "debug": "^4.1.0",
     "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
@@ -31,6 +31,9 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "mocha": "^5.2.0"
   }
 }
