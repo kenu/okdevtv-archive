@@ -134,4 +134,12 @@ router.all('/logout', async function (req, res) {
   res.redirect('/');
 });
 
+router.get('/mypage', async function (req, res) {
+  if (req.session.user) {
+    res.render('user/mypage', {user: req.session.user});
+  } else {
+    res.redirect('/user/login');
+  }
+})
+
 module.exports = router;
