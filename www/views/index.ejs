@@ -69,15 +69,15 @@
                 </li>
                 <li><a href="/#contact">Send Tip</a>
                 </li>
+                <li>
+                    <% if (user) { %>
+                    <a href="/user/mypage">My Page</a>
+                    <% } else { %>
+                    <a href="/user/login">login</a>
+                    <% } %>
+                </li>
             </ul>
         </nav>
-        <section id="login">
-            <% if (user) { %>
-            <a href="/user/mypage">My Page</a>
-            <% } else { %>
-            <a href="/user/login">login</a>
-            <% } %>
-        </section>
 
     </header>
 

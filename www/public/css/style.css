@@ -660,7 +660,7 @@
 
 	#nav {
 		position: absolute;
-		right: 3.5em;
+		right: 0.5em;
 		top: 0;
 		height: 3em;
 		line-height: 3em;
@@ -685,10 +685,6 @@
 					padding: 0 0.5em 0 0.5em;
 					outline: 0;
 				}
-	#login {
-		float: right;
-		margin-right: 0.5em;
-	}
 
 /*********************************************************************************/
 /* Intro                                                                         */
