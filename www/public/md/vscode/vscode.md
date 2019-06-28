@@ -3,6 +3,7 @@
 
 ## mac terminal setup
 * `code .`
+
 ```
 cat << EOF >> ~/.zshrc
 # Add Visual Studio Code (code)
@@ -18,6 +19,7 @@ EOF
 
 ## Auto Guess Encoding
 * settings
+
 ```
 "files.autoGuessEncoding": true
 ```
