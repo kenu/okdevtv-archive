@@ -4,12 +4,12 @@
 * 경쟁 제품 : [flask](http://flask.pocoo.org/)
 
 ## 요구사항
-* [python](https://python.org)
+* [python](/mib/python)
 * pip
-* virtualenv
 
 ## virtualenv 환경
 ```
+pip install virtualenv
 virtualenv .venv  # 환경 생성
 source .venv/bin/activate  # 환경 진입
 ```
@@ -24,6 +24,7 @@ sudo pip install django
 django-admin startproject mysite
 ```
 * set django version
+
 ```
 pip install django==1.8
 ```
@@ -35,19 +36,22 @@ django-admin startproject mysite .
 ```
 
 * settings.py
+
 ```
-    # TIME_ZONE = 'UTC'
-    TIME_ZONE = 'Asia/Seoul'
-    STATIC_URL = '/static/'
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 ```
 
 * migrate to database
+
 ```
 python manage.py migrate
 ```
 
 * run django server
+
 ```
 python manage.py runserver
 ```
@@ -58,6 +62,7 @@ python manage.py runserver
 python manage.py startapp blog
 ```
 * append app into settings.py
+
 ```
     INSTALLED_APPS = (
         'django.contrib.admin',
@@ -95,6 +100,7 @@ python manage.py startapp blog
             return self.title
 ```
 * sync table database
+
 ```
 python manage.py makemigrations blog
 python manage.py migrate blog
@@ -111,6 +117,7 @@ admin.site.register(Post)
 ```
 
 * create super user
+
 ```
 python manage.py createsuperuser
 ```
