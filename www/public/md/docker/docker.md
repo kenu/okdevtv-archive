@@ -152,6 +152,8 @@ https://index.docker.io
 ```
 
 ## ref
+* Docker in 12 minutes
+  * https://www.youtube.com/watch?v=YFl2mCHdv24
 * Getting Started for non-technical
   * https://docs.docker.com/mac/
   * https://docs.docker.com/docker-for-windows/
