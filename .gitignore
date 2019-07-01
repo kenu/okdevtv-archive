@@ -19,3 +19,6 @@ token.json
 package-lock.json
 yarn.lock
 .env
+.classpath
+.project
+*.prefs
