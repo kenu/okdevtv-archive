@@ -22,6 +22,17 @@ module.exports = {
             throw { msg: 'duplicate email' };
         }
 
+        // check recent
+        const sql_recent = `select count(*) as cnt
+        from user_candidate
+        where email = ? and finish = 'N'
+        and timediff(now(), created_at) < '00:05:00';`;
+        const result_recent = await knex.raw(sql_recent, [email.trim()]);
+        if (result_recent[0][0]['cnt'] > 0) {
+            throw { msg: 'email sent already' };
+        }
+
+
         // generate uuid
         const uuid = uuidv4();
         const message = `

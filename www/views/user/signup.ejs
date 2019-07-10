@@ -13,6 +13,8 @@
                         if (res.msg === 'duplicate email') {
                             msg = '<p>이미 등록된 메일입니다.</p><p><a href="/user/reset_password?email='
                                 + $('#email').val() + '">비밀번호 변경하기</p>';
+                        } else if (res.msg == 'email sent already') {
+                            msg = '<p>방금 전에 메일이 발송되었습니다.<br />스팸함에도 메일이 없으면 5분 뒤에 다시 시도해 주세요.</p>'
                         }
                         $('#message').html(msg);
                     }
