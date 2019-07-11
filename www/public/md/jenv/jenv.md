@@ -1,9 +1,10 @@
 # jenv
-* http://jenv.io
+* https://www.jenv.be/
 * Java environment manager
 
-* `curl -L -s get.jenv.io | bash`
-* `source /Users/heogn/.jenv/bin/jenv-init.sh`
+* `brew install jenv`
+* `git clone https://github.com/gcuisinier/jenv.git ~/.jenv`
+* `echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc`
 
 * `jenv install go`
 
