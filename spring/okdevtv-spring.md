@@ -16,8 +16,8 @@
 ## 개발환경
 * 브라우저
   * 크롬브라우저 http://www.google.com/chrome
-* Java 7
-  * http://java.sun.com
+* Java 8
+  * https://github.com/ojdkbuild/ojdkbuild
   * JAVA_HOME 환경변수
   * PATH 환경변수
 * Spring 3.x

@@ -10,7 +10,7 @@
 * `jenv list java`
 
 ## set jdk
-* for redistribution issue download and install from oracle http://java.sun.com
+* for redistribution issue download and install from OpenJDK https://github.com/ojdkbuild/ojdkbuild
 
 ```
 mkdir -p $HOME/.jenv/candidates/java

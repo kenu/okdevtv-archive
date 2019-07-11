@@ -6,7 +6,7 @@
 * JDK = JRE + javac
 
 ## Install
-* http://java.sun.com
+* https://github.com/ojdkbuild/ojdkbuild
 * CentOS
 ```
 yum list | grep jdk
