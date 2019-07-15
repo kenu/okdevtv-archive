@@ -1,10 +1,11 @@
 #!/bin/sh
-source /home/dev/.zshrc
+HOME=/home/dev
+source $HOME/.zshrc
 
 git pull;
 
-SRC=./www
-DEST=/home/dev/local/tomcat/webapps/ROOT/
+SRC=.
+DEST=$HOME/local/okdevtv
 
 cp -rf $SRC/* $DEST
 
