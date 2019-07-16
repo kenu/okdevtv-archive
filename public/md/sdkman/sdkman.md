@@ -3,6 +3,7 @@
 * open bash shell
 * `curl -s "https://get.sdkman.io" | bash`
 * restart bash shell
+* `sdk install kotlin`
 * `sdk install springboot`
 * `sdk help`
 * Windows need Cygwin or Git Bash
