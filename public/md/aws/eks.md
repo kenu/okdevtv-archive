@@ -13,7 +13,7 @@ eksctl version
 
 ## cluster 생성
 ```
-eksctl create cluster --name okdevtv
+eksctl create cluster --name okdevtv --node-type t2.micro
 ```
 
 ## cluster 삭제
