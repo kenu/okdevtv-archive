@@ -13,7 +13,14 @@ eksctl version
 
 ## cluster 생성
 ```
+eksctl create cluster --name okdevtv
+
 eksctl create cluster --name okdevtv --node-type t2.micro
+# default t3.medium
+
+eksctl create cluster --name okdevtv --node-type t2.micro --ssh-access --ssh-public-key /Users/kenu.heo/keys/okdevtv.pub
+# not pem, but public key which can be generated from private key.
+# ssh-keygen -y -f ~/keys/okdevtv.pem > ~/keys/okdevtv.pub
 ```
 
 ## cluster 상태
@@ -65,14 +72,14 @@ redis-master   ClusterIP      10.100.236.142   <none>                           
 redis-slave    ClusterIP      10.100.55.192    <none>                                                                         6379/TCP         66s     app=redis,role=slave
 ```
 
-https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-master-controller.json
-https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-master-service.json
+* https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-master-controller.json
+* https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-master-service.json
 
-https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-controller.json
-https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-service.json
+* https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-controller.json
+* https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-service.json
 
-https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-controller.json
-https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-service.json
+* https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-controller.json
+* https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-service.json
 
 ```
 open http://a968acdc1ada211e9965e0a440f6d044-1573675550.ap-northeast-2.elb.amazonaws.com:3000
