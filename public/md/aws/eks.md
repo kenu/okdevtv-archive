@@ -16,11 +16,6 @@ eksctl version
 eksctl create cluster --name okdevtv --node-type t2.micro
 ```
 
-## cluster 삭제
-```
-eksctl create cluster --name okdevtv
-```
-
 ## cluster 상태
 ```
 eksctl utils describe-stacks --name=okdevtv
@@ -51,14 +46,16 @@ Scaling redis-slave down to 0
 Update succeeded. Deleting old controller: redis-slave
 Renaming redis-slave-3804187ba3edb492a52de28854679c54 to redis-slave
 replicationcontroller/redis-slave rolling updated
+
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-service.json
 service/redis-slave created
+
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-controller.json
-
 replicationcontroller/guestbook created
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-service.json
 
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-service.json
 service/guestbook created
+
 kubectl get services -o wide
 
 NAME           TYPE           CLUSTER-IP       EXTERNAL-IP                                                                    PORT(S)          AGE     SELECTOR
@@ -67,6 +64,15 @@ kubernetes     ClusterIP      10.100.0.1       <none>                           
 redis-master   ClusterIP      10.100.236.142   <none>                                                                         6379/TCP         4m34s   app=redis,role=master
 redis-slave    ClusterIP      10.100.55.192    <none>                                                                         6379/TCP         66s     app=redis,role=slave
 ```
+
+https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-master-controller.json
+https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-master-service.json
+
+https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-controller.json
+https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-service.json
+
+https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-controller.json
+https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-service.json
 
 ```
 open http://a968acdc1ada211e9965e0a440f6d044-1573675550.ap-northeast-2.elb.amazonaws.com:3000
