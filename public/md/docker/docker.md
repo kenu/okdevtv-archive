@@ -129,6 +129,20 @@ if __name__ == "__main__":
 ## 네트워크
 * https://docs.docker.com/engine/tutorials/networkingcontainers/
 
+## AWS EC2
+* docker 설치
+
+```
+sudo yum update -y
+sudo yum install docker -y
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+# for ec2-user permission
+sudo reboot
+
+docker ps
+```
+
 
 ## 참고
 
