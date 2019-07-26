@@ -40,6 +40,12 @@ Error response from daemon: No such container: nginx
 92d58318f84e
 ```
 
+## 실행중인 도커 접속
+
+```
+docker exec -it  92d58318f84e /bin/bash
+```
+
 ## 이미지 불러오기
 * `docker pull imagename`
 
