@@ -143,6 +143,8 @@ sudo reboot
 docker ps
 ```
 
+* docker-compose 설치
+  * https://docs.docker.com/compose/install/
 
 ## 참고
 
