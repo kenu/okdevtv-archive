@@ -9,6 +9,8 @@
 * 요소 검사(inspect element) > Console 탭
 * 3 * 5 JS Console
 
+<img src="images/js01-console.png" alt="JS Console">
+
 ## JSON
 * JavaScript Object Notation
 * 1999 Douglas Crockford
@@ -70,6 +72,7 @@
 ## DOM 스크립트
 * DOM; Document Object Model
 * HTML document를 제어하는 스크립트
+
 ```
 <!DOCTYPE html>
 <html>
