@@ -113,9 +113,9 @@ sudo reboot
 ```
 mkdir ~/local
 cd ~/local
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.2.0-linux-x86_64.tar.gz
-tar xvfz elasticsearch-7.2.0-linux-x86_64.tar.gz
-ln -s elasticsearch-7.2.0 elasticsearch
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.3.0-linux-x86_64.tar.gz
+tar xvfz elasticsearch-7.3.0-linux-x86_64.tar.gz
+ln -s elasticsearch-7.3.0 elasticsearch
 cd elasticsearch
 bin/elasticsearch -d
   # 데몬(백그라운드)로 실행. 옵션 -d를 빼면 터미널 접속해 있는 동안만 실행
@@ -130,9 +130,9 @@ curl -i http://localhost:9200/
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/kibana/kibana-7.2.0-linux-x86_64.tar.gz
-tar xvfz kibana-7.2.0-linux-x86_64.tar.gz
-ln -s kibana-7.2.0-linux-x86_64 kibana
+wget https://artifacts.elastic.co/downloads/kibana/kibana-7.3.0-linux-x86_64.tar.gz
+tar xvfz kibana-7.3.0-linux-x86_64.tar.gz
+ln -s kibana-7.3.0-linux-x86_64 kibana
 cd kibana
 ```
 
@@ -149,9 +149,9 @@ nohup bin/kibana &
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/logstash/logstash-7.2.0.tar.gz
-tar xvfz logstash-7.2.0.tar.gz
-ln -s logstash-7.2.0 logstash
+wget https://artifacts.elastic.co/downloads/logstash/logstash-7.3.0.tar.gz
+tar xvfz logstash-7.3.0.tar.gz
+ln -s logstash-7.3.0 logstash
 cd logstash
 ```
 
@@ -274,9 +274,9 @@ cd ~/local/logstash
 
 ```
 cd ~/local
-wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.2.0-linux-x86_64.tar.gz
-tar xvfz filebeat-7.2.0-linux-x86_64.tar.gz
-ln -s filebeat-7.2.0-linux-x86_64 filebeat
+wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.3.0-linux-x86_64.tar.gz
+tar xvfz filebeat-7.3.0-linux-x86_64.tar.gz
+ln -s filebeat-7.3.0-linux-x86_64 filebeat
 cd filebeat
 # elasticsearch 부분 #으로 주석 처리
   # output.elasticsearch:
@@ -330,6 +330,7 @@ chmod +x start.sh
 
 ### Logstash
 * 필드 추가
+
 ```
 field{
     mutate {
@@ -341,6 +342,7 @@ field{
 ```
 
 * 분리
+
 ```
 field{
     mutate {
@@ -353,6 +355,7 @@ field{
 ```
 
 * 필드 제거
+
 ```
     mutate {
         remove_field => [
@@ -364,6 +367,7 @@ field{
 
 
 * 파라미터 필드 만들기
+
 ```
 filter {
     mutate {
@@ -406,6 +410,7 @@ filter {
 ```
 
 * 이미지 제거
+
 ```
 filter {
     if [message] =~ "^#|\.(css|js|ico|png|xml|jpg|JPG|gif|jpeg|eot|htc\?) " {
@@ -415,6 +420,7 @@ filter {
 ```
 
 * 문자열 체크
+
 ```
 if [agent] =~ "Mediapartners" {
     drop {}
@@ -425,6 +431,7 @@ if [device] == "Spider" {
 ```
 
 * useragent 파싱
+
 ```
     useragent {
         source => "agent"
@@ -432,6 +439,7 @@ if [device] == "Spider" {
 ```
 
 * timestamp 조정(apache log)
+
 ```
     date {
         match => [ "timestamp", "dd/MMM/yyyy:HH:mm:ss Z" ]
@@ -440,6 +448,7 @@ if [device] == "Spider" {
 * https://www.elastic.co/guide/en/logstash/current/plugins-filters-date.html
 
 * urldecode
+
 ```
    urldecode {
        field => "params"
@@ -447,6 +456,7 @@ if [device] == "Spider" {
 ```
 
 * to integer
+
 ```
     mutate {
         convert => [ "bytes", "integer" ]
@@ -454,6 +464,7 @@ if [device] == "Spider" {
 ```
 
 * 하나 이상의 로그 포맷
+
 ```
 filter {
     grok {
@@ -466,6 +477,7 @@ filter {
 ```
 
 * elsasticsearch index 설정
+
 ```
 output {
   elasticsearch {
@@ -478,6 +490,7 @@ output {
 ```
 
 * replace
+
 ```
     mutate {
         gsub => [ 'message', '\\x22', '']
@@ -489,6 +502,7 @@ output {
 
 ### geo_point
 * elasticsearch mappings
+
 ```
 curl -XPUT http://localhost:9200/my_index/ -d '
 {
@@ -502,6 +516,7 @@ curl -XPUT http://localhost:9200/my_index/ -d '
 }'
 ```
 * logstash conf
+
 ```
 filter {
     csv {
@@ -557,14 +572,16 @@ sudo htpasswd /etc/nginx/htpasswd.users kenuheo
 ```
 sudo vi /etc/nginx/nginx.conf
 ```
+
 * `server_name:` 아래 kibana 프록시 설정
+
 ```
         auth_basic "Restricted Access";
         auth_basic_user_file /etc/nginx/htpasswd.users;
 
         location / {
                 sendfile off;
-                proxy_pass         http://127.2.0.1:5601;
+                proxy_pass         http://127.0.0.1:5601;
                 proxy_redirect     default;
                 proxy_http_version 1.1;
                 proxy_set_header   Host              $host;
@@ -582,6 +599,7 @@ sudo vi /etc/nginx/nginx.conf
 ## Kibana with PM2
 
 * download from http://nodejs.org and install node.js
+
 ```
 npm install -g pm2
 cd ~/local/kibana
