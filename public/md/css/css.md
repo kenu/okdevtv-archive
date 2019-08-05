@@ -64,6 +64,9 @@
 * 그레디언트, 그림자 효과, 투명도, 둥근 모서리 등
 * 애니메이션, 트랜지션 효과
 
+## Related
+* [Flexbox](/mib/css/flexbox)
+
 ##  참고
 * The History of CSS
   * http://www.cssneuse.net/the-history-of-css.php
