@@ -38,13 +38,13 @@ passport.deserializeUser(function(obj, done) {
 
 // Use the FacebookStrategy within Passport.
 
-passport.use(new FacebookStrategy({
-  clientID: config.facebook_api_key,
-  clientSecret: config.facebook_api_secret,
-  callbackURL: config.callback_url
-},
-  function (accessToken, refreshToken, profile, done) {
-    try {
+try {
+  passport.use(new FacebookStrategy({
+    clientID: config.facebook_api_key,
+    clientSecret: config.facebook_api_secret,
+    callbackURL: config.callback_url
+  },
+    function (accessToken, refreshToken, profile, done) {
       process.nextTick(function () {
         //Check whether the User exists or not using profile.id
         if (config.use_database) {
@@ -61,11 +61,12 @@ passport.use(new FacebookStrategy({
         }
         return done(null, profile);
       });
-    } catch (e) {
-      console.log(e);
     }
-  }
-));
+  ));
+} catch (e) {
+  console.log(e);
+}
+
 
 var sess = {
   secret: 'okdevtv cat',
