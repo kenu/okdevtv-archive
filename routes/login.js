@@ -16,42 +16,44 @@ const pool = mysql.createPool({
   database: config.database
 });
 
-// Passport session setup.
-passport.serializeUser(function (user, done) {
-  done(null, user);
-});
-
-passport.deserializeUser(function (obj, done) {
-  done(null, obj);
-});
-
-
-// Use the FacebookStrategy within Passport.
-
-passport.use(new FacebookStrategy({
-  clientID: config.facebook_api_key,
-  clientSecret: config.facebook_api_secret,
-  callbackURL: config.callback_url
-},
-  function (accessToken, refreshToken, profile, done) {
-    process.nextTick(function () {
-      //Check whether the User exists or not using profile.id
-      if (config.use_database) {
-        // if sets to true
-        pool.query("SELECT * from user_info where user_id=" + profile.id, (err, rows) => {
-          if (err) throw err;
-          if (rows && rows.length === 0) {
-            console.log("There is no such user, adding now");
-            pool.query("INSERT into user_info(user_id,user_name) VALUES('" + profile.id + "','" + profile.username + "')");
-          } else {
-            console.log("User already exists in database");
-          }
-        });
-      }
-      return done(null, profile);
-    });
-  }
-));
+try {
+  // Passport session setup.
+  passport.serializeUser(function (user, done) {
+    done(null, user);
+  });
+  
+  passport.deserializeUser(function (obj, done) {
+    done(null, obj);
+  });
+  
+  // Use the FacebookStrategy within Passport.
+  passport.use(new FacebookStrategy({
+    clientID: config.facebook_api_key,
+    clientSecret: config.facebook_api_secret,
+    callbackURL: config.callback_url
+  },
+    function (accessToken, refreshToken, profile, done) {
+      process.nextTick(function () {
+        //Check whether the User exists or not using profile.id
+        if (config.use_database) {
+          // if sets to true
+          pool.query("SELECT * from user_info where user_id=" + profile.id, (err, rows) => {
+            if (err) throw err;
+            if (rows && rows.length === 0) {
+              console.log("There is no such user, adding now");
+              pool.query("INSERT into user_info(user_id,user_name) VALUES('" + profile.id + "','" + profile.username + "')");
+            } else {
+              console.log("User already exists in database");
+            }
+          });
+        }
+        return done(null, profile);
+      });
+    }
+  ));
+} catch(e) {
+  console.log(e);
+}
 
 router.use(cookieParser());
 router.use(bodyParser.urlencoded({ extended: false }));
