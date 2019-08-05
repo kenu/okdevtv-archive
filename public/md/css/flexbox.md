@@ -4,16 +4,16 @@
 
 ## Basic Term
 
-<img src="https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg" alt="basic term" />
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg" alt="basic term" class="img" />
 
 ## Basic Concept
 
 * Container
 
-<img src="https://css-tricks.com/wp-content/uploads/2018/10/01-container.svg" alt="container" />
+<img src="https://css-tricks.com/wp-content/uploads/2018/10/01-container.svg" alt="container" class="img" />
 
 * Item
-<img src="https://css-tricks.com/wp-content/uploads/2018/10/02-items.svg" alt="items" />
+<img src="https://css-tricks.com/wp-content/uploads/2018/10/02-items.svg" alt="items" class="img" />
 
 
 ## CSS for container
