@@ -68,10 +68,22 @@ router.post('/setup', async function (req, res) {
   let result = {
     status: status,
     reset
-  }
+  };
   if (msg) {
     result.msg = msg;
   }
+  res.json(result);
+});
+
+router.post('/change_password', async function (req, res) {
+  const password = req.body.password;
+  const password_confirm = req.body.password_confirm;
+  let status = 'fail';
+  let msg = '';
+  let result = {
+    status: status,
+    msg
+  };
   res.json(result);
 });
 
