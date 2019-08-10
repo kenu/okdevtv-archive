@@ -1,6 +1,6 @@
 # log samples
 
-### %{reqs[1]}
+### %{[reqs][1]}
 ```
 210.94.153.153 - - [19/May/2016:10:48:41 +0900] "GET /articles/community HTTP/1.1" 200 7164 "http://okky.kr/article/78051" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36" "-"
 223.62.190.104 - - [19/May/2016:10:49:29 +0900] "GET /articles/tech?query=jsp%EB%B2%84%ED%8A%BC&sort=id&order=desc HTTP/1.1" 200 3618 "http://okky.kr/articles/tech" "Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13E238 Safari/601.1" "-"

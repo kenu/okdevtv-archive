@@ -259,9 +259,9 @@ field{
 field{
     mutate {
         split => ["reqs", "?"]
-        add_field => { "uri" => "%{reqs[0]}" }
-        add_field => { "req_uri" => "%{reqs[0]}" }
-#        add_field => { "querystring" => "%{reqs[1]}" }
+        add_field => { "uri" => "%{[reqs][0]}" }
+        add_field => { "req_uri" => "%{[reqs][0]}" }
+#        add_field => { "querystring" => "%{[reqs][1]}" }
     }
 }
 ```
