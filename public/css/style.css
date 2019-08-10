@@ -645,7 +645,7 @@
 		padding-top: 3em;
 	}
 
-	#logo {
+	#logo_heading {
 		position: absolute;
 		left: 1em;
 		top: 0;
@@ -654,7 +654,7 @@
 		letter-spacing: -1px;
 	}
 
-		#logo a {
+		#logo_heading a {
 			font-size: 1.25em;
 		}
 
