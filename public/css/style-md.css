@@ -7,6 +7,12 @@
     border-radius: 18px;
 }
 
+#logo {
+    width: 36px;
+    margin-right: 6px;
+    margin-bottom: -6px;
+}
+
 table {
     border-collapse: collapse;
 }
