@@ -100,6 +100,22 @@ where uuid = ? and finish != 'Y';`;
 
         return { result, reset };
     },
+    changePassword: async ({ password, password_confirm, email }) => {
+        if (password.length < 8) {
+            throw '비밀번호는 8자리 이상으로 해주세요.';
+        }
+        if (password !== password_confirm) {
+            throw '입력하신 두 비밀번호가 다릅니다.';
+        }
+        const crypted_password = await hashPassword(password);
+
+        const query = `update user set passwd = ?, updated_at = now()
+        where email = ?`;
+        const result = await knex.raw(query, [crypted_password, email]);
+
+        return { result };
+    },
+
     doLogin: async ({ email, password }) => {
         const query = `select seq, passwd from user where email = ?`;
         const result = await knex.raw(query, [email]);

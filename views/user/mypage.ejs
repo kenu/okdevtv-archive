@@ -1,3 +1,8 @@
+<% 
+if (!user) {
+%><script>location.href = '/user/login';</script><%
+}
+%>
 <%- include('header', {title: 'My Page'}) %>
 <script>
     $(function () {
@@ -24,6 +29,8 @@
                     if (res.status === 'ok') {
                         let msg = '비밀번호 변경이 완료되었습니다.';
                         $('#msg').html(msg);
+                    } else {
+                        $('#msg').html(res.msg);
                     }
                 })
                 .fail(function (e) { console.log(e); });

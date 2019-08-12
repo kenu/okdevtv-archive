@@ -78,8 +78,22 @@ router.post('/setup', async function (req, res) {
 router.post('/change_password', async function (req, res) {
   const password = req.body.password;
   const password_confirm = req.body.password_confirm;
+  const email = req.session.user;
   let status = 'fail';
   let msg = '';
+  try {
+    if (email) {
+      const change_result = await user_service.changePassword({ password, password_confirm, email });
+      if (change_result.result[0].affectedRows === 1) {
+        status = 'ok';
+      }
+    } else {
+      msg = 'login이 필요합니다.';
+    }
+  } catch (e) {
+    msg = e.msg;
+    console.log(e);
+  }
   let result = {
     status: status,
     msg
@@ -148,7 +162,7 @@ router.all('/logout', async function (req, res) {
 
 router.get('/mypage', async function (req, res) {
   if (true || req.session.user) {
-    res.render('user/mypage', {user: req.session.user});
+    res.render('user/mypage', { user: req.session.user });
   } else {
     res.redirect('/user/login');
   }
