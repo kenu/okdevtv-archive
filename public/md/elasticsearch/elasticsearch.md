@@ -7,7 +7,7 @@
 * 경쟁제품 Solr, Tica
 * Java 8(jdk 1.8) 이상 필요
 
-* [AWS에서 설치 및 실행](http://okdevtv.com/mib/elk/elk)
+* [AWS에서 설치 및 실행](https://okdevtv.com/mib/elk/elk)
 
 ## 플러그인 설치
 * 5.0부터 외부에 설치; 보안이슈로 인해 격리

@@ -90,7 +90,7 @@ mean/config/env/development.js
 facebook: {
         clientID: '1417763...476376',
         clientSecret: 'a535v2.......adf68c53f41ae6c73b',
-        callbackURL: 'http://okdevtv.com/auth/facebook/callback'
+        callbackURL: 'https://okdevtv.com/auth/facebook/callback'
     },
 ```
 

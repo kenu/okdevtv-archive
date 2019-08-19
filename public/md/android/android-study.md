@@ -47,7 +47,7 @@ JSON 데이터 처리
 
 
 #1 안드로이드 스튜디오 시작하기 (5/16 토)
-* http://okdevtv.com/android.html
+* https://okdevtv.com/android.html
 
 #2 모바일 서비스 기획서와 안드로이드 개발 (5/23 토)
 

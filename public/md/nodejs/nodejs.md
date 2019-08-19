@@ -333,7 +333,7 @@ app.get('/users/:userId/books/:bookId', function (req, res) {
 * [설치링크](https://okdevtv.com/mib/nodejs/node-mariadb)
 
 ## MongoDB + node.js
-* http://okdevtv.com/mongodb_nodejs.html
+* https://okdevtv.com/mongodb_nodejs.html
 
 
 
@@ -380,7 +380,7 @@ if (cluster.isMaster) {
 * node.js 지원하는 PaaS
   * 무료사용 가능
 * https://www.heroku.com/
-* http://okdevtv.com/tip/nodehosting.html
+* https://okdevtv.com/tip/nodehosting.html
 
 
 

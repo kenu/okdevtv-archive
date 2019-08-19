@@ -30,7 +30,7 @@ function setBody(data, path) {
 <html lang="ko"><head><title>${ path[3] }</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta property="og:title" content="${ path[3] }" />
-<meta property="og:url" content="http://okdevtv.com${ path.join('/') }" />
+<meta property="og:url" content="https://okdevtv.com${ path.join('/') }" />
 <link rel="stylesheet" href="/css/style-md.css">
 </head><body><!-- Header --><div id="wrap"><header id="header"><!-- Logo --><h1 id="logo_heading"><a href="/">
 <img src="/images/logo.png" alt="okdevtv logo" id="logo">OKdevTV</a></h1>

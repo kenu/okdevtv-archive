@@ -30,7 +30,7 @@
 
 ## 4. 웹서버 설치
 * nginx 웹서버 설치
-  * http://okdevtv.com/mib/nginx
+  * https://okdevtv.com/mib/nginx
 
 
 ## 5. 간단한 HTML 생성

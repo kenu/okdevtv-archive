@@ -26,7 +26,7 @@ curl -F "userid=kenu" -F "file=/home/kenu/data/hello.txt" http://uploadlink
 * `-H` or `--header`
 
 ```
-curl --header 'headername: value' http://okdevtv.com
+curl --header 'headername: value' https://okdevtv.com
 
 curl -XPOST 'localhost:3000/apis/tip' -H "Content-Type: application/json" -d '{"name": "kenu", "email": "test@test.com"}'
 ```
