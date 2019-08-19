@@ -3,6 +3,7 @@
 ## Requirements
 * awscli
 * kubectl
+* IAM Administrator
 
 ## eksctl
 ```
