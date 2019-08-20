@@ -47,7 +47,7 @@ HMACSHA256(
 ```
 Authorization: Bearer <token>
 ```
-* <img src="https://cdn.auth0.com/content/jwt/jwt-diagram.png" alt="JWT works"/>
+* <img src="https://cdn.auth0.com/content/jwt/jwt-diagram.png" alt="JWT works" class="img"/>
 
 
 ## install
