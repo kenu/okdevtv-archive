@@ -7,12 +7,13 @@
 
 ```
 mkdir ~/local && cd ~/local
-sudo yum groupinstall "Development Tools"
-wget http://download.redis.io/releases/redis-4.0.10.tar.gz
-tar xvfz redis-4.0.10.tar.gz
-cd redis-4.0.10
+sudo yum groupinstall "Development Tools" -y
+wget http://download.redis.io/releases/redis-5.0.5.tar.gz
+tar xvfz redis-5.0.5.tar.gz
+cd redis-5.0.5
 cd deps
 make hiredis jemalloc linenoise lua
+cd ..
 make
 ```
 
