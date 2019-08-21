@@ -63,6 +63,14 @@ client.hkeys("hash key", function (err, replies) {
 });
 ```
 
+## Docker redis
+
+```
+docker run -d -p 6379:6379 --name redis redis
+docker ps
+docker exec -it 7c7dd57eb291 /bin/bash
+```
+
 ## ref
 * redis on windows
   * http://hwigyeom.ntils.com/entry/Windows-%EC%97%90-Redis-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0-1
