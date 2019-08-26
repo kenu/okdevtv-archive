@@ -58,21 +58,33 @@ Authorization: Bearer <token>
 * `jwt.sign(payload, secretOrPrivateKey, [options, callback])`
 
 ## example
-```javascript
-// sign with default (HMAC SHA256)
-var jwt = require('jsonwebtoken');
-var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
-//backdate a jwt 30 seconds
-var older_token = jwt.sign({ foo: 'bar', iat: Math.floor(Date.now() / 1000) - 30 }, 'shhhhh');
 
-// sign with RSA SHA256
-var cert = fs.readFileSync('private.key');  // get private key
-var token = jwt.sign({ foo: 'bar' }, cert, { algorithm: 'RS256'});
+* code from https://www.jsonwebtoken.io/
+* `npm i --save njwt`
 
-// sign asynchronously
-jwt.sign({ foo: 'bar' }, cert, { algorithm: 'RS256' }, function(err, token) {
-  console.log(token);
-});
+```js
+var uuid = require('uuid');
+var nJwt = require('njwt');
+
+var claims = {
+ "sub": "1234567890",
+ "name": "John Doe",
+ "admin": true,
+ "jti": "f0b5fc9e-67d8-43f7-858a-a7cc5f0cae66",
+ "iat": 1566783214,
+ "exp": 1566786814
+}
+
+var jwt = nJwt.create(claims,"secret","HS256");
+var token = jwt.compact();
+console.log(token);
+```
+
+```js
+var nJwt = require('njwt');
+
+var result = nJwt.verify("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImp0aSI6ImYwYjVmYzllLTY3ZDgtNDNmNy04NThhLWE3Y2M1ZjBjYWU2NiIsImlhdCI6MTU2Njc4MzIxNCwiZXhwIjoxNTY2Nzg2ODE0fQ.CZSC2L3vB0dGlH_3EUTt_98iR70gMsDalOF-uuNvmPk","secret", 'HS256');
+console.log(result);
 ```
 
 ## ref
