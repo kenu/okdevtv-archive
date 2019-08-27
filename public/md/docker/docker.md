@@ -49,6 +49,12 @@ docker exec -it  92d58318f84e /bin/bash
 ## 이미지 불러오기
 * `docker pull imagename`
 
+## 컨테이너 전체 삭제
+```
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+```
+
 ## 이미지 만들기
 * https://docs.docker.com/get-started/part2/
 * `Dockerfile`
