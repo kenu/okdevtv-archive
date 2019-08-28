@@ -15,9 +15,9 @@ eksctl version
 ## cluster 생성
 ```
 eksctl create cluster --name okdevtv
+# default t3.medium or m5.large
 
 eksctl create cluster --name okdevtv --node-type t2.micro
-# default t3.medium
 
 eksctl create cluster --name okdevtv --node-type t2.micro --ssh-access --ssh-public-key /Users/kenu.heo/keys/okdevtv.pub
 # not pem, but public key which can be generated from private key.
@@ -42,9 +42,8 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/gu
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-controller.json
 > replicationcontroller/redis-slave created
 
-kubectl rolling-update redis-slave --image=k8s.gcr.io/redis-slave:v2 --image-pull-policy=Always
+kubectl rollout redis-slave --image=k8s.gcr.io/redis-slave:v2 --image-pull-policy=Always
 
-Command "rolling-update" is deprecated, use "rollout" instead
 Created redis-slave-3804187ba3edb492a52de28854679c54
 Scaling up redis-slave-3804187ba3edb492a52de28854679c54 from 0 to 2, scaling down redis-slave from 2 to 0 (keep 2 pods available, don't exceed 3 pods)
 Scaling redis-slave-3804187ba3edb492a52de28854679c54 up to 1
