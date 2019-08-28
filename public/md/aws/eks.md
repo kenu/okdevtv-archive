@@ -2,10 +2,15 @@
 
 ## Requirements
 * awscli
+  * https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-install.html
 * kubectl
-* IAM Administrator
+  * https://kubernetes.io/docs/tasks/tools/install-kubectl/
+* IAM AdministratorAccess Permission
 
 ## eksctl
+* https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/getting-started-eksctl.html
+
+### mac
 ```
 brew tap weaveworks/tap
 brew install weaveworks/tap/eksctl
