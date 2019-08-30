@@ -3,6 +3,7 @@
 * MySQL과 동일한 API
 * https://www.mariadb.org
 * install MariaDB
+  * mac : `brew install mariadb` or `brew install mariadb@10.2`
   * `vi /etc/yum.repos.d/MariaDB.repo`
 
 ```
