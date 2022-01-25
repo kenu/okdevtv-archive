@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var marked = require('marked');
+const { marked } = require('marked');
 var fs = require('fs');
 router.all('*', function (req, res) {
     var path = req.baseUrl.split('/');
